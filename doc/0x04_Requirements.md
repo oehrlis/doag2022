@@ -1,73 +1,75 @@
-# Anforderungen Workshop Umgebung
+# Anforderungen Oracle Cloud (OCI) Kickstart Workshop
 <!-- markdownlint-disable MD013 -->
-Im Rahmen vom DOAG Schulungstag *Oracle Cloud Infrastructure (OCI) Kickstart Workshop*
-besteht die Gelegenheit verschiedene Themen am praktischen Beispiel zu vertiefen.
-Dazu wird jedem Teilnehmer eine Oracle Cloud Umgebung die Zeitdauer des
-*DOAG Schulungstages* zur Verfügung gestellt. Alternativ können die Teilnehmer
-die Übungen zudem in einer eigenen  ausführen. Die Teilnehmer können frei wählen, welche Umgebung sie für den Workshop nutzen möchten. Allerdings ist das Einrichten der lokalen VM bzw. der lokalen Docker-Umgebung nicht Teil des Workshops selbst. Die folgende Zusammenstellung gibt eine kurze Übersicht der verschiedenen Anforderungen an die drei Workshop Umgebungen.
 
-Ausführliche Informationen zur Workshop Umgebung, Unterlagen, Anleitungen etc.
-sind im Vorfeld zum *DOAG Schulungstag* via [DOAG2019 O-DB-DOCKER](https://url.oradba.ch/DOAG2019_O-DB-DOCKER) verfügbar. Falls sie Fragen haben, zögern Sie nicht, am Trivadis-Stand vorbei zu kommen und nach Stefan Oehrli zu Verlangen.
+Wolltest Du schon immer einmal die Möglichkeiten der
+*Oracle Cloud Infrastruktur (OCI)* genauer anschauen, hattest aber nie Zeit gefunden?
+Dann ist unser *Oracle Cloud (OCI) Kickstart Workshop* genau das Richtige. Nach
+einer theoretischen Einführung geht es ab in die Cloud. Als Teilnehmer von diesem
+Workshop hast Du die Gelegenheit verschiedene Themen am praktischen Beispiel zu
+vertiefen. Dazu erhältst Du Zugang zu einer *Oracle Cloud Umgebung*, welche
+Du im Rahmen des Workshops nutzen kannst. Zudem sind die Beispiele und Übungen
+in einem *GitHub* Repository abgelegt und stehen Dir auch nach dem Workshop zu
+Verfügung. Das Repository wird während der *DOAG Konferenz* frei geschaltet und ist
+via [DOAG 2022 O-OCI-WS](https://url.oradba.ch/DOAG22) verfügbar. Falls Du Fragen
+hast, zögere nicht, am DOAG / SOUG Stand vorbei zu kommen und nach Stefan Oehrli
+oder Martin Berger zu Verlangen.
 
 ## Voraussetzungen und Skills
 
-Die verschiedenen Übungen des Workshop erlauben den schrittweise Einstig in das Thema *Oracle-Datenbanken in Docker-Container*. Dazu werden folgende Kenntnisse der Teilnehmer werden empfohlen:
+Die verschiedenen Übungen des Workshop erlauben den schrittweise Einstig in das
+Thema *Oracle Cloud Infrastructure (OCI)*. Dazu werden folgende Kenntnisse der
+Teilnehmer empfohlen:
 
-* Oracle Datenbank Grundlagen wie Installation, Konfiguration und basis Datenbank Administration
-* Docker Grundlagen (siehe auch [Get Started, Part 1: Orientation and setup](https://docs.docker.com/get-started/))
-* Praktische Erfahrung im Umgang mit Shell Skripten, SSH und der Kommando Zeile.
+- Praktische Erfahrung im Umgang mit Shell Skripten, SSH und der Kommando Zeile.
+- Oracle Datenbank Grundlagen wie Installation, Konfiguration und basis Datenbank
+  Administration
+- Basis Kenntnisse im Umgang mit GIT respektive *GitHub* idealerweise mit einem
+  Tool wie *Microsoft Visual Studio Code*.
 
-## Compute Node in der Oracle Cloud
+## Oracle Cloud Infrastructure (OCI) Umgebung
 
-Die Compute Node in der Oracle Cloud werden speziell für diesen Workshop vorbereitet und stehen jedem Teilnehmer für die Dauer des DOAG Schulungstages für praktische Arbeiten zur Verfügung. Jede Compute Node ist wie folgt konfiguriert:
+Die praktischen Arbeiten werden in der *Oracle Cloud Infrastructure (OCI)* Console
+durchgeführt. Dazu reicht ein Notebook mit Internet Zugang sowie einem aktuellen
+Browser.
 
-* *Host Name :* ol7dockerXX.trivadislabs.com (siehe Host Liste auf [DOAG2019 O-DB-DOCKER](https://url.oradba.ch/DOAG2019_O-DB-DOCKER))
-* *Interne IP Adresse :* 10.0.0.2
-* *Externe IP Adresse :* siehe Host Liste auf [DOAG2019 O-DB-DOCKER](https://url.oradba.ch/DOAG2019_O-DB-DOCKER)
-* *VM Shape :* VM.Standard2.2
-    * *CPU:* 2.0 GHz Intel® Xeon® Platinum 8167M (2 Cores)
-    * *Memory:* 30GB
-    * *Disk:* ca. 256GB
-* *Software:* 
-  * Oracle Enterprise Linux 7.7
-  * Docker Engine / Community Edition
-  * Vorbereitete Docker Images
-  * Diverse Oracle Binaries und Git Client
+Zwingende Voraussetzungen:
 
-Der Zugriff auf die Compute Nodes erfolgt ausschliesslich mit SSH und Private Keys. Die Workshop Teilnehmer müssen sicherstellen, dass sie folgende Anforderungen erfüllen:
+- Zugang zur *Oracle Cloud Infrastructure (OCI)*. Ein entsprechender Tenant
+  respektive Zugang zu einem Tenant wird im Rahmen des Workshops bereitgestellt
+- Notebook mit Internet Zugang via DOAG WLAN.
+- Aktueller Browser für *Oracle Cloud Infrastructure (OCI)* Siehe auch Oracle
+  Cloud Infrastructure Documentation [Supported Browsers](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signinginIdentityDomain.htm#Supporte)
+- Persönliche Tools und Umgebung, um Notizen zu erstellen und Shell Skripte
+  anzupassen.
 
-* *SSH Client* für den remote Zugriff. z.B. Putty, MobaXterm oder ähnliches.
-* *SCP Client* um Dateien remote zu kopieren. z.B. WinSCP, Putty oder ähnliches.
-* *Text Editor* für das Anpassen / Entwicklen der Dockerfiles, Skripts etc. Z.B. MS Visual Studio Code, UltraEdit, Notepad++ oder ähnliches
-* Zudem muss sichergestellt werden, dass ein Zugriff auf eine Public IP Address respektive Hostnamen via SSH Key möglich ist.
+::: note
+**Hinweis** Bitte prüfe den Zugriff auf [cloud.oracle.com](cloud.oracle.com) via
+*WLAN* bereits während der DOAG Konferenz. Am Schulungstag fokussieren wir uns
+primär auf die Workshop Themen und können nur bedingt Zeit für das Troubleshooting
+des Netzwerkzugriffes aufwenden.
+:::
 
-Optional werden zudem folgend Punkte empfohlen:
+Daneben werden folgende Voraussetzungen empfohlen, sind aber nicht zwingend
+erforderlich für die praktischen Arbeiten am Workshop:
 
-* GitHub Account für den Zugriff und Download des Source Codes. Der einfache Download geht grundsätzlich ohne Account.
+- GitHub Account für den Zugriff und Download des Source Codes. Der einfache
+  Download geht grundsätzlich ohne Account.
+- Text Editor oder Entwicklungstool z.B. *Microsoft Visual Studio Code*
+- Eigene *Oracle Cloud Infrastructure (OCI)* Umgebung, um im Anschluss an den
+  Workshop das erarbeitete Wissen weiter zu nutzen.
+- Umgebung um allenfalls *Terraform* und das *OCI Command line Interface* remote
+  auszuführen.
 
-## Lokale Vagrant VM
+## Dokumentation und Referenzen
 
-Analog zu den Compute Nodes können sämtliche Übungen direkt in einer Lokalen VM durchgeführt werden. Entsprechende Vagrant Skripte für den Aufbau einer VM stehen im Git Repository [oehrlis/o-db-docker](https://github.com/oehrlis/o-db-docker) zur Verfügung. Für den Aufbau dieser VM mit Vagrant müssen folgende Anforderungen erfüllt werden:
+Folgend Dokumentationen sind im Rahmen von *Oracle Cloud (OCI) Kickstart Workshop*
+hilfreich:
 
-* [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-* [Vagrant](
-https://www.vagrantup.com)
-* Lokale Kopie des Git Repository [oehrlis/o-db-docker](https://github.com/oehrlis/o-db-docker)
-* Oracle Binaries für Oracle 19c sowie aktuelle RU
-* Ausreichend Festplattenplatz für die VM und die Docker Images ca. 50GB
-* Allenfalls weitere Tools, um mit den Container zu arbeiten. z.B. Text Editor etc.
-
-Der Aufbau einer lokalen VM ist nicht bestandteil des Workshops. Teilnehmer, welche wünschen mit einer VM zu Arbeiten, müssend diese im Voraus konfigurieren.
-
-## Lokale Docker Umgebung
-
-Als dritte Variante lassen sich die Übungen auch in einer lokalen Docker Umgebung umsetzen. Dies bietet sich insbesondere für Linux oder MacOS Notebooks an. Um den Workshop lokal durchzuführen, müssen folgende Anforderungen erfüllt werden:
-
-* Installation der Docker Community Edition. Siehe auch [About Docker - Community](https://docs.docker.com/install/)
-* Lokale Kopie des Git Repository [oehrlis/o-db-docker](https://github.com/oehrlis/o-db-docker)
-und [oracle/docker-images)](https://github.com/oracle/docker-images)
-* Oracle Binaries für Oracle 19c sowie aktuelle RU
-* Ausreichend Festplattenplatz für die Docker Images ca. 50GB
-* Allenfalls weitere Tools, um mit den Container zu arbeiten. z.B. Text Editor, Git Client etc.
-
-Der Aufbau einer lokalen Docker Umgebung ist nicht bestandteil des Workshops. Teilnehmer, welche wünschen mit einer lokalen Docker Installation zu Arbeiten, müssend diese im Voraus konfigurieren.
+- Oracle Cloud Infrastructure Documentation [Übersicht](https://docs.oracle.com/en-us/iaas/Content/home.htm)
+- Oracle Cloud Infrastructure Documentation [Getting Started](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
+- Oracle Cloud Infrastructure Documentation [Command Line Interface (CLI)]([Command Line Interface (CLI)](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm))
+- Terraform [Documentation](https://www.terraform.io/docs)
+- Terraform Dokumentation [Oracle Cloud Infrastructure Provider](https://registry.terraform.io/providers/oracle/oci/latest/docs)
+- Microsoft [Visual Studio Code](https://code.visualstudio.com/)
+- [GitHub](https://github.com/)
+- [Excalidraw](https://excalidraw.com/) a virtual collaborative whiteboard tool
