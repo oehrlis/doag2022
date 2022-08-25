@@ -1,8 +1,13 @@
 # Anforderungen Workshop Umgebung
+<!-- markdownlint-disable MD013 -->
+Im Rahmen vom DOAG Schulungstag *Oracle Cloud Infrastructure (OCI) Kickstart Workshop*
+besteht die Gelegenheit verschiedene Themen am praktischen Beispiel zu vertiefen.
+Dazu wird jedem Teilnehmer eine Oracle Cloud Umgebung die Zeitdauer des
+*DOAG Schulungstages* zur Verfügung gestellt. Alternativ können die Teilnehmer
+die Übungen zudem in einer eigenen  ausführen. Die Teilnehmer können frei wählen, welche Umgebung sie für den Workshop nutzen möchten. Allerdings ist das Einrichten der lokalen VM bzw. der lokalen Docker-Umgebung nicht Teil des Workshops selbst. Die folgende Zusammenstellung gibt eine kurze Übersicht der verschiedenen Anforderungen an die drei Workshop Umgebungen.
 
-Im Rahmen des Workshop ***O-DB-DOCKER*** *Oracle-Datenbanken in Docker-Container* besteht die Gelegenheit verschiedene Themen am praktischen Beispiel zu vertiefen. Dazu wird jedem Teilnehmer eine Compute Node in der Oracle Cloud für die Zeitdauer des DOAG Schulungstages zur Verfügunggestellt. Alternativ können die Teilnehmer die Übungen zudem in einer eigenen lokalen VM oder Docker Umgebung ausführen. Die Teilnehmer können frei wählen, welche Umgebung sie für den Workshop nutzen möchten. Allerdings ist das Einrichten der lokalen VM bzw. der lokalen Docker-Umgebung nicht Teil des Workshops selbst. Die folgende Zusammenstellung gibt eine kurze Übersicht der verschiedenen Anforderungen an die drei Workshop Umgebungen.
-
-Ausführliche Informationen zur Workshop Umgebung, Unterlagen, Anleitungen etc. sind im Vorfeld zum DOAG Schulungstag via [DOAG2019 O-DB-DOCKER](https://url.oradba.ch/DOAG2019_O-DB-DOCKER) verfügbar. Falls sie Fragen haben, zögern Sie nicht, am Trivadis-Stand vorbei zu kommen und nach Stefan Oehrli zu Verlangen.
+Ausführliche Informationen zur Workshop Umgebung, Unterlagen, Anleitungen etc.
+sind im Vorfeld zum *DOAG Schulungstag* via [DOAG2019 O-DB-DOCKER](https://url.oradba.ch/DOAG2019_O-DB-DOCKER) verfügbar. Falls sie Fragen haben, zögern Sie nicht, am Trivadis-Stand vorbei zu kommen und nach Stefan Oehrli zu Verlangen.
 
 ## Voraussetzungen und Skills
 
