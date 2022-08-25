@@ -1,5 +1,6 @@
 # Exercises
 
+<!-- markdownlint-configure-file { "MD013": { "tables": false } } -->
 
 The exercises are grouped in individual directories and can generally be
 performed independently of each other. Each exercise contains at least a short
