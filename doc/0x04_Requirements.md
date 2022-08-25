@@ -47,7 +47,7 @@ Zwingende Voraussetzungen:
 **Hinweis** Bitte prüfe den Zugriff auf [cloud.oracle.com](cloud.oracle.com) via
 *WLAN* bereits während der DOAG Konferenz. Am Schulungstag fokussieren wir uns
 primär auf die Workshop Themen und können nur bedingt Zeit für das Troubleshooting
-des Netzwerkzugriffes aufwenden.
+des Netzwerkzuganges aufwenden.
 :::
 
 Daneben werden folgende Voraussetzungen empfohlen, diese sind aber nicht zwingend
