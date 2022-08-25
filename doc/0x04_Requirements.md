@@ -16,8 +16,8 @@ oder Martin Berger zu Verlangen.
 
 ## Voraussetzungen und Skills
 
-Die verschiedenen Übungen des Workshop erlauben den schrittweise Einstig in das
-Thema *Oracle Cloud Infrastructure (OCI)*. Dazu werden folgende Kenntnisse der
+Die Übungen im Workshop erlauben den schrittweise Einstig in das Thema
+*Oracle Cloud Infrastructure (OCI)*. Dazu werden folgende Kenntnisse der
 Teilnehmer empfohlen:
 
 - Praktische Erfahrung im Umgang mit Shell Skripten, SSH und der Kommando Zeile.
@@ -37,8 +37,8 @@ Zwingende Voraussetzungen:
 - Zugang zur *Oracle Cloud Infrastructure (OCI)*. Ein entsprechender Tenant
   respektive Zugang zu einem Tenant wird im Rahmen des Workshops bereitgestellt
 - Notebook mit Internet Zugang via DOAG WLAN.
-- Aktueller Browser für *Oracle Cloud Infrastructure (OCI)*. Siehe auch Oracle
-  Cloud Infrastructure Documentation [Supported Browsers](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signinginIdentityDomain.htm#Supporte)
+- Aktueller Browser für *Oracle Cloud Infrastructure (OCI)*. Siehe auch
+  [Supported Browsers](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signinginIdentityDomain.htm#Supporte)
 - Persönliche Tools, um Notizen zu erstellen und Shell Skripte anzupassen.
 
 ![Oracle Cloud Infrastructure Console - Get Started](../images/OCI-get_started.png)
@@ -58,12 +58,11 @@ erforderlich für die praktischen Arbeiten am Workshop:
 - Text Editor oder Entwicklungstool z.B. *Microsoft Visual Studio Code*
 - Eigene *Oracle Cloud Infrastructure (OCI)* Umgebung, um im Anschluss an den
   Workshop das erarbeitete Wissen weiter zu nutzen.
-- Umgebung um allenfalls *Terraform* und das *OCI Command line Interface* remote
-  auszuführen.
+- Umgebung um *Terraform* und das *OCI Command line Interface* remote auszuführen.
 
 ## Dokumentation und Referenzen
 
-Folgend Dokumentationen sind im Rahmen von *Oracle Cloud (OCI) Kickstart Workshop*
+Folgend Information sind im Rahmen des *Oracle Cloud (OCI) Kickstart Workshop*
 hilfreich:
 
 - Oracle Cloud Infrastructure Documentation [Übersicht](https://docs.oracle.com/en-us/iaas/Content/home.htm)
