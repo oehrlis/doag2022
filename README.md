@@ -16,3 +16,14 @@ Oehrli und Berger - mit Freunden in der Cloud unterwegs
 - 16:00 Feedback / Fragen
 - 16:30 Ende
   
+## Themen
+
+- Einstieg Überblick Terraform und OCI Stacks
+  - Deployment vs konfiguration
+- Konfiguration von Terraform
+- Einfaches deployment mit Terraform
+- Deployment mit OCI Stacks
+- Bestehende Stacks nutzen (Market Place)
+- Tips und Tricks (Scheduling, Löschen etc)
+- Full blown deployment
+- Terraform und andere Tools z.B. Ansible
