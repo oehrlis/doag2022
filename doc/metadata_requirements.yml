@@ -81,8 +81,8 @@ listings-no-page-break: true
 code-block-font-size: \scriptsize
 
 # - LaTeX config ---------------------------------------------------------------
-# header-includes: |
-#   \setcounter{page}{0}
+header-includes: |
+  \setcounter{page}{1}
 #   \usepackage{sectsty}
 #   \sectionfont{\clearpage}
 #   \usepackage{awesomebox}

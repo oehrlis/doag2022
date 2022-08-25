@@ -22,7 +22,7 @@ Teilnehmer empfohlen:
 
 - Praktische Erfahrung im Umgang mit Shell Skripten, SSH und der Kommando Zeile.
 - Oracle Datenbank Grundlagen wie Installation, Konfiguration und basis Datenbank
-  Administration
+  Administration sind hilfreich.
 - Basis Kenntnisse im Umgang mit GIT respektive *GitHub* idealerweise mit einem
   Tool wie *Microsoft Visual Studio Code*.
 
@@ -37,10 +37,11 @@ Zwingende Voraussetzungen:
 - Zugang zur *Oracle Cloud Infrastructure (OCI)*. Ein entsprechender Tenant
   respektive Zugang zu einem Tenant wird im Rahmen des Workshops bereitgestellt
 - Notebook mit Internet Zugang via DOAG WLAN.
-- Aktueller Browser für *Oracle Cloud Infrastructure (OCI)* Siehe auch Oracle
+- Aktueller Browser für *Oracle Cloud Infrastructure (OCI)*. Siehe auch Oracle
   Cloud Infrastructure Documentation [Supported Browsers](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signinginIdentityDomain.htm#Supporte)
-- Persönliche Tools und Umgebung, um Notizen zu erstellen und Shell Skripte
-  anzupassen.
+- Persönliche Tools, um Notizen zu erstellen und Shell Skripte anzupassen.
+
+![Oracle Cloud Infrastructure Console - Get Started](../images/OCI-get_started.png)
 
 ::: note
 **Hinweis** Bitte prüfe den Zugriff auf [cloud.oracle.com](cloud.oracle.com) via
@@ -49,7 +50,7 @@ primär auf die Workshop Themen und können nur bedingt Zeit für das Troublesho
 des Netzwerkzugriffes aufwenden.
 :::
 
-Daneben werden folgende Voraussetzungen empfohlen, sind aber nicht zwingend
+Daneben werden folgende Voraussetzungen empfohlen, diese sind aber nicht zwingend
 erforderlich für die praktischen Arbeiten am Workshop:
 
 - GitHub Account für den Zugriff und Download des Source Codes. Der einfache
