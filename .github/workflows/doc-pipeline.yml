@@ -60,7 +60,7 @@ jobs:
           echo "MD_FILES=$(printf '%s ' ${{ env.DOC }}/[0-8]x??-*.md ${{ env.LAB }}/ex??/?x??${{ env.LANGUAGE }}-*.md ${{ env.DOC }}/9x??-*.md)" >> $GITHUB_ENV
           echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
       # Build PDF using docker images oehrlis/pandoc
-      - name: Build pdf document
+      - name: Build LAB pdf document
         uses: docker://oehrlis/pandoc
         with:
           args: >-
@@ -70,6 +70,18 @@ jobs:
             --resource-path=images
             --filter pandoc-latex-environment
             --output=tvd-${{ env.REPOSITORY_NAME }}_${{ env.LANGUAGE }}.pdf ${{ env.MD_FILES }}
+      
+      # Build PDF using docker images oehrlis/pandoc
+      - name: Build Requirements pdf document
+        uses: docker://oehrlis/pandoc
+        with:
+          args: >-
+            --pdf-engine=xelatex 
+            --listings
+            --metadata-file=doc/metadata_requirements.yml
+            --resource-path=images
+            --filter pandoc-latex-environment
+            --output=tvd-${{ env.REPOSITORY_NAME }}_${{ env.LANGUAGE }}_requirements.pdf ${{ env.DOC }}/0x04_Requirements.md
 
       - uses: actions/upload-artifact@master
         with:

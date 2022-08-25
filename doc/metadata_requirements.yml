@@ -16,7 +16,7 @@
 # see git revision history for more information on changes/updates
 # ------------------------------------------------------------------------------
 title: Oracle Cloud Infrastructure (OCI) Kickstart Workshop
-subtitle: Labor- und Übungsleitfaden 
+subtitle: Anforderungen Workshop-Umgebung 
 author: 
 - Stefan Oehrli
 - Martin Berger
@@ -49,25 +49,25 @@ geometry:
 - right=20mm
 
 # - Titel Page -----------------------------------------------------------------
-titlepage: true
+titlepage: false
 titlepage-rule-height: 0
 # titlepage-text-color: 000000 
 titlepage-text-color: FFFFFF
 titlepage-background: /trivadis/images/TVDTitle2021.png
 
 # - TOC Config -----------------------------------------------------------------
-toc: true
+toc: false
 toc-own-page: true
 toc-title: Table of Contents
 toc-depth: 2
 
 # - List of Tables / Figures ---------------------------------------------------
-lof: true
+lof: false
 lof-own-page: true
-lot: true
+lot: false
 lot-own-page: true
 
-numbersections: true
+numbersections: false
 links-as-notes: false
 linkcolor:    tvdcolor
 urlcolor:     tvdcolor
