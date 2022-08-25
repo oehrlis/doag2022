@@ -1,5 +1,7 @@
 # Workshop Exercises
 
+<!-- markdownlint-configure-file { "MD013": { "tables": false } } -->
+
 ## Overview of Exercises
 
 The exercises are grouped in individual directories and can generally be
