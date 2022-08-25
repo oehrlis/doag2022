@@ -49,7 +49,7 @@ geometry:
 - right=20mm
 
 # - Titel Page -----------------------------------------------------------------
-titlepage: false
+titlepage: true
 titlepage-rule-height: 0
 # titlepage-text-color: 000000 
 titlepage-text-color: FFFFFF
@@ -81,11 +81,11 @@ listings-no-page-break: true
 code-block-font-size: \scriptsize
 
 # - LaTeX config ---------------------------------------------------------------
-header-includes: |
-  \setcounter{page}{1}
-  \usepackage{sectsty}
-  \sectionfont{\clearpage}
-  \usepackage{awesomebox}
+# header-includes: |
+#   \setcounter{page}{1}
+#   \usepackage{sectsty}
+#   \sectionfont{\clearpage}
+#   \usepackage{awesomebox}
 #   \definecolor{tvdcolor}{HTML}{9600FF}
 
 # - Pandoc Environment ---------------------------------------------------------
