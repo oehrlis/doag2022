@@ -1,5 +1,6 @@
 # Exercises
 
+
 The exercises are grouped in individual directories and can generally be
 performed independently of each other. Each exercise contains at least a short
 description of the tasks as well as a solution. In addition, scripts, docker

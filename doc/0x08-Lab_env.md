@@ -1,4 +1,5 @@
 # Oracle Unified Directory Workshop
+<!-- markdownlint-disable MD013 -->
 <!-- markdownlint-configure-file { "MD024":{"allow_different_nesting": true }} -->
 ## Architecture
 
