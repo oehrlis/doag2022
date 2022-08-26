@@ -22,8 +22,7 @@ Teilnehmer empfohlen:
 
 - Praktische Erfahrung im Umgang mit Shell Skripten, SSH und der Kommando Zeile.
 - Oracle Datenbank Grundlagen wie Installation, Konfiguration und Administration.
-- Basis Kenntnisse im Umgang mit GIT respektive *GitHub* idealerweise mit einem
-  Tool wie *Microsoft Visual Studio Code*.
+- Basis Kenntnisse im Umgang mit GIT respektive *[GitHub](https://github.com/)*.
 
 ## Oracle Cloud Infrastructure (OCI) Umgebung
 
@@ -72,5 +71,4 @@ hilfreich:
 - Terraform [Documentation](https://www.terraform.io/docs)
 - Terraform Dokumentation [Oracle Cloud Infrastructure Provider](https://registry.terraform.io/providers/oracle/oci/latest/docs)
 - Microsoft [Visual Studio Code](https://code.visualstudio.com/)
-- [GitHub](https://github.com/)
 - [Excalidraw](https://excalidraw.com/) a virtual collaborative whiteboard tool
