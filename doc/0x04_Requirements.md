@@ -55,6 +55,8 @@ erforderlich für die praktischen Arbeiten am Workshop:
 
 - GitHub Account für den Zugriff und Download des Source Codes. Der einfache
   Download geht grundsätzlich ohne Account.
+- SSH Terminal wie Putty, MobaXterm oder OpenSSH für den Zugriff auf Compute Instances
+- SQL Tool wie SQL Developer, Toad oder ähnlichem für den Zugriff auf Datenbanken
 - Text Editor oder Entwicklungstool z.B. *Microsoft Visual Studio Code*
 - Eigene *Oracle Cloud Infrastructure (OCI)* Umgebung, um im Anschluss an den
   Workshop das erarbeitete Wissen weiter zu nutzen.
