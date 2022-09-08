@@ -25,4 +25,3 @@ Browser (Chrome/Firefox/Opera bevorzugt): <a href="https://console.eu-frankfurt-
 Ihr Tenant ist auf dem Dashboard in der Region oben-rechts ersichtlich.
 
 <img src="./../../images/0x02-01-login-03.png" width="800">
-
