@@ -11,11 +11,11 @@ Ziel ist das Login in die OCI Konsole und das finden der eigenen Einstellungen w
 
 Browser (Chrome/Firefox/Opera bevorzugt): <https://console.eu-frankfurt-1.oraclecloud.com/>
 
-<img src="./../../images/0x02-01-login-01.png" width="400">
+<img src="./../../images/0x02-01-login-01.png" width="500">
 
 ## Login als Direct-Sign-In - kein SSO
 
-<img src="./../../images/0x02-01-login-02.png" width="800">
+<img src="./../../images/0x02-01-login-02.png" width="500">
 
 ## Dashboard für die Region eu-frankfurt-01
 
