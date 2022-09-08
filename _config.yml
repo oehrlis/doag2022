@@ -4,4 +4,36 @@ title: OCI Kickstart Workshop
 description: Oracle Cloud Infrastructure (OCI) Kickstart Workshop mit Oehrli und Berger - mit Freunden in der Cloud unterwegs
 google_analytics:
 source: doc
-theme: jekyll-theme-architect
+#theme: jekyll-theme-architect
+# Configure the remote_theme plugin with the gh-pages branch
+# or the specific tag
+#remote_theme: aksakalli/jekyll-doc-theme@gh-pages   
+
+# theme options from https://bootswatch.com/3/
+# comment out this to use default Bootstrap
+bootwatch: paper # cerulean cosmo custom cyborg darkly flatly journal lumen readable sandstone simplex slate solar spacelab superhero united yeti
+
+defaults:
+- scope:
+    path: _posts
+    type: posts
+  values:
+    layout: post
+    sectionid: blog
+
+- scope:
+    path: doc
+    type: docs
+  values:
+    layout: docs
+    sectionid: docs
+    seo:
+      type: "WebPage"
+
+collections:
+  docs:
+    permalink: /:collection/:path/
+    output: true
+  posts:
+    permalink: /blog/:year/:month/:day/:title/
+    output: true
