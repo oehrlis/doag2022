@@ -5,7 +5,11 @@ Oehrli und Berger - mit Freunden in der Cloud unterwegs
 
 ## Links
 
-[0x01-Preface.md](doc/0x01-Preface.md)
+### Labs Manuell
+
+[0x01 - Architecture](/lab/ex01/0x01-Architecture.md)
+[0x02 - Login](/lab/ex01/0x02-Login.md)
+[0x03 - VCN Quickstart](/lab/ex01/0x03-VCN-Quickstart.md)
 
 ## Zeitplan
 
