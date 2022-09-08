@@ -51,3 +51,7 @@ pandoc -f markdown  --listings \
 -o tvd-ldap-doc.html --css doc/templates/pandoc.css \
 doc/?x??-*.md
 ```
+
+
+
+![image-20220908110513445](/Users/stefan.oehrli/Development/github/oehrlis/doag2022/images/test.png)
