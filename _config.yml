@@ -1,3 +1,7 @@
 # _config.yml
 
-title: "Jekyll Actions Demo"
+title: OCI Kickstart Workshop
+description: Oracle Cloud Infrastructure (OCI) Kickstart Workshop mit Oehrli und Berger - mit Freunden in der Cloud unterwegs
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-architect
