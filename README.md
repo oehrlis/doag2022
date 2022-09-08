@@ -3,6 +3,10 @@
 DOAG Schulungstag 2022 - Oracle Cloud Infrastructure (OCI) Kickstart Workshop mit
 Oehrli und Berger - mit Freunden in der Cloud unterwegs
 
+## Links
+
+[0x01-Preface.md](doc/0x01-Preface.md)
+
 ## Zeitplan
 
 - 09:00 Intro und Organisation
