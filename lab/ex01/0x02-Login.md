@@ -19,4 +19,6 @@ Browser (Chrome/Firefox/Opera bevorzugt): <https://console.eu-frankfurt-1.oracle
 
 ## Dashboard für die Region eu-frankfurt-01
 
+Ihr Tenant ist auf dem Dashboard in der Region oben-rechts ersichtlich.
+
 <img src="./../../images/0x02-01-login-03.png" width="800">
