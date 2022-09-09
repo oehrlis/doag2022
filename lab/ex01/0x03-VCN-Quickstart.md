@@ -67,3 +67,12 @@ Wiederholen Sie den Schritt und erstellen das vierte Subnetz:
 | Name                         | Private Subnet-3-vcn-doag-01        | keine        |
 | Create In Compartment        | <Compartment>                       | keine        |
 | IPv4 CIDR Block              | 10.0.3.0/24                         | keine        |
+
+## Die erstellten Netze
+
+Es gibt:
+
+- 1 Public Regional Network
+- 3 Private Regional Network
+
+<img src="./../../images/0x03-01-vcn-08.png" width="500">
