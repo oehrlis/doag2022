@@ -230,7 +230,7 @@ paar Minuten auf grün gesetzt werden sofern die Webserver korrekt konfigurtiert
 
 Tip: Meistens scheitert es an fehlenden oder falschen Firewall-Einstellungen auf der Maschine oder in der OCI Security List.
 
-<img src="./../../images/0x01-04-compute-public-10.png" width="900">
+<img src="./../../images/0x01-04-compute-lb-10.png" width="900">
 
 ### Test Erreichbarkeit Webserver via Loadbalancer
 
@@ -238,8 +238,8 @@ Verwenden Sie dazu die Load Balancer Public IP und ihren Browser der Workstation
 
 Tip: Meistens scheitert es an fehlenden oder falschen Firewall-Einstellungen auf der Maschine oder in der OCI Security List.
 
-<img src="./../../images/0x01-04-compute-public-11.png" width="900">
+<img src="./../../images/0x01-04-compute-lb-11.png" width="900">
 
 Nach dem Browser-Refresh:
 
-<img src="./../../images/0x01-04-compute-public-12.png" width="900">
+<img src="./../../images/0x01-04-compute-lb-12.png" width="900">
