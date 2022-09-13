@@ -7,6 +7,7 @@
 
 - Networking -> Virtual Cloud Networks
 - Bitte beachten Sie, dass  Sie sich in ihrem zugewiesenen Compartment befinden
+- Region ist eu-frankfurt-1
 - Wir verwenden nicht den VCN Wizard.
 
 Das virtuelle Netzwerk wird Schritt für Schritt erstellt:

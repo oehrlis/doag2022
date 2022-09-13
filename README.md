@@ -9,7 +9,8 @@ Oehrli und Berger - mit Freunden in der Cloud unterwegs
 
 - [0x01 - Architecture](/lab/ex01/0x01-Architecture.md)
 - [0x02 - Login](/lab/ex01/0x02-Login.md)
-- [0x03 - VCN Quickstart](/lab/ex01/0x03-VCN.md)
+- [0x03 - Networking](/lab/ex01/0x03-Network.md)
+- [0x04 - Compute](/lab/ex01/0x04-Compute.md)
 
 ## Zeitplan
 
