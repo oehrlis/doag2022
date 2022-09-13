@@ -3,7 +3,7 @@
 Gemeinsam bauen wir folgende Infrastruktur:
 
 - Virtual Cloud Network VCN
-- Compute Instance mit Public Access und Block Volume
+- Compute Instances mit Public Load Balancer
 - Database Service
 - Eine Verbindung von der Compute Instance zur Oracle Datenbank
 - Eine Autonomous Database ATP
