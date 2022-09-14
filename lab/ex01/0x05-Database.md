@@ -49,3 +49,49 @@ Die restlichen Einstellungen belassen, _Next_.
 Die restlichen Einstellungen belassen, mit Klick auf _Create DB system_ wird die Resource erstellt und anschliessend angezeigt. Die Erstellung dauert ca. 30 Minuten.
 
 <img src="./../../images/0x01-05-database-08.png" width="900">
+
+### SSH-Verbindung von der Cloud Console zur Database Private IP
+
+Stellen Sie sicher das die Cloud Console das Netzwerk auf Private eingestellt hat. Der OS User für die Database Instance heisst _opc_ und hat sudo-Berechtigungen. Es wird der private SSH Key und die Private IP benötigt.
+
+```bash
+[oracle@dbsys01 ~]$ ssh -i ~.ssh/id_rsa_student01 opc@10.0.3.50
+```
+
+<img src="./../../images/0x01-05-database-09.png" width="900">
+
+Wechseln Sie um OS User oracle and setzen Sie die Umgebungsvariablen. Prüfen Sie, ob der PMON-Prozess
+läuft.
+
+```bash
+[oracle@dbsys01 ~]$ sudo su - oracle
+[oracle@dbsys01 ~]$ ps -ef | grep pmon
+```
+
+Verbinden Sie als SYSDBA zur Pluggable Database. Der Service-Name ist mit _lsnrctl_ zu sehen.
+
+```bash
+# Service Name anzeigen
+[oracle@dbsys01 ~]$ lsnrctl status | grep pdbdoag01
+Service "pdbdoag01.snstudentprv02.vcndoagstudent0.oraclevcn.com" has 1 instance(s).
+
+# Easy Connect
+[oracle@dbsys01 ~]$ sqlplus sys@//dbsys01/pdbdoag01.snstudentprv02.vcndoagstudent0.oraclevcn.com as sysdba
+
+SQL*Plus: Release 19.0.0.0.0 - Production on Wed Sep 14 12:58:56 2022
+Version 19.16.0.0.0
+
+Copyright (c) 1982, 2022, Oracle.  All rights reserved.
+
+Enter password: 
+
+Connected to:
+Oracle Database 19c Standard Edition 2 Release 19.0.0.0.0 - Production
+Version 19.16.0.0.0
+
+SQL> SELECT * FROM global_name;
+
+GLOBAL_NAME
+--------------------------------------------------------------------------------
+PDBDOAG01.SNSTUDENTPRV02.VCNDOAGSTUDENT0.ORACLEVCN.COM
+```
