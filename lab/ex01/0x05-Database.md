@@ -4,7 +4,7 @@
 
 Ziel ist die Bereitstellung einer Oracle Datenbank in der Availability Domain 2 Region Frankfurt.
 
-_Oracle Database_ -> _Oracle Base Database (VM, BM)_ -> um eine Datenbank bereit zu stellen. 
+_Oracle Database_ -> _Oracle Base Database (VM, BM)_ -> um eine Datenbank bereit zu stellen.
 _Create DB system_ anklicken.
 
 <img src="./../../images/0x01-05-database-01.png" width="900">
