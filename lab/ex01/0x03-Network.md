@@ -162,6 +162,8 @@ Fügen Sie folgende Ingress-Regeln hinzu:
 |:-----------------------------|:---------------------|:--------|:------------|
 | Ingress                      | CIDR 10.0.1.0/24     | 22      | TCP         |
 | Ingress                      | CIDR 10.0.1.0/24     | 1521    | TCP         |
+| Ingress                      | CIDR 10.0.2.0/24     | 22      | TCP         |
+| Ingress                      | CIDR 10.0.2.0/24     | 1521    | TCP         |
 
 Fügen Sie folgende Egress-Regeln hinzu:
 

@@ -85,7 +85,7 @@ Wechseln Sie in der Cloud Console das Netzwerk auf Private und wählen das Publi
 
 <img src="./../../images/0x01-04-compute-public-09.png" width="900">
 
- ```bash
+```bash
 ssh -i ~.ssh/id_rsa_student01 opc@10.0.1.10
 ```
 

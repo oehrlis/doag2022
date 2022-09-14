@@ -94,4 +94,54 @@ SQL> SELECT * FROM global_name;
 GLOBAL_NAME
 --------------------------------------------------------------------------------
 PDBDOAG01.SNSTUDENTPRV02.VCNDOAGSTUDENT0.ORACLEVCN.COM
+
+```
+
+### SQL*Net Verbindung von der Private Compute Instance zur Database Private IP
+
+Stellen Sie sicher das die Cloud Console das Netzwerk auf das Subnet der Applikation eingestellt hat.
+
+<img src="./../../images/0x01-05-database-10.png" width="900">
+
+Der OS User für die Compute Instance heisst _opc_ und hat sudo-Berechtigungen. Es wird der private SSH Key und die Private IP benötigt.
+
+```bash
+ssh -i ~.ssh/id_rsa_student01 opc@10.0.2.10
+```
+
+<img src="./../../images/0x01-05-database-11.png" width="900">
+
+Bleiben Sie zur Installation vom Oracle Instant Client mit der Compute Instance als User _opc_ verbunden.
+
+```bash
+sudo dnf list installed | grep instantclient
+sudo dnf install oracle-instantclient-release-el8
+sudo dnf install oracle-instantclient-basic
+sudo dnf install oracle-instantclient-sqlplus
+```
+
+# Easy Connect vom Applikationsserver
+
+Da der DNS-Name aktuell nicht bekannt ist, verwenden wir die IP vom Datenbankserver.
+
+```bash
+[oracle@dbsys01 ~]$ sqlplus sys@//10.0.3.50/pdbdoag01.snstudentprv02.vcndoagstudent0.oraclevcn.com as sysdba
+
+SQL*Plus: Release 19.0.0.0.0 - Production on Wed Sep 14 12:58:56 2022
+Version 19.16.0.0.0
+
+Copyright (c) 1982, 2022, Oracle.  All rights reserved.
+
+Enter password:
+
+Connected to:
+Oracle Database 19c Standard Edition 2 Release 19.0.0.0.0 - Production
+Version 19.16.0.0.0
+
+SQL> SELECT * FROM global_name;
+
+GLOBAL_NAME
+--------------------------------------------------------------------------------
+PDBDOAG01.SNSTUDENTPRV02.VCNDOAGSTUDENT0.ORACLEVCN.COM
+
 ```

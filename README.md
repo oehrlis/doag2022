@@ -14,6 +14,7 @@ Oehrli und Berger - mit Freunden in der Cloud unterwegs
 - [0x04 - Compute Load Balancer](/lab/ex01/0x04-Compute-LoadBalancer.md)
 - [0x04 - Compute Block Volume](/lab/ex01/0x04-Compute-BlockVolume.md)
 - [0x05 - Database](/lab/ex01/0x05-Database.md)
+- [0x06 - Autonomous](/lab/ex01/0x06-Autonomous.md)
 
 ## Zeitplan
 
