@@ -47,3 +47,5 @@ Die restlichen Einstellungen belassen, _Next_.
 <img src="./../../images/0x01-05-database-07.png" width="900">
 
 Die restlichen Einstellungen belassen, mit Klick auf _Create DB system_ wird die Resource erstellt und anschliessend angezeigt. Die Erstellung dauert ca. 30 Minuten.
+
+<img src="./../../images/0x01-05-database-08.png" width="900">
