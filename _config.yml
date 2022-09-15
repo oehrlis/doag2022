@@ -4,11 +4,11 @@ title: OCI Kickstart Workshop
 description: Oracle Cloud Infrastructure (OCI) Kickstart Workshop mit Oehrli und Berger - mit Freunden in der Cloud unterwegs
 google_analytics:
 source: doc
-theme: minimal-mistakes-jekyll
+#theme: minimal-mistakes-jekyll
 
 # Configure the remote_theme plugin with the gh-pages branch
 # or the specific tag
-#remote_theme: aksakalli/jekyll-doc-theme@gh-pages   
+remote_theme: aksakalli/jekyll-doc-theme@gh-pages   
 
 # theme options from https://bootswatch.com/3/
 # comment out this to use default Bootstrap
