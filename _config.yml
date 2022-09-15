@@ -23,7 +23,7 @@ defaults:
     layout: docs
     sectionid: lab
 
-  - scope:
+- scope:
     path: doc
     type: docs
   values:
