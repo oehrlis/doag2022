@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # doag2022
 
 DOAG Schulungstag 2022 - Oracle Cloud Infrastructure (OCI) Kickstart Workshop mit
