@@ -9,4 +9,4 @@ Gemeinsam bauen wir folgende Infrastruktur in der Region Germany Central (Frankf
 - Eine Autonomous Database ATP
 - Upload zum OCI Object Storage
 
-![DOAG 2022 Architecture](./../../images/0x01-01-architecture.png)
+![DOAG 2022 Architecture](0x01-01-architecture.png)
