@@ -1,13 +1,14 @@
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD013 -->
-# Database
+<!-- markdownlint-disable MD041 -->
+## Database
 
 Ziel ist die Bereitstellung einer Oracle Datenbank in der Availability Domain 2 Region Frankfurt.
 
 _Oracle Database_ -> _Oracle Base Database (VM, BM)_ -> um eine Datenbank bereit zu stellen.
 _Create DB system_ anklicken.
 
-<img src="./../../images/0x01-05-database-01.png" width="900">
+![OCI DB System Overview](1x01-05-database-01.png)
 
 ## DB system information
 
@@ -27,11 +28,11 @@ _Create DB system_ anklicken.
 | Hostname prefix                     | dbsys01                                  | keine        |
 | Private IP address                  | 10.0.3.50                                | keine        |
 
-<img src="./../../images/0x01-05-database-02.png" width="900">
-<img src="./../../images/0x01-05-database-03.png" width="900">
-<img src="./../../images/0x01-05-database-04.png" width="900">
-<img src="./../../images/0x01-05-database-05.png" width="900">
-<img src="./../../images/0x01-05-database-06.png" width="900">
+![OCI Create DB System Dialog part I](1x01-05-database-02.png)
+![OCI Create DB System Dialog part II](1x01-05-database-03.png)
+![OCI Create DB System Dialog part III](1x01-05-database-04.png)
+![OCI Create DB System Dialog part IV](1x01-05-database-05.png)
+![OCI Create DB System Dialog part V](1x01-05-database-06.png)
 
 Die restlichen Einstellungen belassen, _Next_.
 
@@ -44,11 +45,11 @@ Die restlichen Einstellungen belassen, _Next_.
 | Password                            | SYS-Password                             | keine        |
 | Confirm password                    | SYS-Password                             | keine        |
 
-<img src="./../../images/0x01-05-database-07.png" width="900">
+![OCI Create DB System Admin Password](1x01-05-database-07.png)
 
 Die restlichen Einstellungen belassen, mit Klick auf _Create DB system_ wird die Resource erstellt und anschliessend angezeigt. Die Erstellung dauert ca. 30 Minuten.
 
-<img src="./../../images/0x01-05-database-08.png" width="900">
+![OCI DB System Details](1x01-05-database-08.png)
 
 ### SSH-Verbindung von der Cloud Console zur Database Private IP
 
@@ -58,7 +59,7 @@ Stellen Sie sicher das die Cloud Console das Netzwerk auf Private eingestellt ha
 [oracle@dbsys01 ~]$ ssh -i ~.ssh/id_rsa_student01 opc@10.0.3.50
 ```
 
-<img src="./../../images/0x01-05-database-09.png" width="900">
+![OCI DB System Shell Access](1x01-05-database-09.png)
 
 Wechseln Sie um OS User oracle and setzen Sie die Umgebungsvariablen. Prüfen Sie, ob der PMON-Prozess
 läuft.
