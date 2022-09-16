@@ -2,16 +2,16 @@
 # Trivadis AG, Infrastructure Managed Services
 # Saegereistrasse 29, 8152 Glattbrugg, Switzerland
 # ----------------------------------------------------------------------------
-# Name.......: pandoc_builds.yaml 
+# Name.......: pre-release.yaml 
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@trivadis.com
 # Editor.....: Stefan Oehrli
-# Date.......: 2021.02.23
+# Date.......: 2022.09.16
 # Revision...: 
-# Purpose....: Pandoc build workflow to generate the different documentation
+# Purpose....: GitHub action to create a pre-release
 # Notes......: --
 # Reference..: https://github.com/DavidAnson/markdownlint
 # ----------------------------------------------------------------------------
-name: Doc Build
+name: Documentation pre-release
 
 on:
   push:
@@ -125,7 +125,7 @@ jobs:
 # - Draft release ------------------------------------------------------------
 # Job to build a draft release
   pre-release:
-    needs: build_lab_doc
+    needs: [build_lab_doc, build_req_doc] 
     name: Create draft release
     runs-on: ubuntu-latest
 
@@ -136,13 +136,20 @@ jobs:
         with:
           name: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
 
+      # download generated requirements pdf document from artifact
+      - name: Get requirements document from artifact store
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
+
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: true
-          title: "Development Build"
+          title: "Development build of documents"
           files: |
-            ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
+            ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
+            ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
 
 # --- EOF -------------------------------------------------------------------
