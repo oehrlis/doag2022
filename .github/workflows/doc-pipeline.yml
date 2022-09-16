@@ -121,6 +121,9 @@ jobs:
           # tbd
           path: tvd-${{ env.REPOSITORY_NAME }}_${{ env.LANGUAGE }}.pdf
           key: ${{ runner.os }}-build-docs-${{ hashFiles('**/tvd-*.pdf') }}
+          restore-keys: |
+            ${{ runner.os }}-build-docs
+            ${{ runner.os }}-
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
