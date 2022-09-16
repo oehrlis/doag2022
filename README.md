@@ -5,7 +5,7 @@ Oehrli und Berger - mit Freunden in der Cloud unterwegs
 
 ## Links
 
-to be documented. Oder so...
+to be documented.
 
 ### Labs Manuell
 

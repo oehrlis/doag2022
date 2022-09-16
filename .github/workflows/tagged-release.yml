@@ -27,6 +27,9 @@ on:
       - "v*"
     paths-ignore:
       - '.github/**'
+      
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 env:
   LANGUAGE: de
@@ -44,9 +47,6 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: true
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
 jobs:
   # - Check Markdown -----------------------------------------------------------
