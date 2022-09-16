@@ -33,29 +33,36 @@ exclude:
   - .build
   - ppt
   - bin
+  - AUTHOR_GUIDE.md
+  - CHANGELOG.md
+  - VERSION
+  - LICENSE
+  - README.md
+  - CHANGELOG.md
 
 timezone: Europe/Berlin
-# defaults:
-# - scope:
-#     path: lab
-#     type: docs
-#   values:
-#     layout: docs
-#     sectionid: lab
+defaults:
+- scope:
+    path: lab/ex01
+    type: posts
+  values:
+    layout: post
+    sectionid: blog
 
-# - scope:
-#     path: doc
-#     type: docs
-#   values:
-#     layout: docs
-#     sectionid: docs
-#     seo:
-#       type: "WebPage"
+- scope:
+    path: doc
+    type: docs
+  values:
+    layout: docs
+    sectionid: docs
+    seo:
+      type: "WebPage"
 
-# collections:
-#   docs:
-#     permalink: /:collection/:path/
-#     output: true
-#  posts:
-#    permalink: /blog/:year/:month/:day/:title/
-#    output: true
+collections:
+  docs:
+    permalink: /:collection/:path/
+    output: true
+  posts:
+    permalink: /blog/:year/:month/:day/:title/
+    output: true
+
