@@ -1,4 +1,6 @@
 <!-- markdownlint-disable MD041 -->
+# OCI Walkthrough
+
 ## Architektur
 
 Gemeinsam bauen wir folgende Infrastruktur in der *Region Germany Central (Frankfurt)*:
@@ -10,4 +12,4 @@ Gemeinsam bauen wir folgende Infrastruktur in der *Region Germany Central (Frank
 - Eine Autonomous Database ATP
 - Upload zum OCI Object Storage
 
-![DOAG 2022 Architecture](0x01-01-architecture.png)
+![DOAG 2022 Architecture](1x01-01-architecture.png)
