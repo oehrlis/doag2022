@@ -123,7 +123,7 @@ jobs:
           
 # - Draft release ------------------------------------------------------------
 # Job to build a draft release
-  pre-release:
+  tagged-release:
     needs: [build_lab_doc, build_req_doc] 
     name: Create a tagged release
     runs-on: ubuntu-latest
@@ -141,7 +141,26 @@ jobs:
         with:
           name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
 
+      - name: test
+        run: echo "gitHub Release is $env:GITHUB_REF_NAME."
+
+      - id: release
+        name: Check if release does exists
+        uses: cardinalby/git-get-release-action@v1
+        env:
+          GITHUB_TOKEN: $env:GITHUB_REF_NAME
+        with: 
+          tag: ${{ secrets.GITHUB_TOKEN }}
+          prerelease: false
+          doNotFailIfNotFound: true
+
+      - name: output
+        run: |
+          echo "gitHub Release is ${{ steps.release.outputs.id }}"
+          echo "gitHub Release is ${{ steps.release.outputs.upload_url }}"
+
       - uses: "marvinpinto/action-automatic-releases@latest"
+#        if: ${{ steps.release.outputs.id != 'true' }}
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
@@ -168,7 +187,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
 
   # Deployment job
-  deploy:
+  deploy_web:
     name: Deploy Github pages
     environment:
       name: github-pages
