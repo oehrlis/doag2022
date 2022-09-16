@@ -101,8 +101,9 @@ jobs:
           cache-name: cache-documents
         with:
           # tbd
-          path: tvd-${{ env.REPOSITORY_NAME }}*
-          key: ${{ runner.os }}-build-docs
+          path: tvd-${{ env.REPOSITORY_NAME }}_${{ env.LANGUAGE }}.pdf
+          key: ${{ runner.os }}-build-docs-${{ hashFiles('**/tvd-*.pdf') }}
+          
 # - Draft release ------------------------------------------------------------
 # Job to build a draft release
   pre-release:
@@ -118,8 +119,8 @@ jobs:
           cache-name: cache-documents
         with:
           # tbd
-          path: tvd-${{ env.REPOSITORY_NAME }}*
-          key: ${{ runner.os }}-build-docs
+          path: tvd-${{ env.REPOSITORY_NAME }}_${{ env.LANGUAGE }}.pdf
+          key: ${{ runner.os }}-build-docs-${{ hashFiles('**/tvd-*.pdf') }}
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
