@@ -39,6 +39,8 @@ exclude:
   - LICENSE
   - README.md
   - CHANGELOG.md
+  - ./doc/metadata.yml
+  - ./doc/metadata_requirements.yml
 
 timezone: Europe/Berlin
 defaults:

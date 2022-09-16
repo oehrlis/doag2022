@@ -16,6 +16,10 @@ Browser (Chrome/Firefox/Opera bevorzugt): <a href="https://console.eu-frankfurt-
 
 <img src="./../../images/0x02-01-login-01.png" width="500">
 
+![test 1](./../../images/0x02-01-login-01.png)
+
+![test 2](../../images/0x02-01-login-01.png)
+
 ## Login als Direct-Sign-In - kein SSO
 
 <img src="./../../images/0x02-01-login-02.png" width="500">

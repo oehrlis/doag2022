@@ -59,6 +59,11 @@ jobs:
         run: |
           echo "MD_FILES=$(printf '%s ' ${{ env.DOC }}/[0-8]x??-*.md ${{ env.LAB }}/ex??/?x??-*.md ${{ env.DOC }}/9x??-*.md)" >> $GITHUB_ENV
           echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+      - name: simplify image resource path
+        run: |
+          for i in $MD_FILES ;do
+            echo "process file $i"
+          done
       # Build PDF using docker images oehrlis/pandoc
       - name: Build LAB pdf document
         uses: docker://oehrlis/pandoc
