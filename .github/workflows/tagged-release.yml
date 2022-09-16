@@ -141,16 +141,6 @@ jobs:
         with:
           name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
 
-      - name: test
-        run: |
-          echo "gitHub Release is $env:GITHUB_REF_NAME"
-          echo "gitHub Release is $GITHUB_REF_NAME"
-          echo "gitHub Release is ${{ secrets.GITHUB_REF_NAME }}"
-          echo "gitHub Release is ${{ env.GITHUB_REF_NAME }}"
-          echo "gitHub Release is $GITHUB_REF_NAME"
-          echo "gitHub Release is ${{ github.ref_name }}"
-          echo "gitHub Release is $GITHUB_REF_NAME"
-
       - id: release
         name: Check if release does exists
         uses: cardinalby/git-get-release-action@v1
@@ -160,15 +150,6 @@ jobs:
           tag: ${{ github.ref_name }}
           prerelease: false
           doNotFailIfNotFound: true
-
-      - name: output
-        run: |
-          echo "gitHub Release is ${{ steps.release.outputs.id }}"
-          echo "gitHub Release is ${{ steps.release.outputs.upload_url }}"
-          echo "gitHub Release is $GITHUB_REF_NAME"
-          echo "gitHub Release is ${{ github.ref }}"
-          echo "gitHub Release is $GITHUB_REF_NAME"
-           
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         name: Create new release for $GITHUB_REF_NAME
@@ -181,14 +162,15 @@ jobs:
             ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
 
       - name: Update release $GITHUB_REF_NAME
-        uses: johnwbyrd/update-release@v1.0.0
+        uses: Roang-zero1/github-upload-release-artifacts-action@master
         if: ${{ steps.release.outputs.id != '' }}
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          files: |
+          args:
             ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
             ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
-
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
   # Build job
   build_web:
     name: Build Jekyll base Github pages
