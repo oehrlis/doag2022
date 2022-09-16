@@ -11,7 +11,7 @@
 # Notes......: --
 # Reference..: https://github.com/DavidAnson/markdownlint
 # ----------------------------------------------------------------------------
-name: Documentation pre-release
+name: Doc pre-release
 
 on:
   push:
