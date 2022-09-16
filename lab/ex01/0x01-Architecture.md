@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD041 -->
 ## Architektur
 
-Gemeinsam bauen wir folgende Infrastruktur in der Region Germany Central (Frankfurt):
+Gemeinsam bauen wir folgende Infrastruktur in der *Region Germany Central (Frankfurt)*:
 
 - Virtual Cloud Network VCN
 - Compute Instances mit Public Load Balancer

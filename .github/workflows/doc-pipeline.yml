@@ -93,7 +93,7 @@ jobs:
       - name: Archive build documents
         uses: actions/upload-artifact@master
         with:
-          name: tvd-${{ env.REPOSITORY_NAME }}_${{ env.LANGUAGE }}.pdf
+          name: generated_docs.pdf
           path: tvd-${{ env.REPOSITORY_NAME }}_${{ env.LANGUAGE }}.pdf
           
 # - Draft release ------------------------------------------------------------
@@ -108,13 +108,10 @@ jobs:
       - name: Get build documents
         uses: actions/download-artifact@v2
         with:
-          name: Genetvd-${{ env.REPOSITORY_NAME }}_${{ env.LANGUAGE }}.pdf
+          name: generated_docs.pdf
 
       - name: Check build documents
         run: |
-          ls -alR
-          unzip tvd-${{ env.REPOSITORY_NAME }}_${{ env.LANGUAGE }}.pdf.zip
-          unzip tvd-${{ env.REPOSITORY_NAME }}_${{ env.LANGUAGE }}.pdf
           ls -alR
 
       - uses: "marvinpinto/action-automatic-releases@latest"
