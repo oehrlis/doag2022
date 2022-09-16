@@ -181,7 +181,7 @@ jobs:
             ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
 
       - name: Update release $GITHUB_REF_NAME
-        uses: johnwbyrd/update-release@v1
+        uses: johnwbyrd/update-release@v1.0.0
         if: ${{ steps.release.outputs.id != '' }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
