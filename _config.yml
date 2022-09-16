@@ -1,39 +1,61 @@
-# _config.yml
-
+# Site settings
 title: OCI Kickstart Workshop
-description: Oracle Cloud Infrastructure (OCI) Kickstart Workshop mit Oehrli und Berger - mit Freunden in der Cloud unterwegs
+email: your-email@domain.com
+description: >
+  Oracle Cloud Infrastructure (OCI) Kickstart Workshop
+  mit Oehrli und Berger - mit Freunden in der Cloud unterwegs
+lang: en-US
+
+# baseurl: "/jekyll-doc-theme" # the subpath of your site, e.g. /blog/
+# url: https://aksakalli.github.io/jekyll-doc-theme # the base hostname & protocol for your site
+# git_address: https://github.com/aksakalli/jekyll-doc-theme
+# git_edit_address: https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages
+
+# # theme options from https://bootswatch.com/3/
+# # comment out this to use default Bootstrap
+# bootwatch: paper # cerulean cosmo custom cyborg darkly flatly journal lumen readable sandstone simplex slate solar spacelab superhero united yeti
+
 google_analytics:
 source: doc
 #theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Configure the remote_theme plugin with the gh-pages branch
 # or the specific tag
 remote_theme: aksakalli/jekyll-doc-theme@gh-pages   
 
+exclude:
+  - .build
+  - ppt
+  - bin
+
 timezone: Europe/Berlin
-defaults:
-- scope:
-    path: lab
-    type: docs
-  values:
-    layout: docs
-    sectionid: lab
+# defaults:
+# - scope:
+#     path: lab
+#     type: docs
+#   values:
+#     layout: docs
+#     sectionid: lab
 
-- scope:
-    path: doc
-    type: docs
-  values:
-    layout: docs
-    sectionid: docs
-    seo:
-      type: "WebPage"
+# - scope:
+#     path: doc
+#     type: docs
+#   values:
+#     layout: docs
+#     sectionid: docs
+#     seo:
+#       type: "WebPage"
 
-collections:
-  docs:
-    permalink: /:collection/:path/
-    output: true
+# collections:
+#   docs:
+#     permalink: /:collection/:path/
+#     output: true
 #  posts:
 #    permalink: /blog/:year/:month/:day/:title/
 #    output: true
