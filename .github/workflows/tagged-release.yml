@@ -148,9 +148,9 @@ jobs:
         name: Check if release does exists
         uses: cardinalby/git-get-release-action@v1
         env:
-          GITHUB_TOKEN: $env:GITHUB_REF_NAME
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         with: 
-          tag: ${{ secrets.GITHUB_TOKEN }}
+          tag: "$env:GITHUB_REF_NAME"
           prerelease: false
           doNotFailIfNotFound: true
 
