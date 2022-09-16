@@ -63,6 +63,7 @@ jobs:
         run: |
           for i in $MD_FILES ;do
             echo "process file $i"
+            sed -i 's|\(./\)*../../images/|images/|' $i
           done
       # Build PDF using docker images oehrlis/pandoc
       - name: Build LAB pdf document
