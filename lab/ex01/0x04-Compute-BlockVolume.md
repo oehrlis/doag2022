@@ -81,7 +81,7 @@ sda                  8:0    0 46.6G  0 disk
 ├─sda2               8:2    0    1G  0 part /boot
 └─sda3               8:3    0 45.5G  0 part 
   ├─ocivolume-root 252:0    0 35.5G  0 lvm  /
-  └─ocivolume-oled 252:1    0   10G  0 lvm  /var/oled
+    └─ocivolume-oled 252:1    0   10G  0 lvm  /var/oled
 sdb                  8:16   0  128G  0 disk 
 
 # Disk formatieren mit ext4
