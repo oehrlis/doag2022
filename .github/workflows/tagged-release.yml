@@ -142,7 +142,11 @@ jobs:
           name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
 
       - name: test
-        run: echo "gitHub Release is $env:GITHUB_REF_NAME."
+        run: |
+          echo "gitHub Release is $env:GITHUB_REF_NAME"
+          echo "gitHub Release is $GITHUB_REF_NAME"
+          echo "gitHub Release is ${{ secrets.GITHUB_REF_NAME }}"
+          echo "gitHub Release is ${{ env.GITHUB_REF_NAME }}"
 
       - id: release
         name: Check if release does exists
@@ -150,7 +154,7 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         with: 
-          tag: "$env:GITHUB_REF_NAME"
+          tag: $GITHUB_REF_NAME
           prerelease: false
           doNotFailIfNotFound: true
 
@@ -158,9 +162,21 @@ jobs:
         run: |
           echo "gitHub Release is ${{ steps.release.outputs.id }}"
           echo "gitHub Release is ${{ steps.release.outputs.upload_url }}"
+          echo "gitHub Release is $GITHUB_REF_NAME"
 
       - uses: "marvinpinto/action-automatic-releases@latest"
-#        if: ${{ steps.release.outputs.id != 'true' }}
+        name: Create new release for $GITHUB_REF_NAME
+        if: ${{ steps.release.outputs.id == '' }}
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
+            ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        name: Update release $GITHUB_REF_NAME
+        if: ${{ steps.release.outputs.id != '' }}
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
