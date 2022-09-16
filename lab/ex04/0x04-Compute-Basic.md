@@ -1,6 +1,7 @@
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD013 -->
-# Compute
+<!-- markdownlint-disable MD041 -->
+## Compute
 
 ## Ziel: Erstellen einer Compute Instance mit Public Access
 
