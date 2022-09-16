@@ -131,7 +131,7 @@ jobs:
 # Job to build a draft release
   pre-release:
     needs: [build_lab_doc, build_req_doc] 
-    name: Create draft release
+    name: Create a tagged release
     runs-on: ubuntu-latest
 
     steps:
@@ -157,6 +157,7 @@ jobs:
 
   # Build job
   build_web:
+    name: Build Jekyll base Github pages
     runs-on: ubuntu-latest
     needs: [build_lab_doc, build_req_doc] 
     steps:
@@ -174,6 +175,7 @@ jobs:
 
   # Deployment job
   deploy:
+    name: Deploy Github pages
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
