@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 ## Architektur
 
 Gemeinsam bauen wir folgende Infrastruktur in der Region Germany Central (Frankfurt):
