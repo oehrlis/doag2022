@@ -147,6 +147,9 @@ jobs:
           echo "gitHub Release is $GITHUB_REF_NAME"
           echo "gitHub Release is ${{ secrets.GITHUB_REF_NAME }}"
           echo "gitHub Release is ${{ env.GITHUB_REF_NAME }}"
+          echo "gitHub Release is $GITHUB_REF_NAME"
+          echo "gitHub Release is ${{ github.ref }}"
+          echo "gitHub Release is $GITHUB_REF_NAME"
 
       - id: release
         name: Check if release does exists
@@ -163,6 +166,9 @@ jobs:
           echo "gitHub Release is ${{ steps.release.outputs.id }}"
           echo "gitHub Release is ${{ steps.release.outputs.upload_url }}"
           echo "gitHub Release is $GITHUB_REF_NAME"
+          echo "gitHub Release is ${{ github.ref }}"
+          echo "gitHub Release is $GITHUB_REF_NAME"
+           
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         name: Create new release for $GITHUB_REF_NAME
@@ -174,12 +180,11 @@ jobs:
             ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
             ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
 
-      - uses: "marvinpinto/action-automatic-releases@latest"
-        name: Update release $GITHUB_REF_NAME
+      - name: Update release $GITHUB_REF_NAME
+        uses: johnwbyrd/update-release@v1
         if: ${{ steps.release.outputs.id != '' }}
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
           files: |
             ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
             ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
