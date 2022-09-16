@@ -10,22 +10,33 @@ Binaries, Patch) or code from other Git repositories is required, we refer to
 it accordingly. All exercises can also be downloaded as zip files (see
 [O-SEC_exercises.zip](../others/O-SEC_exercises.zip))
 
-## Introduction
+## Einführung
 
-| ID | Topic                                                               | Description                                                                           | Duration | Solution                                      |
-|----|---------------------------------------------------------------------|---------------------------------------------------------------------------------------|----------|-----------------------------------------------|
-| 00 | [Get known the Environment](ex00/1x00en-Exercise.md)      | Log in and get to know the workshop environment.                                      | 15       | [Solution](ex00/1x00en-Solution.md) |
+| ID | Thema                                    | Beschreibung                                             | Dauer |
+|----|------------------------------------------|----------------------------------------------------------|-------|
+| 01 | [Architektur](ex01/1x01-Architecture.md) | Get known to the different password verifier.            | 15    |
+| 02 | [OCI Login](ex02/1x02-Login.md)          | Erstes Login in Oracle Cloud Infrastructure (OCI)        | 15    |
 
-Table: Workshop Exercises Introduction
+Table: Workshop Übungen zum Thema Einführung
 
-## Authentication
+## OCI Walkthrough
 
-| ID | Topic                                                               | Description                                                                           | Duration | Solution                                      |
-|----|---------------------------------------------------------------------|---------------------------------------------------------------------------------------|----------|-----------------------------------------------|
-| 01 | [Password Verifier](ex01/1x01en-Exercise.md)              | Get known to the different password verifier.                                         | 15       | [Solution](ex01/1x01en-Solution.md) |
-| 02 | [Authentication Methods](ex02/1x02en-Exercise.md)         | Get known to the different authentication methods i.e proxy, OS etc.                  | 15       | [Solution](ex02/1x02en-Solution.md) |
-| 03 | [Password Profiles](ex03/1x03en-Exercise.md)              | Configure password profiles and verify functions.                                     | 20       | [Solution](ex03/1x03en-Solution.md) |
-| 04 | [Kerberos Authentication](ex04/1x04en-Exercise.md)        | Configure and Troubleshoot Kerberos authentication.                                   | 20       | [Solution](ex04/1x04en-Solution.md) |
-| 05 | [Centrally Managed Users](ex05/1x05en-Exercise.md)        | Setup and configure Active Directory integration using Centrally Managed Users (CMU). | 30       | [Solution](ex05/1x05en-Solution.md) |
+| ID | Thema                                    | Beschreibung                                             | Dauer |
+|----|------------------------------------------|----------------------------------------------------------|-------|
+| 03 | [Netzwerk](ex03/1x03-Network.md)         | Konfiguration von Virtual Cloud Networks                 | 20    |
+| 04 | [Compute](ex04/0x04-Compute.md)          | Konfiguration von Compute Instances                      | 20    |
+| 05 | [DB System](ex05/1x05-Database.md)       | Konfiguration von DB Systems                             | 30    |
+| 06 | [Autonomous](ex05/1x05-Database.md)      | Konfiguration von Autonomous Databases                   | 30    |
+| 07 | [Object Store](ex06/0x06-Autonomous.md)  | Konfiguration von Object Storages                        | 30    |
+| 08 | [OCI Command line](ex08/0x08-OCI-CLI.md) | Konfiguration und einsatz des OCI Command Line Utilities | 30    |
 
-Table: Workshop Exercises Authentication
+Table: Workshop Übungen zum Thema OCI Walkthrough
+
+## Terraform Kickstart
+
+| ID | Thema                                    | Beschreibung                                             | Dauer |
+|----|------------------------------------------|----------------------------------------------------------|-------|
+| 03 | [Netzwerk](ex03/1x03-Network.md)         | Konfiguration von Virtual Cloud Networks                 | 20    |
+| 04 | [Compute](ex04/0x04-Compute.md)          | Konfiguration von Compute Instances                      | 20    |
+
+Table: Workshop Übungen zum Thema Terraform Kickstart
