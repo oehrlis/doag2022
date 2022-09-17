@@ -1,16 +1,28 @@
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD041 -->
-## Database
+## Database System
+
+### Übungsziele {.unlisted .unnumbered}
 
 Ziel ist die Bereitstellung einer Oracle Datenbank in der Availability Domain 2 Region Frankfurt.
+
+### Aufgaben {.unlisted .unnumbered}
+
+- Übersicht zu den DB Systemen finden
+- Einfaches DB System erstellen
+- Zugriff via SSH / Cloud Shell sicherstellen
+
+### DB system in OCI
+
+to be documented
 
 _Oracle Database_ -> _Oracle Base Database (VM, BM)_ -> um eine Datenbank bereit zu stellen.
 _Create DB system_ anklicken.
 
-![OCI DB System Overview](1x01-05-database-01.png)
+![OCI DB System Overview](../../images/1x01-05-database-01.png)
 
-## DB system information
+### DB System Informationen
 
 | Item                                | Value                                    | Bemerkungen  |
 |:------------------------------------|:-----------------------------------------|:-------------|
@@ -28,15 +40,15 @@ _Create DB system_ anklicken.
 | Hostname prefix                     | dbsys01                                  | keine        |
 | Private IP address                  | 10.0.3.50                                | keine        |
 
-![OCI Create DB System Dialog part I](1x01-05-database-02.png)
-![OCI Create DB System Dialog part II](1x01-05-database-03.png)
-![OCI Create DB System Dialog part III](1x01-05-database-04.png)
-![OCI Create DB System Dialog part IV](1x01-05-database-05.png)
-![OCI Create DB System Dialog part V](1x01-05-database-06.png)
+![OCI Create DB System Dialog part I](../../images/1x01-05-database-02.png)
+![OCI Create DB System Dialog part II](../../images/1x01-05-database-03.png)
+![OCI Create DB System Dialog part III](../../images/1x01-05-database-04.png)
+![OCI Create DB System Dialog part IV](../../images/1x01-05-database-05.png)
+![OCI Create DB System Dialog part V](../../images/1x01-05-database-06.png)
 
 Die restlichen Einstellungen belassen, _Next_.
 
-## Database information
+### Database Informationen
 
 | Item                                | Value                                    | Bemerkungen  |
 |:------------------------------------|:-----------------------------------------|:-------------|
@@ -45,11 +57,11 @@ Die restlichen Einstellungen belassen, _Next_.
 | Password                            | SYS-Password                             | keine        |
 | Confirm password                    | SYS-Password                             | keine        |
 
-![OCI Create DB System Admin Password](1x01-05-database-07.png)
+![OCI Create DB System Admin Password](../../images/1x01-05-database-07.png)
 
 Die restlichen Einstellungen belassen, mit Klick auf _Create DB system_ wird die Resource erstellt und anschliessend angezeigt. Die Erstellung dauert ca. 30 Minuten.
 
-![OCI DB System Details](1x01-05-database-08.png)
+![OCI DB System Details](../../images/1x01-05-database-08.png)
 
 ### SSH-Verbindung von der Cloud Console zur Database Private IP
 
@@ -59,7 +71,7 @@ Stellen Sie sicher das die Cloud Console das Netzwerk auf Private eingestellt ha
 [oracle@dbsys01 ~]$ ssh -i ~.ssh/id_rsa_student01 opc@10.0.3.50
 ```
 
-![OCI DB System Shell Access](1x01-05-database-09.png)
+![OCI DB System Shell Access](../../images/1x01-05-database-09.png)
 
 Wechseln Sie um OS User oracle and setzen Sie die Umgebungsvariablen. Prüfen Sie, ob der PMON-Prozess
 läuft.
@@ -96,3 +108,6 @@ GLOBAL_NAME
 --------------------------------------------------------------------------------
 PDBDOAG01.SNSTUDENTPRV02.VCNDOAGSTUDENT0.ORACLEVCN.COM
 ```
+
+Weiter zur nächsten Aufgabe [Autonomous Database](./1x06-Autonomous.md) oder
+zurück zu [Compute Block Volume](./1x04-Compute-BlockVolume.md).

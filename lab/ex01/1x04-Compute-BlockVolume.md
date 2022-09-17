@@ -3,10 +3,15 @@
 <!-- markdownlint-disable MD041 -->
 ## Compute Block Volume
 
-## Block Volume erstellen uns als iSCSI an der Public Compute Instance anhängen
+### Übungsziele {.unlisted .unnumbered}
 
-Erstellen Sie ein Block Volume und hängen Sie das an die Instanz an. Partitionieren
-und formatieren Sie die neu angehängte Disk.
+Block Volume erstellen uns als iSCSI an der Public Compute Instance anhängen
+
+### Aufgaben {.unlisted .unnumbered}
+
+- Erstellen Sie ein Block Volume
+- hängen Sie das Block Volume an die Instanz an
+- Partitionieren und formatieren Sie die neu angehängte Disk.
 
 ### Block Volume erstellen
 
@@ -16,7 +21,7 @@ für die Compute Instant nicht verfügbar.
 _Block Storage_ -> _Block Volume_
 
 <img src="./../../images/0x01-04-compute-bv-01.png" width="900">
-
+![OCI Cloud Shell](../../images/1x01-04-cloud-shell-ssh-01.png)
 | Item                         | Value                                      | Bemerkungen  |
 |:-----------------------------|:-------------------------------------------|:-------------|
 | Name                         | bv-doag-student-01-public                  | keine        |
@@ -25,11 +30,11 @@ _Block Storage_ -> _Block Volume_
 | Select Backup Policy         | Bronze                                     | keine        |
 
 <img src="./../../images/0x01-04-compute-bv-02.png" width="900">
-
+![OCI Cloud Shell](../../images/1x01-04-cloud-shell-ssh-01.png)
 Die restlichen Einstellungen belassen, mit Klick auf _Create Block Volume_ wird die Resource erstellt und anschliessend angezeigt.
 
 <img src="./../../images/0x01-04-compute-bv-03.png" width="900">
-
+![OCI Cloud Shell](../../images/1x01-04-cloud-shell-ssh-01.png)
 ### Block Volume am Compute Instance anhängen
 
 Block Volume auswählen, _Resources_ -> _Attached Instances_ -> _Attach to Instance_. Stellen Sie
@@ -37,11 +42,11 @@ sicher das die Compute Instance im Public Subnet läuft im Status "Running". Ans
 Block Volume nicht angehängt werden.
 
 <img src="./../../images/0x01-04-compute-bv-04.png" width="900">
-
+![OCI Cloud Shell](../../images/1x01-04-cloud-shell-ssh-01.png)
 Wählen Sie die Instanz aus.
 
 <img src="./../../images/0x01-04-compute-bv-05.png" width="900">
-
+![OCI Cloud Shell](../../images/1x01-04-cloud-shell-ssh-01.png)
 Die restlichen Einstellungen belassen, mit Klick auf _Attach_ wird die Resource angehängt. Für
 die weitere Verwendung muss auf Stufe OS das Device gemounted werden.
 
@@ -55,7 +60,7 @@ ssh -i ~.ssh/id_rsa_student01 opc@130.61.243.7
 ```
 
 <img src="./../../images/0x01-04-compute-public-08.png" width="900">
-
+![OCI Cloud Shell](../../images/1x01-04-cloud-shell-ssh-01.png)
 ### iSCSI Disk anhängen und formatieren
 
  ```bash
@@ -152,3 +157,6 @@ Filesystem: xfs
 Partitions:
 
 ```
+
+Weiter zur nächsten Übung [Database System](./1x05-Database.md)
+oder zurück zu [Compute Load Balancer](./1x04-Compute-LoadBalancer.md).

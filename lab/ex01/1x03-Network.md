@@ -3,12 +3,16 @@
 <!-- markdownlint-disable MD041 -->
 ## VCN-Basics
 
-## Ziel: Erstellen eines Netzwerks zur weiteren Verwendung
+### Übungsziele {.unlisted .unnumbered}
+
+Erstellen eines Netzwerks zur weiteren Verwendung
 
 - Networking -> Virtual Cloud Networks
 - Bitte beachten Sie, dass  Sie sich in ihrem zugewiesenen Compartment befinden
 - Region ist eu-frankfurt-1
 - Wir verwenden nicht den VCN Wizard.
+
+### Aufgaben {.unlisted .unnumbered}
 
 Das virtuelle Netzwerk wird Schritt für Schritt erstellt:
 
@@ -22,16 +26,17 @@ Das virtuelle Netzwerk wird Schritt für Schritt erstellt:
 - 1 Public Subnet
 - 2 Private Subnet
 
-## Hinweis
+::: note
+**Hinweise** Die hier aufgeführten Schritte werden im Compartment *Student01*
+ausgeführt und heissen auch dementsprechend. Ersetzen Sie die Nummer mit der
+Ihnen zugewiesenen Nummer 01-0n.
+:::
 
-Die hier aufgeführten Schritte werden im Compartment Student01 ausgeführt und heissen auch dementsprechend.
-Ersetzen Sie die Nummer mit der Ihnen zugewiesenen Nummer 01-0n.
+### VCN Erstellen
 
-### VCN
+*Create VCN* auswählen, wir verwenden nicht den VCN Wizard.
 
-_Create VCN_ auswählen, wir verwenden nicht den VCN Wizard.
-
-![OCI VCN Overview](1x03-01-vcn-vcn-01.png)
+![OCI VCN Übersicht](../../images/1x03-01-vcn-vcn-01.png)
 
 | Item                         | Value               | Bemerkungen  |
 |:-----------------------------|:--------------------|:-------------|
@@ -41,15 +46,15 @@ _Create VCN_ auswählen, wir verwenden nicht den VCN Wizard.
 
 Table: VCN Konfigurationsvorgaben
 
-![OCI VCN Create Dialog](1x03-01-vcn-vcn-02.png)
+![OCI VCN Create Dialog](../../images/1x03-01-vcn-vcn-02.png)
 
-Die restlichen Einstellungen belassen, mit Klick auf _Create VCN_ wird die Resource erstellt und anschliessend angezeigt.
+Die restlichen Einstellungen belassen, mit Klick auf *Create VCN* wird die Resource erstellt und anschliessend angezeigt.
 
-### Internet Gateway
+### Internet Gateway Erstellen
 
-Im erstellten VCN die Resource _Internet Gateways_ auswählen, _Create Internet Gateway_.
+Im erstellten VCN die Resource *Internet Gateways* auswählen, *Create Internet Gateway*.
 
-![OCI Internet Gateways Overview](1x03-01-vcn-igw-01.png)
+![OCI Internet Gateways Übersicht](../../images/1x03-01-vcn-igw-01.png)
 
 | Item                         | Value               | Bemerkungen  |
 |:-----------------------------|:--------------------|:-------------|
@@ -57,15 +62,15 @@ Im erstellten VCN die Resource _Internet Gateways_ auswählen, _Create Internet 
 
 Table: Internet Gateways Konfigurationsvorgaben
 
-![OCI Internet Gateways Create Dialog](1x03-01-vcn-igw-02.png)
+![OCI Internet Gateways Create Dialog](../../images/1x03-01-vcn-igw-02.png)
 
-Die restlichen Einstellungen belassen, mit Klick auf _Create Internet Gateway_ wird die Resource erstellt und anschliessend angezeigt.
+Die restlichen Einstellungen belassen, mit Klick auf *Create Internet Gateway* wird die Resource erstellt und anschliessend angezeigt.
 
-### NAT Gateway
+### NAT Gateway Erstellen
 
-Im erstellten VCN die Resource _NAT Gateways_ auswählen, _Create NAT Gateway_.
+Im erstellten VCN die Resource *NAT Gateways* auswählen, *Create NAT Gateway*.
 
-![OCI NAT Gateway Overview](1x03-01-vcn-ngw-01.png)
+![OCI NAT Gateway Übersicht](../../images/1x03-01-vcn-ngw-01.png)
 
 | Item                         | Value               | Bemerkungen  |
 |:-----------------------------|:--------------------|:-------------|
@@ -73,15 +78,15 @@ Im erstellten VCN die Resource _NAT Gateways_ auswählen, _Create NAT Gateway_.
 
 Table: NAT Gateways Konfigurationsvorgaben
 
-![OCI NAT Gateways Create Dialog](1x03-01-vcn-ngw-02.png)
+![OCI NAT Gateways Create Dialog](../../images/1x03-01-vcn-ngw-02.png)
 
-Die restlichen Einstellungen belassen, mit Klick auf _Create NAT Gateway_ wird die Resource erstellt und anschliessend angezeigt.
+Die restlichen Einstellungen belassen, mit Klick auf *Create NAT Gateway* wird die Resource erstellt und anschliessend angezeigt.
 
 ### Routing Table für Public Subnet
 
-Die Route beinhaltet das Internet Gateway. Im erstellten VCN die Resource _Route Tables_ auswählen, _Create Route Table_.
+Die Route beinhaltet das Internet Gateway. Im erstellten VCN die Resource *Route Tables* auswählen, *Create Route Table*.
 
-![OCI Routing Table Overview](1x03-01-vcn-route_table-01.png)
+![OCI Routing Table Übersicht](../../images/1x03-01-vcn-route_table-01.png)
 
 | Item                         | Value                      | Bemerkungen  |
 |:-----------------------------|:---------------------------|:-------------|
@@ -99,15 +104,15 @@ Fügen Sie folgende Route hinzu:
 
 Table: Public Routing Table Konfigurationsvorgaben
 
-![OCI Routing Table Overview](1x03-01-vcn-route_table-02.png)
+![OCI Routing Table Übersicht](../../images/1x03-01-vcn-route_table-02.png)
 
-Die restlichen Einstellungen belassen, mit Klick auf _Create_ wird die Resource erstellt und anschliessend angezeigt.
+Die restlichen Einstellungen belassen, mit Klick auf *Create* wird die Resource erstellt und anschliessend angezeigt.
 
 ### Routing Table für Private Subnet
 
-Die Route beinhaltet das NAT Gateway. Im erstellten VCN die Resource _Route Tables_ auswählen, _Create Route Table_.
+Die Route beinhaltet das NAT Gateway. Im erstellten VCN die Resource *Route Tables* auswählen, *Create Route Table*.
 
-![OCI Routing Table Overview](1x03-01-vcn-route_table-01.png)
+![OCI Routing Table Übersicht](../../images/1x03-01-vcn-route_table-01.png)
 
 | Item                         | Value                      | Bemerkungen  |
 |:-----------------------------|:---------------------------|:-------------|
@@ -125,16 +130,16 @@ Fügen Sie folgende Route hinzu:
 
 Table: Private Routing Table Konfigurationsvorgaben
 
-![OCI Routing Table Create Dialog](1x03-01-vcn-route_table-03.png)
+![OCI Routing Table Create Dialog](../../images/1x03-01-vcn-route_table-03.png)
 
-Die restlichen Einstellungen belassen, mit Klick auf _Create_ wird die Resource erstellt und anschliessend angezeigt.
+Die restlichen Einstellungen belassen, mit Klick auf *Create* wird die Resource erstellt und anschliessend angezeigt.
 
 ### Security List für Public Subnet
 
 Die Security List lässt Zugriff auf das Public Subnet von den Ports 22 (SSH) und 80 (http) zu.
-Im erstellten VCN die Resource _Security Lists_ auswählen, _Create Security List_.
+Im erstellten VCN die Resource *Security Lists* auswählen, *Create Security List*.
 
-![OCI Public Security List Overview](1x03-01-vcn-security_list_public-01.png)
+![OCI Public Security List Übersicht](../../images/1x03-01-vcn-security_list_public-01.png)
 
 | Item                         | Value                      | Bemerkungen  |
 |:-----------------------------|:---------------------------|:-------------|
@@ -159,17 +164,17 @@ Fügen Sie folgende Egress-Regeln hinzu:
 
 Table: Egress-Regeln Public Subnet
 
-Die restlichen Einstellungen belassen, mit Klick auf _Create Security List_ wird die Resource erstellt und anschliessend angezeigt.
+Die restlichen Einstellungen belassen, mit Klick auf *Create Security List* wird die Resource erstellt und anschliessend angezeigt.
 
-![OCI Ingress-Regeln Public Subnet](1x03-01-vcn-security_list_public-02.png)
-![OCI Egress-Regeln Public Subnet](1x03-01-vcn-security_list_public-03.png)
+![OCI Ingress-Regeln Public Subnet](../../images/1x03-01-vcn-security_list_public-02.png)
+![OCI Egress-Regeln Public Subnet](../../images/1x03-01-vcn-security_list_public-03.png)
 
 ### Security List für Private Subnet
 
 Die Security List lässt Zugriff auf das Private Subnet von den Ports 22 (SSH) und 1521 (sqlnet) aus dem Public Subnet zu.
-Im erstellten VCN die Resource _Security Lists_ auswählen, _Create Security List_.
+Im erstellten VCN die Resource *Security Lists* auswählen, *Create Security List*.
 
-![OCI Private Security List Overview](1x03-01-vcn-security_list_private-01.png)
+![OCI Private Security List Übersicht](../../images/1x03-01-vcn-security_list_private-01.png)
 
 | Item                         | Value                      | Bemerkungen  |
 |:-----------------------------|:---------------------------|:-------------|
@@ -194,16 +199,16 @@ Fügen Sie folgende Egress-Regeln hinzu:
 
 Table: Egress-Regeln
 
-Die restlichen Einstellungen belassen, mit Klick auf _Create Security List_ wird die Resource erstellt und anschliessend angezeigt.
+Die restlichen Einstellungen belassen, mit Klick auf *Create Security List* wird die Resource erstellt und anschliessend angezeigt.
 
-![OCI Ingress-Regeln Private Subnet](1x03-01-vcn-security_list_private-02.png)
-![OCI Egress-Regeln Private Subnet](1x03-01-vcn-security_list_private-03.png)
+![OCI Ingress-Regeln Private Subnet](../../images/1x03-01-vcn-security_list_private-02.png)
+![OCI Egress-Regeln Private Subnet](../../images/1x03-01-vcn-security_list_private-03.png)
 
 ### Public Subnet
 
-Im erstellten VCN die Resource _Subnets_ auswählen, _Create Subnet_.
+Im erstellten VCN die Resource *Subnets* auswählen, *Create Subnet*.
 
-![OCI Subnet Overview](1x03-01-vcn-subnet_public-01.png)
+![OCI Subnet Übersicht](../../images/1x03-01-vcn-subnet_public-01.png)
 
 | Item                         | Value                     | Bemerkungen  |
 |:-----------------------------|:--------------------------|:-------------|
@@ -218,14 +223,14 @@ Im erstellten VCN die Resource _Subnets_ auswählen, _Create Subnet_.
 
 Table: Public Subnet Konfiguration
 
-![OCI Create Public Subnet Dialog part I](1x03-01-vcn-subnet_public-02.png)
-![OCI Create Public Subnet Dialog part II](1x03-01-vcn-subnet_public-03.png)
+![OCI Create Public Subnet Dialog Part I](../../images/1x03-01-vcn-subnet_public-02.png)
+![OCI Create Public Subnet Dialog Part II](../../images/1x03-01-vcn-subnet_public-03.png)
 
-Die restlichen Einstellungen belassen, mit Klick auf _Create Subnet_ wird die Resource erstellt und anschliessend angezeigt.
+Die restlichen Einstellungen belassen, mit Klick auf *Create Subnet* wird die Resource erstellt und anschliessend angezeigt.
 
 ### Private Subnets
 
-Im erstellten VCN die Resource _Subnets_ auswählen, _Create Subnet_.
+Im erstellten VCN die Resource *Subnets* auswählen, *Create Subnet*.
 
 | Item                         | Value                          | Bemerkungen  |
 |:-----------------------------|:-------------------------------|:-------------|
@@ -240,11 +245,11 @@ Im erstellten VCN die Resource _Subnets_ auswählen, _Create Subnet_.
 
 Table: Private Subnet Konfiguration I
 
-![OCI Create private Subnet Dialog part I](1x03-01-vcn-subnet_private-01.png)
-![OCI Create private Subnet Dialog part II](1x03-01-vcn-subnet_private-02.png)
-![OCI Create private Subnet Dialog part III](1x03-01-vcn-subnet_private-03.png)
+![OCI Create Private Subnet Dialog Part I](../../images/1x03-01-vcn-subnet_private-01.png)
+![OCI Create Private Subnet Dialog Part II](../../images/1x03-01-vcn-subnet_private-02.png)
+![OCI Create Private Subnet Dialog Part III](../../images/1x03-01-vcn-subnet_private-03.png)
 
-Die restlichen Einstellungen belassen, mit Klick auf _Create Subnet_ wird die Resource erstellt und anschliessend angezeigt.
+Die restlichen Einstellungen belassen, mit Klick auf *Create Subnet* wird die Resource erstellt und anschliessend angezeigt.
 
 Wiederholen Sie die Erstellen für das zweite private Subnet.
 
@@ -263,4 +268,6 @@ Table: Private Subnet Konfiguration II
 
 Übersicht der erstellten Subnets:
 
-![OCI Private Subnet List](1x03-01-vcn-subnet_private_list.png)
+![OCI Private Subnet List](../../images/1x03-01-vcn-subnet_private_list.png)
+
+Weiter zur nächsten Aufgabe [Simple Compute Instance](./1x04-Compute-Basic.md) oder zurück zu [OCI Login](./1x02-Login.md).
