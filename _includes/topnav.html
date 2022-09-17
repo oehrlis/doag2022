@@ -12,6 +12,28 @@
             </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
+            <div class="btn-group">
+                <a href="#" class="btn btn-default">Default</a>
+                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>
+              <div class="btn-group">
+                <a href="#" class="btn btn-default">Default</a>
+                <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>
             <ul class="nav navbar-nav">
                 <li {% if page.sectionid=='docs' %} class="active" {% endif %}><a href="{{ "/doc" | relative_url }}">Doc</a></li>
                 <li {% if page.sectionid=='docs' %} class="active" {% endif %}><a href="{{ "/lab" | relative_url }}">Lab</a></li>
