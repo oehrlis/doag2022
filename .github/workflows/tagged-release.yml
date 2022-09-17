@@ -203,7 +203,7 @@ jobs:
             echo "process file $i"
             sed -i 's|{.unlisted .unnumbered}||' $i
             sed -i 's|{-}||' $i
-            sed -i '/^:::/d' ./infile
+            sed -i '/^:::/d' $i
           done
 
       - name: Build with Jekyll
