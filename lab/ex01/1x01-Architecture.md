@@ -1,4 +1,5 @@
 <!-- markdownlint-disable MD041 -->
+<!-- markdownlint-disable MD051 -->
 # OCI Walkthrough
 
 ## Architektur
@@ -14,4 +15,4 @@ Gemeinsam bauen wir folgende Infrastruktur in der *Region Germany Central (Frank
 
 ![DOAG 2022 Architektur](../../images/1x01-01-architecture.png)
 
-Weiter zur nächsten Aufgabe [OCI Login](./1x02-Login.md) oder zurück zur [Übersicht](../README.md).
+Weiter zur nächsten Aufgabe [OCI Login](#oci-login) oder zurück zur [Übersicht](../README.md).
