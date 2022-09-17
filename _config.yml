@@ -49,6 +49,13 @@ breadcrumbs: true  # disabled by default
 logo: "images/logo.svg"
 search: true
 
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "single"
+
 # timezone: Europe/Berlin
 # defaults:
 # - scope:
