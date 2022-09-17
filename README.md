@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD033 -->
 # DOAG 2022
 
 DOAG Schulungstag 2022 - Oracle Cloud Infrastructure (OCI) Kickstart Workshop mit
@@ -22,7 +23,7 @@ Oehrli und Berger - mit Freunden in der Cloud unterwegs
 ## Themen
 
 - Einstieg Überblick Terraform und OCI Stacks
-  - Deployment vs konfiguration
+  - Deployment vs Konfiguration
 - Konfiguration von Terraform
 - Einfaches deployment mit Terraform
 - Deployment mit OCI Stacks
