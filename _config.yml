@@ -29,8 +29,8 @@ plugins:
 # Configure the remote_theme plugin with the gh-pages branch
 # or the specific tag
 #remote_theme: aksakalli/jekyll-doc-theme@gh-pages   
-remote_theme: "vsoch/docsy-jekyll"
-# minimal_mistakes_skin: "contrast" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "contrast" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 exclude:
   - .build
@@ -45,9 +45,9 @@ exclude:
   - ./doc/metadata.yml
   - ./doc/metadata_requirements.yml
 
-# breadcrumbs: true  # disabled by default
-# logo: "images/logo.svg"
-# search: true
+breadcrumbs: true  # disabled by default
+logo: "images/logo.svg"
+search: true
 
 # timezone: Europe/Berlin
 # defaults:
