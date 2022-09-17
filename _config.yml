@@ -27,7 +27,8 @@ plugins:
 
 # Configure the remote_theme plugin with the gh-pages branch
 # or the specific tag
-remote_theme: aksakalli/jekyll-doc-theme@gh-pages   
+#remote_theme: aksakalli/jekyll-doc-theme@gh-pages   
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
 exclude:
   - .build
