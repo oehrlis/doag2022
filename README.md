@@ -3,19 +3,8 @@
 DOAG Schulungstag 2022 - Oracle Cloud Infrastructure (OCI) Kickstart Workshop mit
 Oehrli und Berger - mit Freunden in der Cloud unterwegs
 
-## Links
-
-to be documented. Heureka.... mit tag mores oder so
-
-### Labs Manuell
-
-- [0x01 - Architecture](/lab/ex01/0x01-Architecture.md)
-- [0x02 - Login](/lab/ex01/0x02-Login.md)
-- [0x03 - Networking](/lab/ex01/0x03-Network.md)
-- [0x04 - Compute](/lab/ex01/0x04-Compute.md)
-- [0x04 - Compute Load Balancer](/lab/ex01/0x04-Compute-LoadBalancer.md)
-- [0x04 - Compute Block Volume](/lab/ex01/0x04-Compute-BlockVolume.md)
-- [0x05 - Database](/lab/ex01/0x05-Database.md)
+- Links, Referenzen sowie Übungsunterlagen als PDF [Resources](./others/README.md)
+- Übungen [Lab](./lab/README.md)
 
 ## Zeitplan
 
