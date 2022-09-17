@@ -195,7 +195,17 @@ jobs:
         with:
           name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
           path: others
-        
+
+      # Remove special syntax in Markdown files
+      - name: Remove special syntax in Markdown files
+        run: |
+          for i in $(find . -name "*.md"); do
+            echo "process file $i"
+            sed -i 's|{.unlisted .unnumbered}||' $i
+            sed -i 's|{-}||' $i
+            sed -i '/^:::/d' ./infile
+          done
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
