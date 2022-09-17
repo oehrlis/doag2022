@@ -19,6 +19,7 @@ google_analytics:
 source: doc
 #theme: minimal-mistakes-jekyll
 plugins:
+  - jekyll-include-cache
   - jekyll-remote-theme
   - jekyll-feed
   - jekyll-redirect-from
@@ -43,29 +44,28 @@ exclude:
   - ./doc/metadata.yml
   - ./doc/metadata_requirements.yml
 
-timezone: Europe/Berlin
-defaults:
-- scope:
-    path: lab/ex01
-    type: posts
-  values:
-    layout: post
-    sectionid: blog
+# timezone: Europe/Berlin
+# defaults:
+# - scope:
+#     path: lab/ex01
+#     type: posts
+#   values:
+#     layout: post
+#     sectionid: blog
 
-- scope:
-    path: doc
-    type: docs
-  values:
-    layout: docs
-    sectionid: docs
-    seo:
-      type: "WebPage"
+# - scope:
+#     path: doc
+#     type: docs
+#   values:
+#     layout: docs
+#     sectionid: docs
+#     seo:
+#       type: "WebPage"
 
-collections:
-  docs:
-    permalink: /:collection/:path/
-    output: true
-  posts:
-    permalink: /blog/:year/:month/:day/:title/
-    output: true
-
+# collections:
+#   docs:
+#     permalink: /:collection/:path/
+#     output: true
+#   posts:
+#     permalink: /blog/:year/:month/:day/:title/
+#     output: true
