@@ -16,7 +16,7 @@ Konfiguration eines Load Balancer für eine Web Anwendung.
 
 ### Zwei Compute Instances im Private Subnet erstellen
 
-3### Webserver LB1
+#### Webserver LB1
 
 | Item                         | Value                                      | Bemerkungen  |
 |:-----------------------------|:-------------------------------------------|:-------------|

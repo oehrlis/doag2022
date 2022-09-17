@@ -30,6 +30,7 @@ plugins:
 # or the specific tag
 #remote_theme: aksakalli/jekyll-doc-theme@gh-pages   
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "contrast" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 exclude:
   - .build
@@ -43,6 +44,10 @@ exclude:
   - CHANGELOG.md
   - ./doc/metadata.yml
   - ./doc/metadata_requirements.yml
+
+breadcrumbs: true  # disabled by default
+logo: "images/logo.svg"
+search: true
 
 # timezone: Europe/Berlin
 # defaults:
