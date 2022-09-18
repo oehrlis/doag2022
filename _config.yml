@@ -1,41 +1,74 @@
-# Site settings
-title: OCI Kickstart Workshop
-email: your-email@domain.com
-description: >
+# -----------------------------------------------------------------------------
+# Trivadis - Part of Accenture, Platform Factory - Data Platforms
+# Saegereistrasse 29, 8152 Glattbrugg, Switzerland
+# -----------------------------------------------------------------------------
+# Name.......: _config.yml
+# Author.....: Stefan Oehrli (oes) stefan.oehrli@trivadis.com
+# Editor.....: Stefan Oehrli
+# Date.......: 2022.09.18
+# Revision...: 
+# Purpose....: Jekyll Configuration
+# Notes......: --
+# Reference..: --
+# License....: Apache License Version 2.0, January 2004 as shown
+#              at http://www.apache.org/licenses/
+# -----------------------------------------------------------------------------
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-remote-theme
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+
+# Theme Settings
+# theme                   : "minimal-mistakes-jekyll"
+remote_theme            : "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin   : "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Site Settings
+locale                  : "de-CH"
+timezone                : Europe/Berlin
+title                   : OCI Kickstart Workshop
+title_separator         : "-"
+subtitle                : "DOAG Trainingsday by Trivadis part of Accenture"
+name                    : "Stefan Oehrli"
+description             : >
   Oracle Cloud Infrastructure (OCI) Kickstart Workshop
-  mit Oehrli und Berger - mit Freunden in der Cloud unterwegs
-lang: en-US
-
-baseurl: "/doag2022" # the subpath of your site, e.g. /blog/
-url: https://code.oradba.ch/doag2022 # the base hostname & protocol for your site
-git_address: https://github.com/oehrlis/doag2022
-git_edit_address: https://github.com/oehrlis/doag2022/blob/main
-
-# # theme options from https://bootswatch.com/3/
-# # comment out this to use default Bootstrap
-# bootwatch: paper # cerulean cosmo custom cyborg darkly flatly journal lumen readable sandstone simplex slate solar spacelab superhero united yeti
+  mit Oehrli und Berger - mit Freunden in der Cloud unterwegs.
+url                     : "https://code.oradba.ch"
+baseurl                 : "/doag2022"
+git_address             : https://github.com/oehrlis/doag2022
+git_edit_address        : https://github.com/oehrlis/doag2022/blob/main
+repository              : "oehrlis/doag2022"
+teaser                  : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+logo                    : "/images/logo.svg"
+masthead_title          : # overrides the website title displayed in the masthead, use " " for no title
+breadcrumbs             : false # true, false (default)
+words_per_minute        : 200
+search                  : true # true, false (default)
+search_full_content     : true # true, false (default)
+search_provider         : lunr # lunr (default), algolia, google
+lunr:
+  search_within_pages   : true # true, false (default)
+google:
+  search_engine_id       : 37722ce2ba1db42e7
+  instant_search         : true # false (default), true
 
 google_analytics:
 source: doc
-#theme: minimal-mistakes-jekyll
-plugins:
-  - jekyll-include-cache
-  - jekyll-remote-theme
-  - jekyll-feed
-  - jekyll-redirect-from
-  - jekyll-seo-tag
-  - jekyll-sitemap
-
-# Configure the remote_theme plugin with the gh-pages branch
-# or the specific tag
-#remote_theme: aksakalli/jekyll-doc-theme@gh-pages   
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: "contrast" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 exclude:
   - .build
-  - ppt
+  - .github
+  - .ideas
+  - .vscode
   - bin
+  - ppt
   - AUTHOR_GUIDE.md
   - CHANGELOG.md
   - VERSION
@@ -45,10 +78,6 @@ exclude:
   - ./doc/metadata.yml
   - ./doc/metadata_requirements.yml
 
-breadcrumbs: true  # disabled by default
-logo: "images/logo.svg"
-search: true
-
 defaults:
   -
     scope:
@@ -56,7 +85,15 @@ defaults:
     values:
       layout: "single"
 
-# timezone: Europe/Berlin
+# _docs
+  - scope:
+      path: "/lab/"
+      type: pages
+    values:
+      classes: wide
+      sidebar:
+        nav: "lab"
+
 # defaults:
 # - scope:
 #     path: lab/ex01
