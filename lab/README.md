@@ -1,6 +1,6 @@
+<!-- markdownlint-configure-file { "MD013": { "tables": false } } -->
 # Übungen
 
-<!-- markdownlint-configure-file { "MD013": { "tables": false } } -->
 
 Die Übungen sind in einzelnen Verzeichnissen gruppiert und können Teilweise
 unabhängig voneinander durchgeführt werden. Jede Übung enthält mindestens eine kurze
@@ -24,7 +24,7 @@ Table: Workshop Übungen zum Thema Einführung
 | ID | Thema                                                      | Beschreibung                                                | Dauer |
 |----|------------------------------------------------------------|-------------------------------------------------------------|-------|
 | 03 | [Netzwerk](ex01/1x03-Network.md)                           | Konfiguration von Virtual Cloud Networks                    | 15    |
-| 04 | [Compute](ex01/1x04-Compute.md)                            | Konfiguration einer Compute Instance                        | 15    |
+| 04 | [Compute](ex01/1x04-Compute-Basic.md)                      | Konfiguration einer Compute Instance                        | 15    |
 | 04 | [Compute Load Balancer](ex01/1x04-Compute-LoadBalancer.md) | Konfiguration von Compute Instances mit einem Load Balancer | 20    |
 | 04 | [Compute Block Volume](ex01/1x04-Compute-BlockVolume.md)   | Konfiguration von Block Volumes für eine Compute Instance   | 20    |
 | 05 | [DB System](ex01/1x05-Database.md)                         | Konfiguration eines DB Systems                              | 30    |

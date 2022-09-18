@@ -36,7 +36,7 @@ timezone                : Europe/Berlin
 title                   : OCI Kickstart Workshop
 title_separator         : "-"
 subtitle                : "DOAG Trainingsday by Trivadis part of Accenture"
-name                    : "Stefan Oehrli"
+name                    : "Stefan Oehrli & Martin Berger"
 description             : >
   Oracle Cloud Infrastructure (OCI) Kickstart Workshop
   mit Oehrli und Berger - mit Freunden in der Cloud unterwegs.
@@ -45,14 +45,14 @@ baseurl                 : "/doag2022"
 git_address             : https://github.com/oehrlis/doag2022
 git_edit_address        : https://github.com/oehrlis/doag2022/blob/main
 repository              : "oehrlis/doag2022"
-teaser                  : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                    : "/images/logo.svg"
+teaser                  : "/images/tvd-logo_500x300.png"
+logo                    : "/images/tvd-logo.png"
 masthead_title          : # overrides the website title displayed in the masthead, use " " for no title
-breadcrumbs             : false # true, false (default)
+breadcrumbs             : true # true, false (default)
 words_per_minute        : 200
 search                  : true # true, false (default)
 search_full_content     : true # true, false (default)
-search_provider         : lunr # lunr (default), algolia, google
+search_provider         : google # lunr (default), algolia, google
 lunr:
   search_within_pages   : true # true, false (default)
 google:
@@ -88,11 +88,22 @@ defaults:
 # _docs
   - scope:
       path: "/lab/"
-      type: pages
+      type: lab
     values:
+      read_time: true
+      breadcrumbs : true
       classes: wide
+      class: wide
       sidebar:
         nav: "lab"
+
+sidebar:
+  - title: "Title"
+    image: "/images/tvd-logo_500x300.png"
+    image_alt: "Logo"
+    text: "Some text here."
+  - title: "Another Title"
+    text: "More text here."
 
 # defaults:
 # - scope:
