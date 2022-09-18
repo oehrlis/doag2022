@@ -52,12 +52,12 @@ breadcrumbs             : true # true, false (default)
 words_per_minute        : 200
 search                  : true # true, false (default)
 search_full_content     : true # true, false (default)
-search_provider         : google # lunr (default), algolia, google
+search_provider         : lunr # lunr (default), algolia, google
 lunr:
   search_within_pages   : true # true, false (default)
-google:
-  search_engine_id       : 37722ce2ba1db42e7
-  instant_search         : true # false (default), true
+# google:
+#   search_engine_id       : 37722ce2ba1db42e7
+#   instant_search         : true # false (default), true
 
 google_analytics:
 source: doc
@@ -83,11 +83,15 @@ defaults:
     scope:
       path: "" # an empty string here means all files in the project
     values:
-      layout: "single"
+     # layout: "single"
+      classes: wide
+      class: wide
+      sidebar:
+        nav: "lab"
 
 # _docs
   - scope:
-      path: "/lab/"
+      path: "/lab/ex01"
       type: lab
     values:
       read_time: true
