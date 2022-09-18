@@ -1,7 +1,6 @@
+# OCI Walkthrough
 <!-- markdownlint-disable MD041 -->
 <!-- markdownlint-disable MD051 -->
-# OCI Walkthrough
-
 ## Architektur
 
 Gemeinsam bauen wir folgende Infrastruktur in der *Region Germany Central (Frankfurt)*:

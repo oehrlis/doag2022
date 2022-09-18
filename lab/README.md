@@ -1,6 +1,5 @@
-<!-- markdownlint-configure-file { "MD013": { "tables": false } } -->
 # Übungen
-
+<!-- markdownlint-configure-file { "MD013": { "tables": false } } -->
 Die Übungen sind in einzelnen Verzeichnissen gruppiert und können Teilweise
 unabhängig voneinander durchgeführt werden. Jede Übung enthält mindestens eine kurze
 Beschreibung der Aufgaben sowie eine Lösung. Darüber hinaus sind Skripte, etc.

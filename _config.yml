@@ -85,14 +85,18 @@ defaults:
     values:
      # layout: "single"
       classes: wide
-      class: wide
       sidebar:
         nav: "lab"
+        - title: "Title"
+          image: "/images/tvd-logo_500x300.png"
+          image_alt: "Logo"
+          text: "Some text here."
+        - title: "Another Title"
+          text: "More text here."
 
 # _docs
   - scope:
-      path: "/lab/ex01"
-      type: lab
+      path: "/lab/ex01/"
     values:
       read_time: true
       breadcrumbs : true
@@ -100,14 +104,6 @@ defaults:
       class: wide
       sidebar:
         nav: "lab"
-
-sidebar:
-  - title: "Title"
-    image: "/images/tvd-logo_500x300.png"
-    image_alt: "Logo"
-    text: "Some text here."
-  - title: "Another Title"
-    text: "More text here."
 
 # defaults:
 # - scope:
