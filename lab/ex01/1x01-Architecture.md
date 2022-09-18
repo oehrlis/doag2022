@@ -1,3 +1,7 @@
+---
+excerpt: "Descriptions and samples of all layouts included with the theme and how to best use them."
+---
+
 # OCI Walkthrough
 <!-- markdownlint-disable MD041 -->
 <!-- markdownlint-disable MD051 -->

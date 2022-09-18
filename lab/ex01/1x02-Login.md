@@ -1,6 +1,5 @@
 ---
 title: "Connect"
-permalink: /labs/login/
 excerpt: "Descriptions and samples of all layouts included with the theme and how to best use them."
 ---
 <!-- markdownlint-disable MD033 -->

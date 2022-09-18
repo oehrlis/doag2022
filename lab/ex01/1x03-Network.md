@@ -1,6 +1,5 @@
 ---
 title: "Network"
-permalink: /labs/network/
 excerpt: "Descriptions and samples of all layouts included with the theme and how to best use them."
 ---
 <!-- markdownlint-disable MD033 -->

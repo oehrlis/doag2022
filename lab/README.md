@@ -1,4 +1,10 @@
-# Übungen
+---
+title: "Übungen"
+permalink: /labs/
+excerpt: "Descriptions and samples of all layouts included with the theme and how to best use them."
+---
+
+
 <!-- markdownlint-configure-file { "MD013": { "tables": false } } -->
 Die Übungen sind in einzelnen Verzeichnissen gruppiert und können Teilweise
 unabhängig voneinander durchgeführt werden. Jede Übung enthält mindestens eine kurze

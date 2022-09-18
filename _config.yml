@@ -50,11 +50,14 @@ logo                    : "/images/tvd-logo.png"
 masthead_title          : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs             : true # true, false (default)
 words_per_minute        : 200
-search                  : true # true, false (default)
-search_full_content     : true # true, false (default)
-search_provider         : lunr # lunr (default), algolia, google
+atom_feed:
+  path                  : # blank (default) uses feed.xml
+  hide                  : # true, false (default)
+search                  : # true, false (default)
+search_full_content     : # true, false (default)
+search_provider         : # lunr (default), algolia, google
 lunr:
-  search_within_pages   : true # true, false (default)
+  search_within_pages   : # true, false (default)
 # google:
 #   search_engine_id       : 37722ce2ba1db42e7
 #   instant_search         : true # false (default), true
@@ -98,6 +101,18 @@ defaults:
       class: wide
       sidebar:
         nav: "lab"
+
+collections_dir: lab
+collections:
+  ex00:
+    output: true
+    permalink: /:name
+  ex01:
+    output: true
+    permalink: /:name
+  ex02:
+    output: true
+    permalink: /:name 
 
 # defaults:
 # - scope:
