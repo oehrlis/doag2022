@@ -13,5 +13,3 @@ Gemeinsam bauen wir folgende Infrastruktur in der *Region Germany Central (Frank
 - Upload zum OCI Object Storage
 
 ![DOAG 2022 Architektur](../../images/1x01-01-architecture.png)
-
-Weiter zur nächsten Aufgabe [OCI Login](#oci-login) oder zurück zur [Übersicht](../README.md).

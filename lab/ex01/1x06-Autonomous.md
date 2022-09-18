@@ -14,6 +14,3 @@ to be documented
 ### tbd
 
 to be documented
-
-Weiter zur nächsten Aufgabe [Object Storage](./1x07-Object-Storage.md) oder
-zurück zu [Database System](./1x05-Database.md).

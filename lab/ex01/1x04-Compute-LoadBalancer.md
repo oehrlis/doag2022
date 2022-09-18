@@ -125,6 +125,3 @@ Tip: Meistens scheitert es an fehlenden oder falschen Firewall-Einstellungen auf
 Nach dem Browser-Refresh:
 
 ![Webserver 2 via Load Balancer](../../images/1x01-04-compute-lb-12.png)
-
-Weiter zur nächsten Übung [Compute Block Volume](./1x04-Compute-BlockVolume.md)
-oder zurück zu [Simple Compute Instance](./1x04-Compute-Basic.md).

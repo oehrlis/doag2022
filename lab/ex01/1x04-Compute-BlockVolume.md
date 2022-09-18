@@ -157,6 +157,3 @@ Filesystem: xfs
 Partitions:
 
 ```
-
-Weiter zur nächsten Übung [Database System](./1x05-Database.md)
-oder zurück zu [Compute Load Balancer](./1x04-Compute-LoadBalancer.md).

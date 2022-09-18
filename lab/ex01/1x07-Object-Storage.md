@@ -14,6 +14,3 @@ to be documented
 ### tbd
 
 to be documented
-
-Weiter zur nächsten Aufgabe [OCI Command Line Interface](./1x08-OCI-CLI.md) oder
-zurück zu [Autonomous Database](./1x06-Autonomous.md).

@@ -1,3 +1,8 @@
+---
+title: "Network"
+permalink: /labs/network/
+excerpt: "Descriptions and samples of all layouts included with the theme and how to best use them."
+---
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD041 -->
@@ -269,5 +274,3 @@ Table: Private Subnet Konfiguration II
 Übersicht der erstellten Subnets:
 
 ![OCI Private Subnet List](../../images/1x03-01-vcn-subnet_private_list.png)
-
-Weiter zur nächsten Aufgabe [Simple Compute Instance](./1x04-Compute-Basic.md) oder zurück zu [OCI Login](./1x02-Login.md).

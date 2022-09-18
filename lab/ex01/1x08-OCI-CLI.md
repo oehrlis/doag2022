@@ -14,5 +14,3 @@ to be documented
 ### tbd
 
 to be documented
-
-Weiter zur nächsten Aufgabe [Terraform](./1x03-Network.md) oder zurück zu [Object Storage](./1x07-Object-Storage.md).

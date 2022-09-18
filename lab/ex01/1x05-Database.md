@@ -108,6 +108,3 @@ GLOBAL_NAME
 --------------------------------------------------------------------------------
 PDBDOAG01.SNSTUDENTPRV02.VCNDOAGSTUDENT0.ORACLEVCN.COM
 ```
-
-Weiter zur nächsten Aufgabe [Autonomous Database](./1x06-Autonomous.md) oder
-zurück zu [Compute Block Volume](./1x04-Compute-BlockVolume.md).

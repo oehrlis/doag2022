@@ -1,3 +1,8 @@
+---
+title: "Connect"
+permalink: /labs/login/
+excerpt: "Descriptions and samples of all layouts included with the theme and how to best use them."
+---
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD041 -->
@@ -31,5 +36,3 @@ Browser (Chrome/Firefox/Opera bevorzugt): <a href="https://console.eu-frankfurt-
 Ihr Tenant ist auf dem Dashboard in der Region oben-rechts ersichtlich.
 
 ![OCI Dashboard](../../images/1x02-01-login-03.png)
-
-Weiter zur nächsten Aufgabe [VCN-Basics](./1x03-Network.md) oder zurück zu [Architektur](./1x01-Architecture.md).

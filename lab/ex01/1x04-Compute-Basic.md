@@ -137,6 +137,3 @@ Verwenden Sie dazu die Public IP und ihren Browser der Workstation. URL: http://
 ![Test Webserver](../../images/1x01-04-compute-public-11.png)
 
 Schliessen Sie die Cloud Console.
-
-Weiter zur nächsten Übung [Compute Load Balancer](./1x04-Compute-LoadBalancer.md)
-oder zurück zu [VCN-Basics](./1x03-Network.md).
