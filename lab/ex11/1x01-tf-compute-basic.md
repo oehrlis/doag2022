@@ -1,6 +1,6 @@
 ---
 title: "Compute Instance"
-permalink: /lab/tf/compute/
+permalink: /lab/tf-compute/
 excerpt: "Erstellen einer Compute Instance mit Terraform"
 ---
 

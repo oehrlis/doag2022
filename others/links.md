@@ -1,9 +1,6 @@
----
-title: "Workshop Links"
-permalink: /others/links
-excerpt: "Links zum O-OCI-WS Workshop"
----
 <!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD041 -->
+## Workshop Links
 
 Dieser Bereich enthält Links und Referenzen zum Workshop Thema OCI.
 

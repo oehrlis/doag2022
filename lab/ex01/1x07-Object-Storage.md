@@ -1,6 +1,6 @@
 ---
 title: "Object Storage"
-permalink: /lab/oci/object-storage/
+permalink: /lab/oci-object-storage/
 excerpt: "Konfiguration von Object Storage"
 ---
 <!-- markdownlint-disable MD013 -->

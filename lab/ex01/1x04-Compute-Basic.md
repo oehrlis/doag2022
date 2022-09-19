@@ -1,6 +1,6 @@
 ---
 title: "Compute Instance"
-permalink: /lab/oci/compute/
+permalink: /lab/oci-compute/
 excerpt: "Erstellen einer Compute Instance"
 ---
 <!-- markdownlint-disable MD013 -->

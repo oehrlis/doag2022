@@ -1,6 +1,6 @@
 ---
 title: "Login"
-permalink: /lab/tf/login/
+permalink: /lab/tf-login/
 excerpt: "Terraform Login und erste Schritte"
 ---
 <!-- markdownlint-disable MD013 -->
@@ -28,11 +28,13 @@ Damit Terraform auf OCI zugreifen kann, muss ein entsprechender API Key vorhande
 sein respektive erstellt werden. Gehe dazu auf die Benutzer Einstellungen in der
 OCI Konsole.
 
-![OCI User Informationen](../../images/1x09-console-user.png)
+_User Settings_ -> _API Key_ -> _Add API Key_.
+
+![OCI User Informationen](../../images/1x09-console-user.png){:width="400px"}
 
 Bei den Ressourcen wähle die API Keys.
 
-![API Key Overview](../../images/1x09-user-API-key-overview.png)
+![API Key Overview](../../images/1x09-user-API-key-overview.png){:width="500px"}
 
 Erstelle einen neuen API Key.
 
@@ -41,7 +43,7 @@ Erstelle einen neuen API Key.
 den Zugriff benötigt und kann später nicht mehr heruntergeladen werden.
 :::
 
-![API Key Generieren](../../images/1x09-user-API-key-new.png)
+![API Key Generieren](../../images/1x09-user-API-key-new.png){:width="500px"}
 
 Zum Abschluss werden die Konfiguration für das OCI-CLI angezeigt. Laden den
 generierten Private sowie Public Key herunter und kopiere die

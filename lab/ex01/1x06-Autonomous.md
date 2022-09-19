@@ -1,6 +1,6 @@
 ---
 title: "Autonomous Database"
-permalink: /lab/oci/atp/
+permalink: /lab/oci-atp/
 excerpt: "Erstellen einer Autonomous Database"
 ---
 <!-- markdownlint-disable MD013 -->
@@ -40,7 +40,6 @@ dass Sie sich im korrekten Compartment befinden.
 | Oracle Database Edition             | Oracle Database Standard Edition (SE)    | keine        |
 | Contact Email                       | Eine gültige Mailadresse                 | keine        |
 
-<img src="../../images/0x01-06-adb-02.png" width="900">
 ![Create Autonomous Datenbank Teil I](../../images/1x01-06-adb-02.png){:width="900px"}
 ![Create Autonomous Datenbank Teil II](../../images/1x01-06-adb-03.png){:width="900px"}
 ![Create Autonomous Datenbank Teil III](../../images/1x01-06-adb-04.png){:width="900px"}
@@ -84,7 +83,7 @@ group by c_region, c_city
 order by count(*);
 ```
 
-![SQL Developer](../../images/1x01-06-adb-08.png){:width="900px"}
+![SQL Developer](../../images/1x01-06-adb-08.png){:width="400px"}
 
 Weitere Schema Queries: <https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/sample-queries.html#GUID-431A16E8-4C4D-4786-BE5C-30029AC1EFD8>
 

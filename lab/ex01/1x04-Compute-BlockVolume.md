@@ -1,6 +1,6 @@
 ---
 title: "Block Volume"
-permalink: /lab/oci/compute-bv/
+permalink: /lab/oci-compute-bv/
 excerpt: "Erstellen eines Block Volumes für eine Compute Instance"
 ---
 <!-- markdownlint-disable MD013 -->

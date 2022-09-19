@@ -1,6 +1,6 @@
 ---
 title: "Autonomous Database"
-permalink: /lab/tf/atp/
+permalink: /lab/tf-atp/
 excerpt: "Erstellen einer Autonomous Database mit Terraform"
 ---
 <!-- markdownlint-disable MD013 -->

@@ -1,6 +1,6 @@
 ---
 title: "Netzwerk"
-permalink: /lab/tf/network/
+permalink: /lab/tf-network/
 excerpt: "VCN Konfiguration mit Terraform"
 ---
 <!-- markdownlint-disable MD013 -->

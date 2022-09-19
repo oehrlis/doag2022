@@ -1,6 +1,6 @@
 ---
 title: "Module"
-permalink: /lab/tf/modules/
+permalink: /lab/tf-modules/
 excerpt: "Verwendung von Terraform Modulen"
 ---
 <!-- markdownlint-disable MD013 -->

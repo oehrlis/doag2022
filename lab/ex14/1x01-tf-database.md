@@ -1,6 +1,6 @@
 ---
 title: "DB System"
-permalink: /lab/tf/db-system/
+permalink: /lab/tf-db-system/
 excerpt: "Erstellen eines DB Systems mit Terraform"
 ---
 <!-- markdownlint-disable MD013 -->

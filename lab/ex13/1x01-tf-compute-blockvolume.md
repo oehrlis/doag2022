@@ -1,6 +1,6 @@
 ---
 title: "Block Volume"
-permalink: /lab/tf/compute-bv/
+permalink: /lab/tf-compute-bv/
 excerpt: "Erstellen eines Block Volumes für eine Compute Instance"
 ---
 <!-- markdownlint-disable MD013 -->

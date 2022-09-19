@@ -1,6 +1,6 @@
 ---
 title: "Compute Instance Anpassen"
-permalink: /lab/tf/compute-adv/
+permalink: /lab/tf-compute-adv/
 excerpt: "Anpassung von Compute Instances mit Terraform"
 ---
 <!-- markdownlint-disable MD013 -->

@@ -1,6 +1,6 @@
 ---
 title: "DB System"
-permalink: /lab/oci/db-system/
+permalink: /lab/oci-db-system/
 excerpt: "Erstellen eines DB Systems"
 ---
 <!-- markdownlint-disable MD013 -->

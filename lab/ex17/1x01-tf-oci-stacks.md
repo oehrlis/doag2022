@@ -1,6 +1,6 @@
 ---
 title: "OCI Stacks"
-permalink: /lab/tf/stacks/
+permalink: /lab/tf-stacks/
 excerpt: "Verwendung von OCI Stacks mit Terraform"
 ---
 <!-- markdownlint-disable MD013 -->
