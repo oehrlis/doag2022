@@ -8,7 +8,7 @@ excerpt: "Erstellen einer Compute Instance mit Terraform"
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
-## Simple Compute Instance
+## Compute Instance mit Terraform
 
 ### Übungsziele {.unlisted .unnumbered}
 

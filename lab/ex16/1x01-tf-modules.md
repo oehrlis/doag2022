@@ -1,5 +1,5 @@
 ---
-title: "Modulen"
+title: "Module"
 permalink: /lab/tf/modules/
 excerpt: "Verwendung von Terraform Modulen"
 ---

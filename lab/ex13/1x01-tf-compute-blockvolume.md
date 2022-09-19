@@ -7,7 +7,7 @@ excerpt: "Erstellen eines Block Volumes für eine Compute Instance"
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
-## Compute Instance mit Block Volume
+## Block Volume mit Terraform
 
 ### Übungsziele {.unlisted .unnumbered}
 

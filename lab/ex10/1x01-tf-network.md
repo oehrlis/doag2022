@@ -7,7 +7,7 @@ excerpt: "VCN Konfiguration mit Terraform"
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
-## Terraform Konfiguration
+## Terraform Netzwerk Konfiguration
 
 ### Übungsziele {.unlisted .unnumbered}
 

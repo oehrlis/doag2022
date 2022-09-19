@@ -7,7 +7,7 @@ excerpt: "Erstellen einer Autonomous Database mit Terraform"
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
-## Autonomous Database
+## Autonomous Database mit Terraform
 
 ### Übungsziele {.unlisted .unnumbered}
 

@@ -22,24 +22,31 @@ Table: Workshop Übungen zum Thema Einführung
 
 ## OCI Walkthrough
 
-| ID | Thema                                                      | Beschreibung                                                | Dauer |
-|----|------------------------------------------------------------|-------------------------------------------------------------|-------|
-| 03 | [Netzwerk](#vcn-basics)                          | Konfiguration von Virtual Cloud Networks                    | 15    |
-| 04 | [Compute](#simple-compute-instance)                       | Konfiguration einer Compute Instance                        | 15    |
+| ID | Thema                                                         | Beschreibung                                                | Dauer |
+|----|---------------------------------------------------------------|-------------------------------------------------------------|-------|
+| 03 | [Netzwerk](#vcn-basics)                                       | Konfiguration von Virtual Cloud Networks                    | 15    |
+| 04 | [Compute Instance](#simple-compute-instance)                  | Konfiguration einer Compute Instance                        | 15    |
 | 04 | [Compute Load Balancer](#compute-instances-mit-load-balancer) | Konfiguration von Compute Instances mit einem Load Balancer | 20    |
-| 04 | [Compute Block Volume](#compute-instance-mit-block-volume)   | Konfiguration von Block Volumes für eine Compute Instance   | 20    |
-| 05 | [DB System](ex01/1x05-Database.md)                         | Konfiguration eines DB Systems                              | 30    |
-| 06 | [Autonomous](ex01/1x05-Database.md)                        | Konfiguration einer Autonomous Databases                    | 30    |
-| 07 | [Object Store](ex01/0x06-Autonomous.md)                    | Konfiguration von Object Storages                           | 15    |
-| 08 | [OCI Command line](ex01/0x08-OCI-CLI.md)                   | Konfiguration und Einsatz des OCI Command Line Utilities    | 15    |
+| 04 | [Compute Block Volume](#compute-instance-mit-block-volume)    | Konfiguration von Block Volumes für eine Compute Instance   | 20    |
+| 05 | [DB System](#database-system)                                 | Konfiguration eines DB Systems                              | 30    |
+| 06 | [Autonomous](#autonomous-database)                            | Konfiguration einer Autonomous Databases                    | 30    |
+| 07 | [Object Store](#object-storage)                               | Konfiguration von Object Storages                           | 15    |
+| 08 | [OCI Command line](#oci-command-line-interface)               | Konfiguration und Einsatz des OCI Command Line Utilities    | 15    |
 
 Table: Workshop Übungen zum Thema OCI Walkthrough
 
 ## Terraform Kickstart
 
-| ID | Thema                                    | Beschreibung                                             | Dauer |
-|----|------------------------------------------|----------------------------------------------------------|-------|
-| 03 | [Netzwerk](ex02/1x03-Network.md)         | Konfiguration von Virtual Cloud Networks                 | 20    |
-| 04 | [Compute](ex02/0x04-Compute.md)          | Konfiguration von Compute Instances                      | 20    |
+| ID | Thema                                                   | Beschreibung                                                   | Dauer |
+|----|---------------------------------------------------------|----------------------------------------------------------------|-------|
+| 09 | [Login](#terraform-konfiguration)                       | Konfiguration Terraform Login und erste Schritte mit Terraform | 10    |
+| 10 | [Netzwerk](#terraform-netzwerk-konfiguration)           | Erstellen und Konfiguration von Virtual Cloud Networks         | 20    |
+| 11 | [Compute Instance](#compute-instance-mit-terraform)     | Erstellen von Compute Instances                                | 20    |
+| 12 | [Compute Instance Anpassen](#compute-instance-anpassen) | Anpassung von Compute Instances                                | 20    |
+| 13 | [Compute Block Volume](#block-volume-mit-terraform)     | Konfiguration von Block Volumes für eine Compute Instance      | 20    |
+| 14 | [DB System](#block-volume-mit-terraform)                | Konfiguration eines DB Systems                                 | 20    |
+| 15 | [Autonomous](#autonomous-database-mit-terraform)        | Konfiguration einer Autonomous Databases                       | 20    |
+| 16 | [Modules](#terraform-module)                            | Verwendung von Terraform Modulen                               | 20    |
+| 17 | [OCI Stacks](#oci-stacks)                               | Nutzung von OCI Stacks                                         | 20    |
 
 Table: Workshop Übungen zum Thema Terraform Kickstart

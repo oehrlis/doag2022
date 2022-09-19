@@ -7,7 +7,7 @@ excerpt: "Verwendung von OCI Stacks mit Terraform"
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
-## Terraform Konfiguration
+## OCI Stacks
 
 ### Übungsziele {.unlisted .unnumbered}
 

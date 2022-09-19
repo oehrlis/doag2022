@@ -8,7 +8,7 @@ excerpt: "Erstellen eines DB Systems mit Terraform"
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
 
-## Database System
+## Database System mit Terraform
 
 ### Übungsziele {.unlisted .unnumbered}
 
