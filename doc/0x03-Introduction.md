@@ -35,9 +35,6 @@ Nach der Teilnahme an unserem *Oracle Cloud Infrastruktur* Workshop, werden Sie
 - in der Lage sein, eine grundlegende Replikation einzurichten, zu konfigurieren und Fehler zu beheben.
 - die üblichen Anwendungsfälle der OUD-Wiederherstellung kennen.
 
-
-Übersetzt mit www.DeepL.com/Translator (kostenlose Version)
-
 After attending our *Oracle Unified Directory* workshop, you will
 
 - gain practical experience in the use of Oracle Unified Directory.
