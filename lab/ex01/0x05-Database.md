@@ -115,9 +115,9 @@ Bleiben Sie zur Installation vom Oracle Instant Client mit der Compute Instance 
 
 ```bash
 sudo dnf list installed | grep instantclient
-sudo dnf install oracle-instantclient-release-el8
-sudo dnf install oracle-instantclient-basic
-sudo dnf install oracle-instantclient-sqlplus
+sudo dnf -y install oracle-instantclient-release-el8
+sudo dnf -y install oracle-instantclient-basic
+sudo dnf -y install oracle-instantclient-sqlplus
 ```
 
 # Easy Connect vom Applikationsserver

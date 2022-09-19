@@ -73,7 +73,7 @@ die Public und Private IP.
  wird der private SSH Key und die Public IP benötigt.
 
  ```bash
-ssh -i ~.ssh/id_rsa_student01 opc@130.61.243.7
+ssh -i ~/.ssh/id_rsa_student01 opc@130.61.243.7
 exit
 ```
 

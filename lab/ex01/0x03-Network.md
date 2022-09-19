@@ -107,7 +107,7 @@ Fügen Sie folgende Route hinzu:
 
 | Target Type                  | Value                   | Bemerkungen  |
 |:-----------------------------|:------------------------|:-------------|
-| Internet Gateway             | rt-doag-student-public  | keine        |
+| NAT      Gateway             | rt-doag-student-public  | keine        |
 | Destination CIDR Block       | 0.0.0.0/0               | keine        |
 | Target NAT Gateway           | ngw-doag-student-01     | keine        |
 
