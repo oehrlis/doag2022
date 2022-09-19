@@ -1,6 +1,6 @@
 ---
 title: "Workshop Downloads"
-permalink: /others/download
+permalink: /others/downloads/
 excerpt: "Downloads zum O-OCI-WS Workshop"
 ---
 <!-- markdownlint-disable MD033 -->
