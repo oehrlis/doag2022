@@ -59,20 +59,28 @@ lab:
 
   - title: Übungen Terraform
     children:
-      - title: "Working with Posts"
-        url: /docs/posts/
-      - title: "Working with Pages"
-        url: /docs/pages/
-      - title: "Working with Collections"
-        url: /docs/collections/
-      - title: "Helpers"
-        url: /docs/helpers/
-      - title: "Utility Classes"
-        url: /docs/utility-classes/
+      - title: "Login"
+        url: /lab/tf/login/
+      - title: "Netzwerk"
+        url: /lab/tf/network/
+      - title: "Compute Instance"
+        url: /lab/tf/compute/
+      - title: "Compute Instance Anpassen"
+        url: /lab/tf/compute-adv/
+      - title: "Block Volume"
+        url: /lab/tf/compute-bv/
+      - title: "DB System"
+        url: /lab/tf/db-system/
+      - title: "Autonomous Database"
+        url: /lab/tf/atp/
+      - title: "Module"
+        url: /lab/tf/modules/
+      - title: "OCI Stacks"
+        url: /lab/tf/stacks/
 
   - title: Extras
     children:
-      - title: "Unterlagen"
-        url: /others/
+      - title: "Downloads"
+        url: /others/downloads
       - title: "Links"
-        url: /others/
+        url: /others/links
