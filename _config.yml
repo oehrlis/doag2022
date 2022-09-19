@@ -84,6 +84,7 @@ exclude:
   - doc/metadata_requirements.yml
   - lab/README.md
   - lab/ex01/1x01-Intro.md
+  - lab/ex09/1x01-tf-intro.md
 
 defaults:
   -
