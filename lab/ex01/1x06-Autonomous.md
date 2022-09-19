@@ -72,7 +72,9 @@ _ADB_ -> _DB Connection_ -> _Download Wallet_
 
 Testen Sie die Verbindung und Speichern Sie sie.
 
-<img src="../../images/0x01-06-adb-07.png" width="900">
+![SQL Developer Verbindung Testen](../../images/1x01-06-adb-07.png){:width="900px"}
+
+<img src="../../images/1x01-06-adb-07.png" width="900">
 
 Die Autonomous Database steht zur Verwendung bereit. Testen Sie das Demo Dataset im Schema _SSB_.
 
