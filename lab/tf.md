@@ -5,15 +5,6 @@ excerpt: "Einführung in den OCI Workshop (O-OCI-WS)"
 ---
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-configure-file { "MD013": { "tables": false } } -->
-# Übungen
-
-Die Übungen sind in einzelnen Verzeichnissen gruppiert und können Teilweise
-unabhängig voneinander durchgeführt werden. Jede Übung enthält mindestens eine kurze
-Beschreibung der Aufgaben sowie eine Lösung. Darüber hinaus sind Skripte, etc.
-Bestandteil jeder Übung. Für Übungen, bei denen Software (Oracle Binaries, Patch)
-oder Code aus anderen Git-Repositories benötigt wird, verweisen wir entsprechend
-darauf. Alle Übungen stehen auch via GitHub Repository
-[oehrlis/doag2022](https://github.com/oehrlis/doag2022) zur Verfügung.
 
 ## Terraform Kickstart
 
@@ -31,4 +22,4 @@ darauf. Alle Übungen stehen auch via GitHub Repository
 
 Table: Workshop Übungen zum Thema Terraform Kickstart
 
-Weiter zum Kapitel [OCI Walkthrough](lab/README-oci.md)
+Weiter zum Kapitel [OCI Walkthrough](lab/oci.md)
