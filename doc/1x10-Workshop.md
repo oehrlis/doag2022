@@ -1,9 +1,5 @@
----
-title: "Workshop Übersicht"
-permalink: /doc/workshop/
-excerpt: "Einführung in den OCI Workshop (O-OCI-WS)"
----
 <!-- markdownlint-disable MD025 -->
+<!-- markdownlint-disable MD051 -->
 <!-- markdownlint-configure-file { "MD013": { "tables": false } } -->
 # Übungen
 
@@ -19,8 +15,8 @@ darauf. Alle Übungen stehen auch via GitHub Repository
 
 | ID | Thema                                    | Beschreibung                                             | Dauer |
 |----|------------------------------------------|----------------------------------------------------------|-------|
-| 01 | [Architektur](ex01/1x01-Architecture.md) | Übersicht der OCI Architektur für den Walkthrough.       | 10    |
-| 02 | [OCI Login](ex01/1x02-Login.md)          | Erstes Login in Oracle Cloud Infrastructure (OCI)        | 15    |
+| 01 | [Architektur](#architektur)              | Übersicht der OCI Architektur für den Walkthrough.       | 10    |
+| 02 | [OCI Login](#oci-konsole-login)          | Erstes Login in Oracle Cloud Infrastructure (OCI)        | 15    |
 
 Table: Workshop Übungen zum Thema Einführung
 
@@ -28,10 +24,10 @@ Table: Workshop Übungen zum Thema Einführung
 
 | ID | Thema                                                      | Beschreibung                                                | Dauer |
 |----|------------------------------------------------------------|-------------------------------------------------------------|-------|
-| 03 | [Netzwerk](ex01/1x03-Network.md)                           | Konfiguration von Virtual Cloud Networks                    | 15    |
-| 04 | [Compute](ex01/1x04-Compute.md)                            | Konfiguration einer Compute Instance                        | 15    |
-| 04 | [Compute Load Balancer](ex01/1x04-Compute-LoadBalancer.md) | Konfiguration von Compute Instances mit einem Load Balancer | 20    |
-| 04 | [Compute Block Volume](ex01/1x04-Compute-BlockVolume.md)   | Konfiguration von Block Volumes für eine Compute Instance   | 20    |
+| 03 | [Netzwerk](#vcn-basics)                          | Konfiguration von Virtual Cloud Networks                    | 15    |
+| 04 | [Compute](#simple-compute-instance)                       | Konfiguration einer Compute Instance                        | 15    |
+| 04 | [Compute Load Balancer](#compute-instances-mit-load-balancer) | Konfiguration von Compute Instances mit einem Load Balancer | 20    |
+| 04 | [Compute Block Volume](#compute-instance-mit-block-volume)   | Konfiguration von Block Volumes für eine Compute Instance   | 20    |
 | 05 | [DB System](ex01/1x05-Database.md)                         | Konfiguration eines DB Systems                              | 30    |
 | 06 | [Autonomous](ex01/1x05-Database.md)                        | Konfiguration einer Autonomous Databases                    | 30    |
 | 07 | [Object Store](ex01/0x06-Autonomous.md)                    | Konfiguration von Object Storages                           | 15    |
