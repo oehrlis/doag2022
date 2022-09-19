@@ -94,7 +94,7 @@ jobs:
       # Create a variable for a list of MD files
       - name: Populate env variables
         run: |
-          echo "MD_FILES=$(printf '%s ' ${{ env.DOC_FOLDER }}/[0-8]x??-*.md ${{ env.LAB_FOLDER }}/ex??/?x??-*.md ${{ env.DOC_FOLDER }}/9x??-*.md)" >> $GITHUB_ENV
+          echo "MD_FILES=$(printf '%s ' ${{ env.DOC_FOLDER }}/[0-8]x??-*.md ${{ env.LAB_FOLDER }}/?x??-*.md ${{ env.LAB_FOLDER }}/ex??/?x??-*.md ${{ env.DOC_FOLDER }}/9x??-*.md)" >> $GITHUB_ENV
       # Update the image base folder to match image page during pandoc build
       - name: Simplify image resource path
         run: |
