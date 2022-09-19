@@ -79,6 +79,7 @@ exclude:
   - README.md
   - CHANGELOG.md
   - doc/0x01-Preface.md
+  - doc/1x10-Workshop.md
   - doc/metadata.yml
   - doc/metadata_requirements.yml
   - lab/README.md
