@@ -2,12 +2,12 @@
 # Trivadis - Part of Accenture, Platform Factory - Data Platforms
 # Saegereistrasse 29, 8152 Glattbrugg, Switzerland
 # -----------------------------------------------------------------------------
-# Name.......: _config.yml
+# Name.......: navigation.yml
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@trivadis.com
 # Editor.....: Stefan Oehrli
-# Date.......: 2022.09.18
+# Date.......: 2022.09.19
 # Revision...: 
-# Purpose....: Jekyll Configuration
+# Purpose....: Webpage navigation
 # Notes......: --
 # Reference..: --
 # License....: Apache License Version 2.0, January 2004 as shown
@@ -15,8 +15,8 @@
 # -----------------------------------------------------------------------------
 main:
   - title: "Einführung"
-    url: /doc/
-    description: "Workshop Dokumentation"
+    url: /doc/introduction/
+    description: "Einführung in den OCI Workshop (O-OCI-WS)"
   - title: "Übungen"
     url: /lab/
     description: "Labor und Übungen"
@@ -27,27 +27,35 @@ main:
 lab:
   - title: Einführung
     children:
-      - title: "Quick-Start Guide"
-        url: /docs/quick-start-guide/
-      - title: "Structure"
-        url: /docs/structure/
-      - title: "Installation"
-        url: /docs/installation/
-      - title: "Upgrading"
-        url: /docs/upgrading/
+      - title: "Einführung"
+        url: /doc/introduction/
+      - title: "Anforderungen"
+        url: /doc/requirements/
+      - title: "Lab Umgebung"
+        url: /doc/lab/
+      - title: "Workshop Übersicht"
+        url: /doc/workshop/
 
   - title: Übungen OCI
     children:
-      - title: "Configuration"
-        url: /docs/configuration/
-      - title: "Navigation"
-        url: /docs/navigation/
-      - title: "UI Text"
-        url: /docs/ui-text/
-      - title: "Authors"
-        url: /docs/authors/
-      - title: "Layouts"
-        url: /docs/layouts/
+      - title: "Login"
+        url: /lab/login/
+      - title: "Netzwerk"
+        url: /lab/network/
+      - title: "Compute Instance"
+        url: /lab/compute/
+      - title: "Load Balancer"
+        url: /lab/compute-lb/
+      - title: "Block Volume"
+        url: /lab/compute-bv/
+      - title: "DB System"
+        url: /lab/db-system/
+      - title: "Autonomous Database"
+        url: /lab/atp/
+      - title: "Object Storage"
+        url: /lab/object-storage/
+      - title: "OCI CLI"
+        url: /lab/oci-cli/
 
   - title: Übungen Terraform
     children:
