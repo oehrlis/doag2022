@@ -99,14 +99,14 @@ jobs:
       # Create a variable for a list of MD files
       - name: Populate env variables
         run: |
-          echo "MD_FILES=$(printf '%s ' ${{ env.DOC_FOLDER }}/[0-8]x??-*.md ${{ env.LAB_FOLDER }}/?x??-*.md ${{ env.LAB_FOLDER }}/ex??/?x??-*.md ${{ env.DOC_FOLDER }}/9x??-*.md)" >> $GITHUB_ENV
+          echo "MD_FILES=$(printf '%s ' ${{ env.DOC_FOLDER }}/[0-8]x??-*.md ${{ env.LAB_FOLDER }}/ex??/?x??-*.md ${{ env.DOC_FOLDER }}/9x??-*.md)" >> $GITHUB_ENV
       # Update the image base folder to match image page during pandoc build
       - name: Preparing Markdown files for pandoc (fix image path, remove front matter,...)
         run: |
           for i in $MD_FILES ;do
             echo "process file $i"
             sed -i 's|\(./\)*../../images/|images/|' $i
-            sed '1{/^---$/!q;};1,/^---$/d' $i
+            sed -i '1{/^---$/!q;};1,/^---$/d' $i
           done
       # Build PDF using docker images oehrlis/pandoc
       - name: run pandoc to build pdf document
