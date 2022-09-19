@@ -15,9 +15,6 @@ in einem zweiten Teil mit dem Thema Infrastructure as Code (IaC). In praktischen
 Übungen konfigurieren wir Terraform und deployen anschließend unterschiedliche
 Ressourcen mithilfe von Terraform und OCI Stacks.
 
-Voraussetzungen für die Schulung finden Sie zum Download weiter unten. Bitte
-beachten Sie: GitHub repo ist erst an der Konferenz geöffnet
-
 ## Ausbildungsziele {.unlisted .unnumbered}
 
 Mit Fokus auf die Oracle Cloud Infrastruktur (OCI), Infrastructure as Code (IaC)
@@ -51,19 +48,20 @@ dieses Dokument jederzeit ohne Vorankündigung zu überarbeiten.
 - **Document:**          O-OCI-WS Labor- und Übungsleitfaden
 - **Classification:**    public
 - **Status:**            Work in progress
-- **Last changes:**      2022.09.02
+- **Last changes:**      2022.09.19
 - **Document name:**     O-OCI-WS_lab_de.pdf
 
-| Hauptautoren  | Mitwirkende & Reviewer                    |
-|------------------------------|--------------------------|
-| Stefan Oehrli, Martin Berger |                          |
+| Hauptautoren                 | Mitwirkende & Reviewer |
+|------------------------------|------------------------|
+| Stefan Oehrli, Martin Berger |                        |
 
 Table: Übersicht der Autoren
 
 ## Revisionshistorie {.unlisted .unnumbered}
 
-| Version | Datum      | Visum | Bemerkung                               |
-|---------|------------|------|-------------------------------|
-| 0.0.1   | 2022.09.08 | soe  | Initial release               |
+| Version | Datum      | Visum | Bemerkung       |
+|---------|------------|-------|-----------------|
+| 0.0.1   | 2022.09.08 | soe   | Initial release |
+| 0.2.1   | 2022.09.18 | soe   | OCI Walkthrough |
 
 Table: Historie der Änderungen
