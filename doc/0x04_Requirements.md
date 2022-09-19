@@ -1,5 +1,11 @@
-# Anforderungen Oracle Cloud (OCI) Kickstart Workshop
+---
+title: "Anforderungen"
+permalink: /doc/requirements/
+excerpt: "Einführung in den OCI Workshop (O-OCI-WS)"
+---
 <!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD025 -->
+# Anforderungen Oracle Cloud (OCI) Kickstart Workshop
 
 Wolltest Du schon immer einmal die Möglichkeiten der
 *Oracle Cloud Infrastruktur (OCI)* genauer anschauen, hattest aber nie Zeit gefunden?

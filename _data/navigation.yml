@@ -1,0 +1,78 @@
+# -----------------------------------------------------------------------------
+# Trivadis - Part of Accenture, Platform Factory - Data Platforms
+# Saegereistrasse 29, 8152 Glattbrugg, Switzerland
+# -----------------------------------------------------------------------------
+# Name.......: navigation.yml
+# Author.....: Stefan Oehrli (oes) stefan.oehrli@trivadis.com
+# Editor.....: Stefan Oehrli
+# Date.......: 2022.09.19
+# Revision...: 
+# Purpose....: Webpage navigation
+# Notes......: --
+# Reference..: --
+# License....: Apache License Version 2.0, January 2004 as shown
+#              at http://www.apache.org/licenses/
+# -----------------------------------------------------------------------------
+main:
+  - title: "Einführung"
+    url: /doc/introduction/
+    description: "Einführung in den OCI Workshop (O-OCI-WS)"
+  - title: "Übungen"
+    url: /lab/
+    description: "Labor und Übungen"
+  - title: "Extras"
+    url: /others/
+    description: "Links, PDF und weiteres"
+
+lab:
+  - title: Einführung
+    children:
+      - title: "Einführung"
+        url: /doc/introduction/
+      - title: "Anforderungen"
+        url: /doc/requirements/
+      - title: "Lab Umgebung"
+        url: /doc/lab/
+      - title: "Workshop Übersicht"
+        url: /doc/workshop/
+
+  - title: Übungen OCI
+    children:
+      - title: "Login"
+        url: /lab/login/
+      - title: "Netzwerk"
+        url: /lab/network/
+      - title: "Compute Instance"
+        url: /lab/compute/
+      - title: "Load Balancer"
+        url: /lab/compute-lb/
+      - title: "Block Volume"
+        url: /lab/compute-bv/
+      - title: "DB System"
+        url: /lab/db-system/
+      - title: "Autonomous Database"
+        url: /lab/atp/
+      - title: "Object Storage"
+        url: /lab/object-storage/
+      - title: "OCI CLI"
+        url: /lab/oci-cli/
+
+  - title: Übungen Terraform
+    children:
+      - title: "Working with Posts"
+        url: /docs/posts/
+      - title: "Working with Pages"
+        url: /docs/pages/
+      - title: "Working with Collections"
+        url: /docs/collections/
+      - title: "Helpers"
+        url: /docs/helpers/
+      - title: "Utility Classes"
+        url: /docs/utility-classes/
+
+  - title: Extras
+    children:
+      - title: "Unterlagen"
+        url: /others/
+      - title: "Links"
+        url: /others/

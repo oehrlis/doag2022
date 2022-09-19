@@ -1,0 +1,234 @@
+# ----------------------------------------------------------------------------
+# Trivadis AG, Infrastructure Managed Services
+# Saegereistrasse 29, 8152 Glattbrugg, Switzerland
+# ----------------------------------------------------------------------------
+# Name.......: tagged-release.yaml 
+# Author.....: Stefan Oehrli (oes) stefan.oehrli@trivadis.com
+# Editor.....: Stefan Oehrli
+# Date.......: 2022.09.16
+# Revision...: 
+# Purpose....: GitHub action to create a tagged release
+# Notes......: --
+# Reference..: https://github.com/DavidAnson/markdownlint
+# ----------------------------------------------------------------------------
+name: Doc and web tagged release
+
+on:
+  push:
+    tags:
+      - "v*"
+    
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+  LANGUAGE: de
+  NAME_PREFIX: O-OCI-WS
+  DOC_FOLDER: doc
+  LAB_FOLDER: lab
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # - Check Markdown -----------------------------------------------------------
+  # job to check the documentation
+  check_docs:
+    name: Check Markdown
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      # Check Markdown using markdownlint-cli from docker images 06kellyjac/markdownlint-cli
+      - name: run markdownlint-cli
+        uses: docker://06kellyjac/markdownlint-cli
+        with:
+          args: .
+
+# - Build requirements documentation -------------------------------------------
+  # Job to build the requirements documentation
+  build_req_doc:
+    needs: check_docs
+    name: Build requirements PDF document
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Build PDF using docker images oehrlis/pandoc
+      - name: run pandoc to build pdf document
+        uses: docker://oehrlis/pandoc
+        with:
+          args: >-
+            --pdf-engine=xelatex 
+            --listings
+            --metadata-file=doc/metadata_requirements.yml
+            --resource-path=.:images
+            --filter pandoc-latex-environment
+            --output=${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf ${{ env.DOC_FOLDER }}/0x04_Requirements.md
+      
+      # Upload generated pdf document as artifact
+      - name: Upload pdf document as artifact 
+        uses: actions/upload-artifact@master
+        with:
+          name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
+          path: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
+
+# - Build lab documentation ----------------------------------------------------
+  # Job to build the lab and exercise guide
+  build_lab_doc:
+    needs: check_docs
+    name: Build Lab and Exercise Guide
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Create a variable for a list of MD files
+      - name: Populate env variables
+        run: |
+          echo "MD_FILES=$(printf '%s ' ${{ env.DOC_FOLDER }}/[0-8]x??-*.md ${{ env.LAB_FOLDER }}/?x??-*.md ${{ env.LAB_FOLDER }}/ex??/?x??-*.md ${{ env.DOC_FOLDER }}/9x??-*.md)" >> $GITHUB_ENV
+      # Update the image base folder to match image page during pandoc build
+      - name: Simplify image resource path
+        run: |
+          for i in $MD_FILES ;do
+            echo "process file $i"
+            sed -i 's|\(./\)*../../images/|images/|' $i
+          done
+      # Build PDF using docker images oehrlis/pandoc
+      - name: run pandoc to build pdf document
+        uses: docker://oehrlis/pandoc
+        with:
+          args: >-
+            --pdf-engine=xelatex 
+            --listings
+            --metadata-file=doc/metadata.yml
+            --resource-path=.:images
+            --filter pandoc-latex-environment
+            --output=${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf ${{ env.MD_FILES }}
+
+      # Upload generated pdf document as artifact
+      - name: Upload pdf document as artifact 
+        uses: actions/upload-artifact@master
+        with:
+          name: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
+          path: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
+          
+# - Draft release ------------------------------------------------------------
+# Job to build a draft release
+  tagged-release:
+    needs: [build_lab_doc, build_req_doc] 
+    name: Create a tagged release
+    runs-on: ubuntu-latest
+
+    steps:
+      # download generated pdf document from artifact
+      - name: Get lab document from artifact store
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
+
+      # download generated requirements pdf document from artifact
+      - name: Get requirements document from artifact store
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
+
+      - id: release
+        name: Check if release does exists
+        uses: cardinalby/git-get-release-action@v1
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        with: 
+          tag: ${{ github.ref_name }}
+          prerelease: false
+          doNotFailIfNotFound: true
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        name: Create new release for $GITHUB_REF_NAME
+        if: ${{ steps.release.outputs.id == '' }}
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
+            ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
+
+      - name: Update release $GITHUB_REF_NAME
+        uses: Roang-zero1/github-upload-release-artifacts-action@master
+        if: ${{ steps.release.outputs.id != '' }}
+        with:
+          args:
+            ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
+            ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+  # Build job
+  build_web:
+    name: Build Jekyll base Github pages
+    runs-on: ubuntu-latest
+    needs: [build_lab_doc, build_req_doc] 
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+
+      # download generated pdf document from artifact
+      - name: Get lab document from artifact store
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
+          path: others
+
+      # download generated requirements pdf document from artifact
+      - name: Get requirements document from artifact store
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
+          path: others
+
+      # Remove special syntax in Markdown files
+      - name: Remove special syntax in Markdown files
+        run: |
+          for i in $(find . -name "*.md"); do
+            echo "process file $i"
+            sed -i 's|{.unlisted .unnumbered}||' $i
+            sed -i 's|{-}||' $i
+            sed -i '/^:::/d' $i
+          done
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+
+  # Deployment job
+  deploy_web:
+    name: Deploy Github pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build_web
+    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+# --- EOF -------------------------------------------------------------------

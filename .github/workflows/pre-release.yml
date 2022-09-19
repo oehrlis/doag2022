@@ -1,0 +1,159 @@
+# ----------------------------------------------------------------------------
+# Trivadis AG, Infrastructure Managed Services
+# Saegereistrasse 29, 8152 Glattbrugg, Switzerland
+# ----------------------------------------------------------------------------
+# Name.......: pre-release.yaml 
+# Author.....: Stefan Oehrli (oes) stefan.oehrli@trivadis.com
+# Editor.....: Stefan Oehrli
+# Date.......: 2022.09.16
+# Revision...: 
+# Purpose....: GitHub action to create a pre-release
+# Notes......: --
+# Reference..: https://github.com/DavidAnson/markdownlint
+# ----------------------------------------------------------------------------
+name: Doc pre-release
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '.github/**'
+    tags-ignore:
+      - "v*"  
+
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - '.github/**'
+    tags-ignore:
+      - "v*"  
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+  LANGUAGE: de
+  NAME_PREFIX: O-OCI-WS
+  DOC_FOLDER: doc
+  LAB_FOLDER: lab
+
+jobs:
+  # - Check Markdown -----------------------------------------------------------
+  # job to check the documentation
+  check_docs:
+    name: Check Markdown
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      # Check Markdown using markdownlint-cli from docker images 06kellyjac/markdownlint-cli
+      - name: run markdownlint-cli
+        uses: docker://06kellyjac/markdownlint-cli
+        with:
+          args: .
+
+# - Build requirements documentation -------------------------------------------
+  # Job to build the requirements documentation
+  build_req_doc:
+    needs: check_docs
+    name: Build requirements PDF document
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Build PDF using docker images oehrlis/pandoc
+      - name: run pandoc to build pdf document
+        uses: docker://oehrlis/pandoc
+        with:
+          args: >-
+            --pdf-engine=xelatex 
+            --listings
+            --metadata-file=doc/metadata_requirements.yml
+            --resource-path=.:images
+            --filter pandoc-latex-environment
+            --output=${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf ${{ env.DOC_FOLDER }}/0x04_Requirements.md
+      
+      # Upload generated pdf document as artifact
+      - name: Upload pdf document as artifact 
+        uses: actions/upload-artifact@master
+        with:
+          name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
+          path: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
+
+# - Build lab documentation ----------------------------------------------------
+  # Job to build the lab and exercise guide
+  build_lab_doc:
+    needs: check_docs
+    name: Build Lab and Exercise Guide
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Create a variable for a list of MD files
+      - name: Populate env variables
+        run: |
+          echo "MD_FILES=$(printf '%s ' ${{ env.DOC_FOLDER }}/[0-8]x??-*.md ${{ env.LAB_FOLDER }}/?x??-*.md ${{ env.LAB_FOLDER }}/ex??/?x??-*.md ${{ env.DOC_FOLDER }}/9x??-*.md)" >> $GITHUB_ENV
+      # Update the image base folder to match image page during pandoc build
+      - name: Simplify image resource path
+        run: |
+          for i in $MD_FILES ;do
+            echo "process file $i"
+            sed -i 's|\(./\)*../../images/|images/|' $i
+          done
+      # Build PDF using docker images oehrlis/pandoc
+      - name: run pandoc to build pdf document
+        uses: docker://oehrlis/pandoc
+        with:
+          args: >-
+            --pdf-engine=xelatex 
+            --listings
+            --metadata-file=doc/metadata.yml
+            --resource-path=.:images
+            --filter pandoc-latex-environment
+            --output=${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf ${{ env.MD_FILES }}
+
+      # Upload generated pdf document as artifact
+      - name: Upload pdf document as artifact 
+        uses: actions/upload-artifact@master
+        with:
+          name: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
+          path: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
+          
+# - Draft release ------------------------------------------------------------
+# Job to build a draft release
+  pre-release:
+    needs: [build_lab_doc, build_req_doc] 
+    name: Create draft release
+    runs-on: ubuntu-latest
+
+    steps:
+      # download generated pdf document from artifact
+      - name: Get lab document from artifact store
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
+
+      # download generated requirements pdf document from artifact
+      - name: Get requirements document from artifact store
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development build of documents"
+          files: |
+            ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
+            ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
+
+# --- EOF -------------------------------------------------------------------

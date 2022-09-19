@@ -1,8 +1,10 @@
-# doag2022
+<!-- markdownlint-disable MD033 -->
+# DOAG 2022
 
 DOAG Schulungstag 2022 - Oracle Cloud Infrastructure (OCI) Kickstart Workshop mit
 Oehrli und Berger - mit Freunden in der Cloud unterwegs
 
+<<<<<<< HEAD
 ## Links
 
 ### Labs Manuell
@@ -15,6 +17,10 @@ Oehrli und Berger - mit Freunden in der Cloud unterwegs
 - [0x04 - Compute Block Volume](/lab/ex01/0x04-Compute-BlockVolume.md)
 - [0x05 - Database](/lab/ex01/0x05-Database.md)
 - [0x06 - Autonomous](/lab/ex01/0x06-Autonomous.md)
+=======
+- Links, Referenzen sowie Übungsunterlagen als PDF [Resources](./others/README.md)
+- Übungen [Lab](./lab/README.md)
+>>>>>>> defbbdb212b38e674748465813b1df582330c04c
 
 ## Zeitplan
 
@@ -32,7 +38,7 @@ Oehrli und Berger - mit Freunden in der Cloud unterwegs
 ## Themen
 
 - Einstieg Überblick Terraform und OCI Stacks
-  - Deployment vs konfiguration
+  - Deployment vs Konfiguration
 - Konfiguration von Terraform
 - Einfaches deployment mit Terraform
 - Deployment mit OCI Stacks
