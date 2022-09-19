@@ -104,7 +104,7 @@ terraform init
 Terraform erstellt im lokalen Verzeichnis ein neues Verzeichnis *.terraform*. Da
 ist die aktuelle Version des OCI Providers sowie weiteres abgelegt (z.B. Module).
 
-### ### Konfiguration OCI Provider mit Terraform Variablen
+### Konfiguration OCI Provider mit Terraform Variablen
 
 Das direkte abspeichern der Provider Konfiguration in den Terraform Dateien ist
 nicht ganz ideal. Aus diesem Grund werden für die Informationen entsprechende

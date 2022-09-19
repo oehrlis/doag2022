@@ -39,23 +39,23 @@ lab:
   - title: Übungen OCI
     children:
       - title: "Login"
-        url: /lab/login/
+        url: /lab/oci/login/
       - title: "Netzwerk"
-        url: /lab/network/
+        url: /lab/oci/network/
       - title: "Compute Instance"
-        url: /lab/compute/
+        url: /lab/oci/compute/
       - title: "Load Balancer"
-        url: /lab/compute-lb/
+        url: /lab/oci/compute-lb/
       - title: "Block Volume"
-        url: /lab/compute-bv/
+        url: /lab/oci/compute-bv/
       - title: "DB System"
-        url: /lab/db-system/
+        url: /lab/oci/db-system/
       - title: "Autonomous Database"
-        url: /lab/atp/
+        url: /lab/oci/atp/
       - title: "Object Storage"
-        url: /lab/object-storage/
+        url: /lab/oci/object-storage/
       - title: "OCI CLI"
-        url: /lab/oci-cli/
+        url: /lab/oci/oci-cli/
 
   - title: Übungen Terraform
     children:
