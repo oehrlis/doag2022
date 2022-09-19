@@ -78,8 +78,11 @@ exclude:
   - LICENSE
   - README.md
   - CHANGELOG.md
-  - ./doc/metadata.yml
-  - ./doc/metadata_requirements.yml
+  - doc/0x01-Preface.md
+  - doc/metadata.yml
+  - doc/metadata_requirements.yml
+  - lab/README.md
+  - lab/ex01/1x01-Intro.md
 
 defaults:
   -
@@ -102,17 +105,17 @@ defaults:
       sidebar:
         nav: "lab"
 
-collections_dir: lab
-collections:
-  ex00:
-    output: true
-    permalink: /:name
-  ex01:
-    output: true
-    permalink: /:name
-  ex02:
-    output: true
-    permalink: /:name 
+# collections_dir: lab
+# collections:
+#   ex00:
+#     output: true
+#     permalink: /:name
+#   ex01:
+#     output: true
+#     permalink: /:name
+#   ex02:
+#     output: true
+#     permalink: /:name 
 
 # defaults:
 # - scope:
