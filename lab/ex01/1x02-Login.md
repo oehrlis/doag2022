@@ -17,10 +17,10 @@ Ziel ist das Login in die OCI Konsole und das finden der eigenen Einstellungen w
 
 Login in die OCI Konsole mit folgenden Angaben / Informationen.
 
-- URL: <a href="https://console.eu-frankfurt-1.oraclecloud.com" target="_blank" rel="noopener">OCI Konsole Frankfurt - Login</a>
-- Tenant: wird noch bekanntgegeben
-- Username: wird noch bekannt gegeben
-- Passwort: das Initiale Password wird noch bekannt gegeben und muss bei der ersten Anmeldung geändert werden.
+- **URL:** <a href="https://console.eu-frankfurt-1.oraclecloud.com" target="_blank" rel="noopener">OCI Konsole Frankfurt - Login</a>
+- **Tenant:** wird noch bekanntgegeben
+- **Username:** wird noch bekannt gegeben
+- **Passwort:** das Initiale Password wird noch bekannt gegeben und muss bei der ersten Anmeldung geändert werden.
 
 ### URL OCI Konsole
 
