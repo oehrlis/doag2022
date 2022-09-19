@@ -3,6 +3,7 @@ title: "Workshop Einführung"
 permalink: /doc/into/
 excerpt: "Einführung in den OCI Workshop (O-OCI-WS)"
 ---
+<!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD033 -->
 # Workshop Einführung
