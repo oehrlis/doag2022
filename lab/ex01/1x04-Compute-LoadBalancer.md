@@ -1,7 +1,13 @@
-<!-- markdownlint-disable MD033 -->
+---
+title: "Load Balancer"
+permalink: /lab/compute-lb/
+excerpt: "Erstellen von Compute Instances mit einem Load Balancer"
+---
 <!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD025 -->
+<!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
-## Compute Load Balancer
+## Compute Instances mit Load Balancer
 
 ### Übungsziele {.unlisted .unnumbered}
 

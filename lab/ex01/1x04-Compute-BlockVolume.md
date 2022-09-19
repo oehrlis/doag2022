@@ -1,7 +1,13 @@
-<!-- markdownlint-disable MD033 -->
+---
+title: "Block Volume"
+permalink: /lab/compute-bv/
+excerpt: "Erstellen eines Block Volumes für eine Compute Instance"
+---
 <!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD025 -->
+<!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
-## Compute Block Volume
+## Compute Instance mit Block Volume
 
 ### Übungsziele {.unlisted .unnumbered}
 

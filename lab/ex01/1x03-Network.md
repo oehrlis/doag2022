@@ -1,9 +1,11 @@
 ---
-title: "Network"
-excerpt: "Descriptions and samples of all layouts included with the theme and how to best use them."
+title: "Netzwerk"
+permalink: /lab/network/
+excerpt: "OCI Netzwerk Konfiguration"
 ---
-<!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD025 -->
+<!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
 ## VCN-Basics
 

@@ -1,5 +1,11 @@
-<!-- markdownlint-disable MD033 -->
+---
+title: "Compute Instance"
+permalink: /lab/compute/
+excerpt: "Erstellen einer Compute Instance"
+---
 <!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD025 -->
+<!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
 ## Simple Compute Instance
 

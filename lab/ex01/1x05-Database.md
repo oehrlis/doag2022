@@ -1,5 +1,11 @@
-<!-- markdownlint-disable MD033 -->
+---
+title: "DB System"
+permalink: /lab/db-system/
+excerpt: "Erstellen eines DB Systems"
+---
 <!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD025 -->
+<!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
 ## Database System
 
