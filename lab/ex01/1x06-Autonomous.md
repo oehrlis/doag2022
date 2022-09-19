@@ -23,7 +23,7 @@ Ziel ist die Bereitstellung einer Autonomous Database Autonomous Transaction Pro
 _Oracle Database_ -> _Autonomous Database_ -> _Create Autonomous Database_. Stellen Sie sicher,
 dass Sie sich im korrekten Compartment befinden.
 
-<img src="./../../images/0x06-01-adb-01.png" width="900">
+<img src="../../images/0x01-06-adb-01.png" width="900">
 
 ## Provide basic information for the Autonomous Database
 
@@ -40,14 +40,14 @@ dass Sie sich im korrekten Compartment befinden.
 | Oracle Database Edition             | Oracle Database Standard Edition (SE)    | keine        |
 | Contact Email                       | Eine gültige Mailadresse                 | keine        |
 
-<img src="./../../images/0x06-01-adb-02.png" width="900">
-<img src="./../../images/0x06-01-adb-03.png" width="900">
-<img src="./../../images/0x06-01-adb-04.png" width="900">
+<img src="../../images/0x01-06-adb-02.png" width="900">
+<img src="../../images/0x01-06-adb-03.png" width="900">
+<img src="../../images/0x01-06-adb-04.png" width="900">
 
 Die restlichen Einstellungen belassen, _Create Autonomous Database_. Sie erhalten ein E-Mail
 wenn die ATP bereit ist.
 
-<img src="./../../images/0x06-01-adb-05.png" width="900">
+<img src="../../images/0x01-06-adb-05.png" width="900">
 
 ## SQL Developer Connect
 
@@ -56,7 +56,7 @@ werden. Wichtig: Das File muss nicht entpackt werden.
 
 _ADB_ -> _DB Connection_ -> _Download Wallet_
 
-<img src="./../../images/0x06-01-adb-06.png" width="900">
+<img src="../../images/0x01-06-adb-06.png" width="900">
 
 ### SQL Developer einrichten
 
@@ -72,7 +72,7 @@ _ADB_ -> _DB Connection_ -> _Download Wallet_
 
 Testen Sie die Verbindung und Speichern Sie sie.
 
-<img src="./../../images/0x06-01-adb-07.png" width="900">
+<img src="../../images/0x01-06-adb-07.png" width="900">
 
 Die Autonomous Database steht zur Verwendung bereit. Testen Sie das Demo Dataset im Schema _SSB_.
 
@@ -83,14 +83,14 @@ group by c_region, c_city
 order by count(*);
 ```
 
-<img src="./../../images/0x06-01-adb-08.png" width="900">
+<img src="../../images/0x01-06-adb-08.png" width="900">
 
 Weitere Schema Queries: <https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/sample-queries.html#GUID-431A16E8-4C4D-4786-BE5C-30029AC1EFD8>
 
 Upload ATP Wallet to OCI Cloud Console und dann weiter zur Private Compute Instance. Die OCI Console muss auf _Network:Public_ gesetzt sein. Wenn das File nicht ersichtlich ist nach dem Upload, kurz die OCI Cloud Console neu starten.
 
-<img src="./../../images/0x06-01-adb-09.png" width="900">
-<img src="./../../images/0x06-01-adb-10.png" width="900">
+<img src="../../images/0x01-06-adb-09.png" width="900">
+<img src="../../images/0x01-06-adb-10.png" width="900">
 
 ```bash
 scp -i ~/.ssh/id_rsa_student01 Wallet_adbst01.zip opc@130.61.243.7:/home/opc
