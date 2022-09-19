@@ -1,6 +1,6 @@
 ---
 title: "OCI CLI"
-permalink: /lab/oci-cli/
+permalink: /lab/oci/oci-cli/
 excerpt: "Konfiguration und Verwendung vom OCI Command line Interface"
 ---
 <!-- markdownlint-disable MD013 -->

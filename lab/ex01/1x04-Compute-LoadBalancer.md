@@ -1,6 +1,6 @@
 ---
 title: "Load Balancer"
-permalink: /lab/compute-lb/
+permalink: /lab/oci/compute-lb/
 excerpt: "Erstellen von Compute Instances mit einem Load Balancer"
 ---
 <!-- markdownlint-disable MD013 -->

@@ -1,6 +1,6 @@
 ---
 title: "Login"
-permalink: /lab/login/
+permalink: /lab/oci/login/
 excerpt: "OCI Konsole Login und erste Schritte"
 ---
 <!-- markdownlint-disable MD013 -->

@@ -1,6 +1,6 @@
 ---
 title: "Netzwerk"
-permalink: /lab/network/
+permalink: /lab/oci/network/
 excerpt: "OCI Netzwerk Konfiguration"
 ---
 <!-- markdownlint-disable MD013 -->
