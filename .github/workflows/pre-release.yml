@@ -107,6 +107,7 @@ jobs:
             echo "process file $i"
             sed -i 's|\(./\)*../../images/|images/|' $i
             sed -i '1{/^---$/!q;};1,/^---$/d' $i
+            sed -i 's/{:.*}$//'  $i
           done
       # Build PDF using docker images oehrlis/pandoc
       - name: run pandoc to build pdf document
