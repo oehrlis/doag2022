@@ -64,7 +64,37 @@ sudo bash -c 'echo Das ist mein DOAG-Webserver 2 in der Oracle Cloud Infrastruct
 
 ![OCI Übersicht der Compute Instances](../../images/1x01-04-compute-lb-01.png)
 
-Schliessen Sie die Cloud Console.
+### Webserver einrichten
+
+Verbinden Sie sich wie in der vorherigen Übung mit der Cloud Shell Console zu den Webservern mit
+der Private IP Adresse und installieren sie auf beiden Compute Instabnces Apache,
+
+### Webserver Installation
+
+ ```bash
+# Package Installation
+sudo yum install httpd -y
+sudo apachectl start
+sudo systemctl enable httpd
+ ```
+
+```bash
+# Apache Konfiguration
+sudo apachectl configtest
+sudo bash -c 'echo Das ist mein DOAG-Webserver [n] in der Oracle Cloud Infrastructure >> /var/www/html/index.html'
+
+```
+
+```bash
+# Firewall Konfiguration
+sudo firewall-cmd --permanent --zone=public --add-service=http
+sudo firewall-cmd --reload
+```
+
+```bash
+# Check
+sudo netstat -tulnp | grep httpd
+```
 
 ### Load Balancer Konfiguration
 
@@ -103,7 +133,7 @@ _Next_.
 
 #### Load Balancer Konfiguration - Configure Listener
 
-![[OCI Load Balancer Listener Konfiguration](../../images/1x01-04-compute-lb-08.png)
+![OCI Load Balancer Listener Konfiguration](../../images/1x01-04-compute-lb-08.png)
 
 _Next_.
 
