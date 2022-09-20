@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
-## Workshop Downloads
+## Downloads
 
 Dieser Bereich enthält verschiedene zusätzliche Dokumente, Handouts und Skripte
 zum Thema. Dazu gehören auch die entsprechenden PDF Dateien mit den Übungen.
