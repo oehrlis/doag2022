@@ -35,7 +35,7 @@ cd .ssh
 ssh-keygen -b 2048 -t rsa -f id_rsa_student01
 ```
 
-![OCI Cloud Shell](../../images/1x01-04-cloud-shell-ssh-01.png)
+![OCI Cloud Shell](../../images/1x01-04-cloud-shell-ssh-02.png)
 
 Es wurden zwei Files erstellt:
 
