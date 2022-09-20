@@ -85,28 +85,45 @@ order by count(*);
 
 ![SQL Developer](../../images/1x01-06-adb-08.png){:width="400px"}
 
+### Swingbench konfigurieren und ausführen
+
 Weitere Schema Queries: <https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/sample-queries.html#GUID-431A16E8-4C4D-4786-BE5C-30029AC1EFD8>
 
 Upload ATP Wallet to OCI Cloud Console und dann weiter zur Private Compute Instance. Die OCI Console muss auf _Network:Public_ gesetzt sein. Wenn das File nicht ersichtlich ist nach dem Upload, kurz die OCI Cloud Console neu starten.
-
-![tbd I](../../images/1x01-06-adb-09.png){:width="900px"}
-![tbd II](../../images/1x01-06-adb-10.png){:width="900px"}
 
 ```bash
 scp -i ~/.ssh/id_rsa_student01 Wallet_adbst01.zip opc@130.61.243.7:/home/opc
 ssh -i ~/.ssh/id_rsa_student01 opc@130.61.243.7
 ```
 
+### JDK installieren - wird für Swingbench benötigt
+
 ```bash
-sudo yum makecache fast
-sudo yum -y install java-1.8.0-openjdk-headless.x86_64
+wget https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz
+sudo tar xvf openjdk-17.0.2_linux-x64_bin.tar.gz
+sudo mv jdk-17.0.2/ /opt/jdk-17/
+
+sudo tee /etc/profile.d/jdk.sh <<EOF
+export JAVA_HOME=/opt/jdk-17
+export PATH=\$PATH:\$JAVA_HOME/bin
+EOF
+
+source /etc/profile.d/jdk.sh
+
+$ java -version
+openjdk version "17.0.2" 2022-01-18
+OpenJDK Runtime Environment (build 17.0.2+8-86)
+OpenJDK 64-Bit Server VM (build 17.0.2+8-86, mixed mode, sharing)
+
 ```
 
+### Swingbench herunterladen und installieren
+
 ```bash
-curl http://www.dominicgiles.com/site_downloads/swingbenchlatest.zip -o swingbench.zip
+curl https://objectstorage.eu-zurich-1.oraclecloud.com/p/a6Ctsdw-2QBqSn4UxTxvwCuUT2-I5hwrySLxeDECaGYd1tonWN-gTR4Cq1YrxTLE/n/zrrioivzmxcn/b/swingbench/o/swingbench24062022.zip -o swingbench.zip
 unzip swingbench.zip
 
-[opc@ci-doag-student-01-lb-1 ~]$ ll
+$ ll
 total 40276
 drwx------. 12 opc opc      161 Mar 16  2022 swingbench
 -rw-rw-r--.  1 opc opc 41211958 Sep 15 14:48 swingbench.zip
@@ -114,16 +131,18 @@ drwx------. 12 opc opc      161 Mar 16  2022 swingbench
 
 ```
 
-<https://github.com/oracle/learning-library/blob/master/oci-library/L100-LAB/ATP_Lab/ATP_HOL.md#practice-3-create-atp-instance-in-oci-and-configure-swing-bench-on-compute-instance-to-generate-load-traffic>
+### Daten generieren
 
 ```bash
 cd swingbench/bin
 
-./oewizard -cf /home/opc/Wallet_ATP01.zip -cs atp01_medium -ts DATA -dbap Oracle098Ax12w -dba ADMIN -u soe -p Oracle098Ax12w -async_off -scale 0.2 -hashpart -create -cl -v
+./oewizard -cf /home/opc/Wallet_adbst01.zip -cs atp01_medium -ts DATA -dbap Oracle098Ax12w -dba ADMIN -u soe -p Oracle098Ax12w -async_off -scale 0.2 -hashpart -create -cl -v
+```
 
-./sbutil -soe -cf /home/opc/Wallet_ATP01.zip -cs atp01_medium -u soe -p Oracle098Ax12w -tables
+### Daten verifizieren
 
-./sbutil -soe -cf /home/opc/Wallet_adbst01.zip -cs adbst01_medium -u soe -p Oracle098Ax12w -tables
+```bash
+./sbutil -soe -cf /home/opc/Wallet_adbst01.zip -cs atp01_medium -u soe -p Oracle098Ax12w -tables
 Operation is successfully completed.
 Operation is successfully completed.
 Order Entry Schemas Tables
@@ -143,8 +162,9 @@ Order Entry Schemas Tables
 | ORDERENTRY_METADATA  | 0         | 0      | 64KB    | Disabled    | No           |
 +----------------------+-----------+--------+---------+-------------+--------------+
                                 Total Space     1.5GB
-
 ```
+
+### Login Rate anpassen
 
 ```bash
 sed -i -e 's/<LogonGroupCount>1<\/LogonGroupCount>/<LogonGroupCount>5<\/LogonGroupCount>/' \
@@ -154,6 +174,19 @@ sed -i -e 's/<LogonGroupCount>1<\/LogonGroupCount>/<LogonGroupCount>5<\/LogonGro
 
 ```
 
+### Benchmark für 5 Minuten
+
 ```bash
-curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
+./charbench -c ../configs/SOE_Server_Side_V2.xml -cf /home/opc/Wallet_adbst01.zip  -cs atp01_medium -u soe -p Oracle098Ax12w -v users,tpm,tps,vresp -intermin 0 -intermax 0 -min 0 -max 0 -uc 128 -di SQ,WQ,WA -rt 0:5
 ```
+
+- If OCPU Auto-Scaling is disabled and running on one OCPU, TPS - Transactions per Second - is about 700-1500 TPM
+- If OCPU Auto-Scaling is enabled - Transactions per Second - is about 2000-2500 TPM
+
+### Screenshot SQL Develoepr Web vor Auto Scaling
+
+![tbd I](../../images/1x01-06-adb-09.png){:width="900px"}
+
+### Screenshot SQL Develoepr Web nach Auto Scaling
+
+![tbd II](../../images/1x01-06-adb-10.png){:width="900px"}

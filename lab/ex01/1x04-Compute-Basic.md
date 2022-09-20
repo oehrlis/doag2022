@@ -54,6 +54,8 @@ cat id_rsa_student01.pub
 
 _Create Instance_ auswählen. Beachten Sie das richtige Compartment und die Region Germany Central (Frankfurt).
 
+Beachten: Das Image muss Oracle Linux 7.9 sein für die spätere Verwendung!
+
 ![OCI Compute Instance Übersicht](../../images/1x01-04-compute-public-01.png)
 
 | Item                         | Value                                | Bemerkungen  |
@@ -61,6 +63,7 @@ _Create Instance_ auswählen. Beachten Sie das richtige Compartment und die Regi
 | Name                         | ci-doag-student-01-public            | keine        |
 | Placement                    | AD3                                  | keine        |
 | Shape                        | Reduzieren auf 4GB                   | keine        |
+| Image                        | Oracle Linux 7.9                     | keine        |
 | Virtual Cloud Network        | vcn-doag-student-01                  | keine        |
 | Subnet                       | sn-doag-student-01-public (Regional) | keine        |
 | Private IP Address           | 10.0.1.10                            | keine        |
@@ -134,6 +137,12 @@ sudo firewall-cmd --reload
 ```bash
 # Check
 sudo netstat -tulnp | grep httpd
+```
+
+### Public IP anzeigen
+
+```bash
+curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
 ```
 
 ### Test Erreichbarkeit vom Webserver
