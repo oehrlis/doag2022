@@ -152,9 +152,10 @@ Tip: Meistens scheitert es an fehlenden oder falschen Firewall-Einstellungen auf
 
 ### Test Erreichbarkeit Webserver via Load Balancer
 
-Verwenden Sie dazu die Load Balancer Public IP und ihren Browser der Workstation. URL: http://<ihre Public IP>.
+Verwenden Sie dazu die Load Balancer Public IP und ihren Browser der Workstation. URL: <http://ihre-load-balancer-public-ip>
 
 Tip: Meistens scheitert es an fehlenden oder falschen Firewall-Einstellungen auf der Maschine oder in der OCI Security List.
+Prüfen Sie den Zustand der Backends im Health Check.
 
 ![Webserver 1 via Load Balancer](../../images/1x01-04-compute-lb-11.png)
 
