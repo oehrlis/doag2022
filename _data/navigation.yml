@@ -33,8 +33,6 @@ lab:
         url: /doc/requirements/
       - title: "Lab Umgebung"
         url: /doc/lab/
-      - title: "Workshop Übersicht"
-        url: /doc/workshop/
 
   - title: Übungen OCI
     children:
