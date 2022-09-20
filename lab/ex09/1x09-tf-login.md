@@ -231,7 +231,7 @@ terraform apply login.tfplan
 ```
 
 ::: note
-**Hinweise** Im Vorliegenden Beispiel haben wir die verschiedenen *Terraform*
+**Hinweise** Im vorliegenden Beispiel haben wir die verschiedenen *Terraform*
 Konfigurationen in unterschiedliche Dateien geschrieben. Grundsätzlich ist es
 auch möglich alles in eine Datei zu schreiben. Es ist aber *Best Practice* bei
 *Terraform* dies in entsprechend verschiedene Dateien aufzuteilen. Dies ermöglicht
