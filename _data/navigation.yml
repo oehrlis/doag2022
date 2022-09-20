@@ -50,10 +50,8 @@ lab:
         url: /lab/oci-db-system/
       - title: "Autonomous Database"
         url: /lab/oci-atp/
-      - title: "Object Storage"
-        url: /lab/oci-object-storage/
       - title: "OCI CLI"
-        url: /lab/oci-cli/
+        url: /lab/oci-misc/
 
   - title: Übungen Terraform
     children:
