@@ -185,8 +185,9 @@ HOST_NAME
 ----------------------------------------------------------------
 dbsys01
 ```
+
 Beenden Sie die Konsolenverbindung zur Datenbank sod das Sie wieder in der lokalen CLoud Shell sind.
 
 ```bash
 [opc@ci-doag-student-01-lb-1 ~]$ exit
-````
+```
