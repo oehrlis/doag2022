@@ -36,7 +36,7 @@ dass Sie sich im korrekten Compartment befinden.
 | Password                            | ADMIN Passwort                           | keine        |
 | Confirm Password                    | ADMIN Passwort                           | keine        |
 | Access type                         | Secure access from everywhere            | keine        |
-| License type                        | BYOL                                     | keine        |
+| License type                        | License Included                         | keine        |
 | Oracle Database Edition             | Oracle Database Standard Edition (SE)    | keine        |
 | Contact Email                       | Eine gültige Mailadresse                 | keine        |
 
@@ -58,7 +58,7 @@ _ADB_ -> _DB Connection_ -> _Download Wallet_
 
 ![Wallet Download](../../images/1x01-06-adb-06.png){:width="900px"}
 
-### SQL Developer einrichten
+### Optional: SQL Developer einrichten
 
  Starten Sie ihren lokalen SQL Developer and legen Sie eine neue Verbindung an.
 
@@ -83,32 +83,43 @@ group by c_region, c_city
 order by count(*);
 ```
 
-![SQL Developer](../../images/1x01-06-adb-08.png){:width="400px"}
-
-### Swingbench konfigurieren und ausführen
-
 Weitere Schema Queries: <https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/sample-queries.html#GUID-431A16E8-4C4D-4786-BE5C-30029AC1EFD8>
 
-Upload ATP Wallet to OCI Cloud Console und dann weiter zur Private Compute Instance. Die OCI Console muss auf _Network:Public_ gesetzt sein. Wenn das File nicht ersichtlich ist nach dem Upload, kurz die OCI Cloud Console neu starten.
+![SQL Developer](../../images/1x01-06-adb-08.png){:width="400px"}
+
+### Swingbench in der Public Compute Instance konfigurieren und ausführen
+
+Upload ATP Wallet to OCI Cloud Console (oben rechts beim Zahrad) und dann weiter zur Private Compute Instance. Die OCI Console muss auf _Network:Public_ gesetzt sein. Wenn das File nicht ersichtlich ist nach dem Upload, kurz die OCI Cloud Console neu starten.
 
 ```bash
 scp -i ~/.ssh/id_rsa_student01 Wallet_adbst01.zip opc@130.61.243.7:/home/opc
 ssh -i ~/.ssh/id_rsa_student01 opc@130.61.243.7
 ```
 
+Auf der Public Compute Instance muss nun das Wallet ersichtlich sein.
+
+```bash
+$ ls -l
+total 28
+-rw-r--r--. 1 opc opc 26432 Sep 21 08:45 Wallet_adbst01.zip
+```
+
 ### JDK installieren - wird für Swingbench benötigt
 
 ```bash
+# JDK 17 download und Installation
 wget https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz
 sudo tar xvf openjdk-17.0.2_linux-x64_bin.tar.gz
 sudo mv jdk-17.0.2/ /opt/jdk-17/
 
-sudo tee /etc/profile.d/jdk.sh <<EOF
+# Shell Script anlegen
+sudo tee /etc/profile.d/set-jdk.sh <<EOF
 export JAVA_HOME=/opt/jdk-17
 export PATH=\$PATH:\$JAVA_HOME/bin
 EOF
 
-source /etc/profile.d/jdk.sh
+# Umgebung setzen und Version prüfen
+source /etc/profile.d/set-jdk.sh
 
 $ java -version
 openjdk version "17.0.2" 2022-01-18
@@ -120,51 +131,59 @@ OpenJDK 64-Bit Server VM (build 17.0.2+8-86, mixed mode, sharing)
 ### Swingbench herunterladen und installieren
 
 ```bash
+# Download vom OCI Object Store und entpacken
 curl https://objectstorage.eu-zurich-1.oraclecloud.com/p/a6Ctsdw-2QBqSn4UxTxvwCuUT2-I5hwrySLxeDECaGYd1tonWN-gTR4Cq1YrxTLE/n/zrrioivzmxcn/b/swingbench/o/swingbench24062022.zip -o swingbench.zip
+
 unzip swingbench.zip
 
+# Verzeichnisinhalt
 $ ll
-total 40276
-drwx------. 12 opc opc      161 Mar 16  2022 swingbench
--rw-rw-r--.  1 opc opc 41211958 Sep 15 14:48 swingbench.zip
--rw-r--r--.  1 opc opc    26437 Sep 15 14:44 Wallet_adbst01.zip
+-rw-rw-r--.  1 opc opc 187033144 Dec 27  2021 openjdk-17.0.2_linux-x64_bin.tar.gz
+drwx------. 12 opc opc      4096 Jun 24 13:52 swingbench
+-rw-rw-r--.  1 opc opc  37822106 Sep 21 08:48 swingbench.zip
+-rw-r--r--.  1 opc opc     26432 Sep 21 08:45 Wallet_adbst01.zip
 
 ```
 
 ### Daten generieren
 
 ```bash
+# In das Unterverzeichnis wechseln um Daten zu generieren für das Schema SOE
 cd swingbench/bin
 
-./oewizard -cf /home/opc/Wallet_adbst01.zip -cs atp01_medium -ts DATA -dbap Oracle098Ax12w -dba ADMIN -u soe -p Oracle098Ax12w -async_off -scale 0.2 -hashpart -create -cl -v
+# Das Passwort für den User SOE ist auf Oracle098Ax12w gesetzt
+# Für DBAP das gesetzte ADB-Passwort verwenden
+./oewizard -cf /home/opc/Wallet_adbst01.zip -cs adbst01_medium -ts DATA -dbap Oracle098Ax12w -dba ADMIN -u soe -p Oracle098Ax12w -async_off -scale 0.2 -hashpart -create -cl -v
 ```
 
 ### Daten verifizieren
 
 ```bash
-./sbutil -soe -cf /home/opc/Wallet_adbst01.zip -cs atp01_medium -u soe -p Oracle098Ax12w -tables
+# Anzeige der geladenen Testdaten
+./sbutil -soe -cf /home/opc/Wallet_adbst01.zip -cs adbst01_medium -u soe -p Oracle098Ax12w -tables
+
 Operation is successfully completed.
 Operation is successfully completed.
 Order Entry Schemas Tables
 +----------------------+-----------+--------+---------+-------------+--------------+
 | Table Name           | Rows      | Blocks | Size    | Compressed? | Partitioned? |
 +----------------------+-----------+--------+---------+-------------+--------------+
-| ORDERS               | 285,958   | 32,192 | 256.0MB |             | Yes          |
-| ADDRESSES            | 300,000   | 32,192 | 256.0MB |             | Yes          |
-| LOGON                | 476,597   | 32,192 | 256.0MB |             | Yes          |
-| CARD_DETAILS         | 300,000   | 32,192 | 256.0MB |             | Yes          |
-| ORDER_ITEMS          | 1,431,767 | 32,192 | 256.0MB |             | Yes          |
 | CUSTOMERS            | 200,000   | 32,192 | 256.0MB |             | Yes          |
-| INVENTORIES          | 898,969   | 2,386  | 19.0MB  | Disabled    | No           |
+| ADDRESSES            | 300,000   | 32,192 | 256.0MB |             | Yes          |
+| CARD_DETAILS         | 300,000   | 32,192 | 256.0MB |             | Yes          |
+| ORDERS               | 285,958   | 32,192 | 256.0MB |             | Yes          |
+| LOGON                | 476,597   | 32,192 | 256.0MB |             | Yes          |
+| ORDER_ITEMS          | 1,412,453 | 32,192 | 256.0MB |             | Yes          |
+| INVENTORIES          | 901,660   | 2,512  | 20.0MB  | Disabled    | No           |
 | PRODUCT_DESCRIPTIONS | 1,000     | 35     | 320KB   | Disabled    | No           |
 | PRODUCT_INFORMATION  | 1,000     | 28     | 256KB   | Disabled    | No           |
-| WAREHOUSES           | 1,000     | 5      | 64KB    | Disabled    | No           |
 | ORDERENTRY_METADATA  | 0         | 0      | 64KB    | Disabled    | No           |
+| WAREHOUSES           | 1,000     | 5      | 64KB    | Disabled    | No           |
 +----------------------+-----------+--------+---------+-------------+--------------+
                                 Total Space     1.5GB
 ```
 
-### Login Rate anpassen
+### Swingbench Login Rate anpassen
 
 ```bash
 sed -i -e 's/<LogonGroupCount>1<\/LogonGroupCount>/<LogonGroupCount>5<\/LogonGroupCount>/' \
@@ -177,16 +196,17 @@ sed -i -e 's/<LogonGroupCount>1<\/LogonGroupCount>/<LogonGroupCount>5<\/LogonGro
 ### Benchmark für 5 Minuten
 
 ```bash
-./charbench -c ../configs/SOE_Server_Side_V2.xml -cf /home/opc/Wallet_adbst01.zip  -cs atp01_medium -u soe -p Oracle098Ax12w -v users,tpm,tps,vresp -intermin 0 -intermax 0 -min 0 -max 0 -uc 128 -di SQ,WQ,WA -rt 0:5
+# Der Parameter -rt regelt die Laufzeit
+./charbench -c ../configs/SOE_Server_Side_V2.xml -cf /home/opc/Wallet_adbst01.zip  -cs atbst01_medium -u soe -p Oracle098Ax12w -v users,tpm,tps,vresp -intermin 0 -intermax 0 -min 0 -max 0 -uc 128 -di SQ,WQ,WA -rt 0:5
 ```
 
 - If OCPU Auto-Scaling is disabled and running on one OCPU, TPS - Transactions per Second - is about 700-1500 TPM
 - If OCPU Auto-Scaling is enabled - Transactions per Second - is about 2000-2500 TPM
 
-### Screenshot SQL Develoepr Web vor Auto Scaling
+### Screenshot SQL Developer Web vor Auto Scaling
 
 ![tbd I](../../images/1x01-06-adb-09.png){:width="900px"}
 
-### Screenshot SQL Develoepr Web nach Auto Scaling
+### Screenshot SQL Developer Web nach Auto Scaling
 
 ![tbd II](../../images/1x01-06-adb-10.png){:width="900px"}

@@ -76,7 +76,7 @@ Die restlichen Einstellungen belassen, mit Klick auf _Create DB system_ wird die
 Stellen Sie sicher das die Cloud Console das Netzwerk auf _Private_ und das Subnetz der Datenbank eingestellt hat. Der OS User für die Database Instance heisst _opc_ und hat sudo-Berechtigungen. Es wird der private SSH Key und die Private IP benötigt.
 
 ```bash
-[oracle@dbsys01 ~]$ ssh -i ~.ssh/id_rsa_student01 opc@10.0.3.50
+[oracle@dbsys01 ~]$ ssh -i ~/.ssh/id_rsa_student01 opc@10.0.3.50
 ```
 
 ![OCI DB System Shell Access](../../images/1x01-05-database-09.png)
@@ -92,7 +92,7 @@ läuft.
 Verbinden Sie als SYSDBA zur Pluggable Database. Der Service-Name ist mit _lsnrctl_ zu sehen.
 
 ```bash
-# Service Name anzeigen
+# Service Name der Pluggable Database anzeigen
 [oracle@dbsys01 ~]$ lsnrctl status | grep pdbdoag01
 Service "pdbdoag01.snstudentprv02.vcndoagstudent0.oraclevcn.com" has 1 instance(s).
 
@@ -116,7 +116,21 @@ GLOBAL_NAME
 --------------------------------------------------------------------------------
 PDBDOAG01.SNSTUDENTPRV02.VCNDOAGSTUDENT0.ORACLEVCN.COM
 
-```
+SQL> show pdbs
+
+    CON_ID CON_NAME                       OPEN MODE  RESTRICTED
+---------- ------------------------------ ---------- ----------
+         3 PDBDOAG01                      READ WRITE NO
+
+SQL> exit
+``
+
+Beenden Sie die Konsolenverbindung zur Datenbank sod das Sie wieder in der lokalen CLoud Shell sind.
+
+```bash
+[oracle@dbsys01 ~]$ exit
+[opc@dbsys01 ~]$ exit
+````
 
 ### SQL*Net Verbindung von der Private Compute Instance zur Database Private IP
 
@@ -124,10 +138,10 @@ Stellen Sie sicher das die Cloud Console das Netzwerk auf das Subnet der Applika
 
 <img src="../../images/0x01-05-database-10.png" width="900">
 
-Der OS User für die Compute Instance heisst _opc_ und hat sudo-Berechtigungen. Es wird der private SSH Key und die Private IP benötigt.
+Der OS User für die Compute Instance heisst _opc_ und hat sudo-Berechtigungen. Es wird der private SSH Key und die Private IP benötigt. Die  IP-Adresse ist auf Stufe Datenbanke unter der Resource _Nodes_ zu finden.
 
 ```bash
-ssh -i ~.ssh/id_rsa_student01 opc@10.0.2.10
+ssh -i ~/.ssh/id_rsa_student01 opc@10.0.2.10
 ```
 
 <img src="../../images/0x01-05-database-11.png" width="900">
@@ -165,4 +179,14 @@ GLOBAL_NAME
 --------------------------------------------------------------------------------
 PDBDOAG01.SNSTUDENTPRV02.VCNDOAGSTUDENT0.ORACLEVCN.COM
 
+SQL> SELECT host_name FROM v$instance;
+
+HOST_NAME
+----------------------------------------------------------------
+dbsys01
 ```
+Beenden Sie die Konsolenverbindung zur Datenbank sod das Sie wieder in der lokalen CLoud Shell sind.
+
+```bash
+[opc@ci-doag-student-01-lb-1 ~]$ exit
+````
