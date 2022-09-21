@@ -47,7 +47,6 @@ Ihnen zugewiesenen Nummer 01-0n.
 | Item                         | Value               | Bemerkungen  |
 |:-----------------------------|:--------------------|:-------------|
 | Name                         | vcn-doag-student-01 | keine        |
-| Compartment                  | <Compartment>       | keine        |
 | IPv4 CIDR Blocks             | 10.0.0.0/16         | keine        |
 
 Table: VCN Konfigurationsvorgaben
@@ -192,10 +191,9 @@ Fügen Sie folgende Ingress-Regeln hinzu:
 
 | Destination                  | Source Type & CIDR   | Port    | Protocol    |
 |:-----------------------------|:---------------------|:--------|:------------|
-| Ingress                      | CIDR 10.0.1.0/24     | 22      | TCP         |
-| Ingress                      | CIDR 10.0.1.0/24     | 1521    | TCP         |
-| Ingress                      | CIDR 10.0.2.0/24     | 22      | TCP         |
-| Ingress                      | CIDR 10.0.2.0/24     | 1521    | TCP         |
+| Ingress                      | CIDR 10.0.0.0/16     | 22      | TCP         |
+| Ingress                      | CIDR 10.0.0.0/16     | 80      | TCP         |
+| Ingress                      | CIDR 10.0.0.0/16     | 22      | TCP         |
 
 Table: Ingress-Regeln
 

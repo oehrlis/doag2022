@@ -19,7 +19,7 @@ Erstellen einer Compute Instance mit Public Access.
 - Compute Instance erstellen
 - SSH Verbindung auf die Compute Instance
 - Installation eines einfachen Webservers
-
+  
 ### SSH Key in der Cloud Console erstellen
 
 Login in die Oracle Cloud Infrastructure Cloud Console und starten der Cloud Shell. Für eine bessere Lesbarkeit
@@ -27,7 +27,7 @@ kann die Terminalgrösse angepasst werden.
 
 ![OCI Cloud Shell](../../images/1x01-04-cloud-shell-ssh-01.png)
 
-Erstellen Sie einen SSH-Key im neu erstellten Unterverzeichnis .ssh, kein Passwortschutz vom Key.
+Erstellen Sie einen SSH-Key im neu erstellten Unterverzeichnis .ssh, ohne Passwortschutz vom Key.
 
 ```bash
 mkdir .ssh
@@ -43,7 +43,7 @@ Es wurden zwei Files erstellt:
 - id_rsa_student01.pub - das ist der Public Key
 
 Der Inhalt vom Public Key wird später zum Erstellen von Compute Instances benötigt. Kopieren Sie den ganzen Inhalt
-in ein lokales Textfile oder Ablage.
+in ein lokales Textfile oder Ablage (Markieren + Ctrl-C).
 
 ```bash
 cd .ssh
@@ -102,10 +102,8 @@ exit
 
 Wechseln Sie in der Cloud Console das Netzwerk auf Private und wählen das Public Subnet aus. Der OS User für die Compute Instance heisst _opc_ und hat sudo-Berechtigungen. Es wird der private SSH Key und die Private IP benötigt.
 
-![OCI Compute Instance Anpassung Netzwerk](../../images/1x01-04-compute-public-09.png)
-
 ```bash
-ssh -i ~.ssh/id_rsa_student01 opc@10.0.1.10
+ssh -i ~/.ssh/id_rsa_student01 opc@hier-ihre-public-ip-verwenden
 ```
 
 ![OCI Compute Instance Shell Zugriff via privater IP](../../images/1x01-04-compute-public-10.png)
@@ -125,7 +123,6 @@ sudo systemctl enable httpd
 # Apache Konfiguration
 sudo apachectl configtest
 sudo bash -c 'echo Das ist mein DOAG-Webserver in der Oracle Cloud Infrastructure >> /var/www/html/index.html'
-
 ```
 
 ```bash

@@ -58,8 +58,9 @@ die weitere Verwendung muss auf Stufe OS das Device gemounted werden.
 
 ### SSH-Verbindung von der Cloud Console zur Public IP
 
- Starten Sie die Cloud Console. Der OS User für die Compute Instance heisst _opc_ und hat sudo-Berechtigungen. Es
- wird der private SSH Key und die Public IP benötigt.
+ Starten Sie die Cloud Console und sterllen Sie sicher, dass das Netzwekr auf _Public Network_ eingestellt ist. Der OS User für die Compute Instance heisst _opc_ und hat sudo-Berechtigungen. Es  wird der private SSH Key und die Public IP benötigt.
+
+ Sollte die Cloud Shell nach der Umstellung nicht reagieren, kurz neu Starten in _View_ -> _Restart_.
 
  ```bash
 ssh -i ~.ssh/id_rsa_student01 opc@130.61.243.7
@@ -68,6 +69,8 @@ ssh -i ~.ssh/id_rsa_student01 opc@130.61.243.7
 ![Shell Zugriff auf die Compute Instance](../../images/1x01-04-compute-public-08.png)
 
 ### iSCSI Disk anhängen und formatieren
+
+Die iSCSI Kommandi müssen von den Block Volume Informationen kopiert werden und ist unterschiedlich.
 
  ```bash
 # Bestehende Disks anzeigen

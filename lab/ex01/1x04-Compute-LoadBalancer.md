@@ -36,7 +36,7 @@ Konfiguration eines Load Balancer für eine Web Anwendung.
 | Public IP address            | Do not assign a public IPv4 address        | keine        |
 | SSH keys                     | Public SSH Key aus der Cloud Shell         | keine        |
 
-Index html-File
+Index html-File für Webserver 1:
 
 ```bash
 sudo bash -c 'echo Das ist mein DOAG-Webserver 1 in der Oracle Cloud Infrastructure >> /var/www/html/index.html'
@@ -56,7 +56,7 @@ sudo bash -c 'echo Das ist mein DOAG-Webserver 1 in der Oracle Cloud Infrastruct
 | Public IP address            | Do not assign a public IPv4 address        | keine        |
 | SSH keys                     | Public SSH Key aus der Cloud Shell         | keine        |
 
-Index html-File
+Index html-File für Webserver 2:
 
 ```bash
 sudo bash -c 'echo Das ist mein DOAG-Webserver 2 in der Oracle Cloud Infrastructure >> /var/www/html/index.html'
@@ -64,10 +64,19 @@ sudo bash -c 'echo Das ist mein DOAG-Webserver 2 in der Oracle Cloud Infrastruct
 
 ![OCI Übersicht der Compute Instances](../../images/1x01-04-compute-lb-01.png)
 
+### Cloud Shell auf Private Subnet ändern
+
+Ändern Sie in der Cloud Shell die Netzwerkkonfiguration auf Private und definieren sie das Subnet.
+_Connect to this Network_. Es dauert ein paar Sekunden bis die Konifguration gemacht ist.
+
+![OCI Console Netz anpassen](../../images/1x01-04-compute-lb-13.png)
+![OCI Console Netz anpassen](../../images/1x01-14-compute-lb-14.png)
+
 ### Webserver einrichten
 
 Verbinden Sie sich wie in der vorherigen Übung mit der Cloud Shell Console zu den Webservern mit
-der Private IP Adresse und installieren sie auf beiden Compute Instabnces Apache,
+der Private IP Adresse und dem SSH-Key als User _opc_. Installieren sie auf beiden Compute Instances Apache und
+erstellen Sie ein kleines HTML-File.
 
 ### Webserver Installation
 

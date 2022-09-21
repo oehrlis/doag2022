@@ -37,7 +37,9 @@ _Create DB system_ anklicken.
 | Storage management software         | Logical Volume Manager                   | keine        |
 | Storage volume performance          | Balanced                                 | keine        |
 | Shape Type                          | Virtual Machine                          | keine        |
-| Shape                               | VM.Standard.E4.Flex - 2 core OCPU, 32    | keine        |
+| Shape                               | VM.Standard.E4.Flex - 2 core OCPU        | keine        |
+| Storage                             | Logical Volume Manager                   | keine        |
+| Total Node Count                    | 1                                        | keine        |
 | Oracle Database software edition    | Standard Edition                         | keine        |
 | Add SSH keys                        | <Public Key>                             | keine        |
 | License type                        | License included                         | keine        |
@@ -71,7 +73,7 @@ Die restlichen Einstellungen belassen, mit Klick auf _Create DB system_ wird die
 
 ### SSH-Verbindung von der Cloud Console zur Database Private IP
 
-Stellen Sie sicher das die Cloud Console das Netzwerk auf Private eingestellt hat. Der OS User für die Database Instance heisst _opc_ und hat sudo-Berechtigungen. Es wird der private SSH Key und die Private IP benötigt.
+Stellen Sie sicher das die Cloud Console das Netzwerk auf _Private_ und das Subnetz der Datenbank eingestellt hat. Der OS User für die Database Instance heisst _opc_ und hat sudo-Berechtigungen. Es wird der private SSH Key und die Private IP benötigt.
 
 ```bash
 [oracle@dbsys01 ~]$ ssh -i ~.ssh/id_rsa_student01 opc@10.0.3.50
@@ -120,7 +122,7 @@ PDBDOAG01.SNSTUDENTPRV02.VCNDOAGSTUDENT0.ORACLEVCN.COM
 
 Stellen Sie sicher das die Cloud Console das Netzwerk auf das Subnet der Applikation eingestellt hat.
 
-<img src="./../../images/0x01-05-database-10.png" width="900">
+<img src="../../images/0x01-05-database-10.png" width="900">
 
 Der OS User für die Compute Instance heisst _opc_ und hat sudo-Berechtigungen. Es wird der private SSH Key und die Private IP benötigt.
 
@@ -128,7 +130,7 @@ Der OS User für die Compute Instance heisst _opc_ und hat sudo-Berechtigungen. 
 ssh -i ~.ssh/id_rsa_student01 opc@10.0.2.10
 ```
 
-<img src="./../../images/0x01-05-database-11.png" width="900">
+<img src="../../images/0x01-05-database-11.png" width="900">
 
 Bleiben Sie zur Installation vom Oracle Instant Client mit der Compute Instance als User _opc_ verbunden.
 
