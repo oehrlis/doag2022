@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# Trivadis AG, Infrastructure Managed Services
+# Trivadis - Part of Accenture, Platform Factory - Data Platforms
 # Saegereistrasse 29, 8152 Glattbrugg, Switzerland
 # ---------------------------------------------------------------------------
 # Name.......: outputs.tf
@@ -17,6 +17,11 @@
 output "oracle_images" {
   description = "Latest Oracle Linux Image"
   value       = data.oci_core_images.oracle_images.images.*.display_name
+}
+
+output "lab_compartment" {
+  description = "OCID of Student LAB Compartment"
+  value       = data.oci_identity_compartments.lab_compartment.compartments.*.compartment_id
 }
 
 # --- EOF -------------------------------------------------------------------

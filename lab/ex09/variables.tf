@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# Trivadis - Part of Accenture, Data Platform - Transactional Data Platform
+# Trivadis - Part of Accenture, Platform Factory - Data Platforms
 # Saegereistrasse 29, 8152 Glattbrugg, Switzerland
 # ------------------------------------------------------------------------------
 # Name.......: variables.tf
@@ -37,10 +37,22 @@ variable "tenancy_ocid" {
   type        = string
 }
 
+
 variable "region" {
   # List of regions: https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#ServiceAvailabilityAcrossRegions
   description = "The OCI region where resources will be created"
   type        = string
 }
 
+# --- LAB Config ---------------------------------------------------------------
+variable "lab_compartment_name" {
+  description = "Name of the students LAB Compartment"
+  default     = ""
+  type        = string
+}
+variable "base_compartment_ocid" {
+  description = "OCID of the base compartment"
+  default     = ""
+  type        = string
+}
 # --- EOF ----------------------------------------------------------------------

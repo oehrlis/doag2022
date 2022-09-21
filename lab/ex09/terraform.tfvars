@@ -23,6 +23,6 @@
 # provider identity parameters -------------------------------------------------
 # region = "eu-frankfurt-1"
 
-# general oci parameters -------------------------------------------------------
-
+# general lab parameters -------------------------------------------------------
+base_compartment_ocid="ocid1.compartment.oc1..aaaaaaaarwdzpyew2frhxyoor5lymqzlcktktzu7mnd24zpvu3l5id3mupaq"
 # --- EOF ----------------------------------------------------------------------

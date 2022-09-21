@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# Trivadis AG, Infrastructure Managed Services
+# Trivadis - Part of Accenture, Platform Factory - Data Platforms
 # Saegereistrasse 29, 8152 Glattbrugg, Switzerland
 # ---------------------------------------------------------------------------
 # Name.......: datasource.tf
@@ -14,12 +14,18 @@
 #              at http://www.apache.org/licenses/
 # ---------------------------------------------------------------------------
 
+# get the student compartment information based on the name
+data "oci_identity_compartments" "lab_compartment" {
+  compartment_id = var.base_compartment_ocid
+  name           = var.lab_compartment_name
+}
 # get latest Oracle linux image
 data "oci_core_images" "oracle_images" {
-  compartment_id           = var.tenancy_ocid
+  compartment_id           = data.oci_identity_compartments.lab_compartment.compartments.0.compartment_id
   operating_system         = "Oracle Linux"
   operating_system_version = "7.9"
   shape                    = "VM.Standard.E4.Flex"
   sort_by                  = "TIMECREATED"
 }
+
 # --- EOF -------------------------------------------------------------------
