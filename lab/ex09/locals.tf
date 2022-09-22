@@ -15,6 +15,6 @@
 # ---------------------------------------------------------------------------
 
 locals {
-  lab_compartment_ocid = data.oci_identity_compartments.lab_compartment.compartments.0.compartment_id
+  lab_compartment_ocid = data.oci_identity_compartments.lab_compartments.compartments.0.compartment_id
 }
 # --- EOF -------------------------------------------------------------------

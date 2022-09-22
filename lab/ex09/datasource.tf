@@ -15,13 +15,18 @@
 # ---------------------------------------------------------------------------
 
 # get the student compartment information based on the name
-data "oci_identity_compartments" "lab_compartment" {
+data "oci_identity_compartments" "lab_compartments" {
   compartment_id = var.base_compartment_ocid
   name           = var.lab_compartment_name
 }
+
+# get the details of the lab
+data "oci_identity_compartment" "lab_compartment" {
+  id = local.lab_compartment_ocid
+}
 # get latest Oracle linux image
 data "oci_core_images" "oracle_images" {
-  compartment_id           = local.lab_compartment_ocid
+  compartment_id           = data.oci_identity_compartment.lab_compartment.id
   operating_system         = "Oracle Linux"
   operating_system_version = "7.9"
   shape                    = "VM.Standard.E4.Flex"
