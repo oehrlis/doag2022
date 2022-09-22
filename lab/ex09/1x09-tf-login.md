@@ -30,7 +30,7 @@ Für eine bessere Lesbarkeit kann die Terminal Grösse angepasst werden.
 
 ![OCI Cloud Shell](../../images/1x09-cloud-shell-start.png)
 
-Clone das GitHub Repository in das aktuelle Verzeichnis.
+Clonen Sie das GitHub Repository in das aktuelle Verzeichnis.
 
 ```bash
 git clone https://github.com/oehrlis/doag2022.git
@@ -47,7 +47,7 @@ auch für die weiteren Übungen.
 ### API Key
 
 Damit *Terraform* auf OCI zugreifen kann, muss ein entsprechender API Key vorhanden
-sein respektive erstellt werden. Gehe dazu auf die Benutzer Einstellungen in der
+sein respektive erstellt werden. Gehen Sie dazu auf die Benutzer Einstellungen in der
 OCI Konsole.
 
 *User Settings*_* -> *API Key* -> *Add API Key*.
@@ -61,28 +61,28 @@ Bei den Ressourcen wähle die API Keys.
 Erstelle einen neuen API Key.
 
 ::: caution
-**Hinweise** Speichere unbedingt den generierten Private Key ab. Dieser wird für
-den Zugriff benötigt und kann später nicht mehr heruntergeladen werden.
+**Hinweise** Speicheren Sie unbedingt den generierten Private Key ab. Dieser wird
+für den Zugriff benötigt und kann später nicht mehr heruntergeladen werden.
 :::
 
 ![API Key Generieren](../../images/1x09-user-API-key-new.png){:width="500px"}
 
-Zum Abschluss werden die Konfiguration für das OCI-CLI angezeigt. Laden den
-generierten Private sowie Public Key herunter und kopiere die
+Zum Abschluss werden die Konfiguration für das OCI-CLI angezeigt. Laden Sie den
+generierten Private sowie Public Key herunter und kopieren die
 Informationen in ein Text File. Wir benötigen diese beim nächsten Schritt
 
 ![API Key Konfigurationsübersicht](../../images/1x09-user-API-key-config.png)
 
 ::: note
-**Hinweise** Falls Du vorher bereits die Übung zum [OCI CLI](../ex01/1x08-OCI-CLI.md)
-gemacht hast, kannst Du alternativ auch den API Key vom OCI CLI verwenden
+**Hinweise** Falls Sie vorher bereits die Übung zum [OCI CLI](../ex01/1x08-OCI-CLI.md)
+gemacht haben, können Sie alternativ auch den API Key vom OCI CLI verwenden
 :::
 
 ### Informationen für den OCI Provider
 
 Für die Konfiguration des OCI Provider müssen folgende Informationen vorhanden sein.
 Die *API Key Konfigurationsübersicht* oben, hat diese bereits dargestellt. Falls nötig,
-kann man diese, mit Ausnahme des Privaten Schlüssel, jeder jetzt wieder bei den
+kann man diese, mit Ausnahme des privaten Schlüssel, wieder bei den
 Benutzerinformationen in der OCI Konsole abrufen respektive mit *View Configuration*.
 
 - **Tenant OCID** eindeutige ID des OCI Tenants
@@ -103,8 +103,8 @@ vi $HOME/.oci/tf_api_key_public.pem
 
 ### Konfiguration OCI Provider
 
-Der *Terraform* OCI Provider wird in der Datei *provider.tf* konfiguriert. Ergänze
-die Informationen ab Zeile 30 entsprechend:
+Der *Terraform* OCI Provider wird in der Datei *provider.tf* konfiguriert. Ergänzen
+Sie die Informationen ab Zeile 30 entsprechend:
 
 ```bash
 cd $HOME/doag2022/lab/ex09
@@ -138,7 +138,7 @@ nicht ganz ideal. Aus diesem Grund werden für die Informationen entsprechende
 cat variables.tf
 ```
 
-Passe anschliessend die Provider Konfiguration ab der Zeile 30 wie folgt an:
+Passen Sie anschliessend die Provider Konfiguration ab der Zeile 30 wie folgt an:
 
 ```bash
 #define the terraform provider
@@ -157,7 +157,7 @@ Initialisiere den Terraform Provider mit *terraform init*.
 terraform init
 ```
 
-Wie Du in der Datei *variables.tf* sehen kannst, sind für alle Variablen keine
+Wie Sie in der Datei *variables.tf* sehen können, sind für alle Variablen keine
 Standartwerte gesetzt. Dementsprechend wird *Terraform* im Folgenden jeweils die hier
 definierten Variablen interaktiv abfragen. Um dies zu Vermeiden, kann man für alle
 *Terraform* Variablen auch entsprechende [Umgebungsvariablen](https://www.terraform.io/cli/config/environment-variables)
@@ -190,7 +190,7 @@ vi terraform.tfvars
 region = "eu-frankfurt-1"
 ```
 
-für die User spezifischen Variablen erstellen wir eine *env* Datei, welche wir jeweils
+Für die User spezifischen Variablen erstellen wir eine *env* Datei, welche wir jeweils
 laden können. Alternativ kann man das auch direkt in seinem Bash Profile ablegen.
 
 ```bash
@@ -204,7 +204,7 @@ export TF_VAR_fingerprint="WERT-AUS-CONSOLE"
 export TF_VAR_private_key_path="PFAD"
 ```
 
-Laden der Umgebungsvariablen
+Laden Sie der Umgebungsvariablen
 
 ```bash
 . $HOME/tf_env
@@ -216,6 +216,19 @@ env|grep -i TF_VAR
 ```bash
 terraform init
 ```
+
+Wie sie im Verzeichnis sehen können, sind bereits weitere Terraform Dateien erstellt.
+Für das Login werden diese nicht verwendet. Sie dienen an dieser Stelle lediglich als
+Beispiel, um auch beim Ausführen eines Planes auch wirklich etwas aus zuführen. Sie
+finden folgend Dateien:
+
+- *datasource.tf* Data Sources für die Abfragen von Informationen zu definierten
+  Ressourcen. In diesem Beispiel *Compartment OCID* und Standard Linux Images.
+- *locals.tf* Definition von lokalen Variablen, welche genutzt werden
+- *outputs.tf* Definition von Ausgabewerten
+- *provider.tf* Eigentlich OCI Provider Konfiguration
+- *terraform.tfvars* Definition der Variable Werten
+- *variables.tf* Definition der Input Values / Variablen
 
 *Terraform plan* erstellen. Erst bei diesem Schritt nutzt *Terraform* explizit die
 definierten Credentials.
