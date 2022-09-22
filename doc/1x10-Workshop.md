@@ -31,7 +31,6 @@ Table: Workshop Übungen zum Thema Einführung
 | 05 | [DB System](#database-system)                                 | Konfiguration eines DB Systems                              | 30    |
 | 06 | [Autonomous](#autonomous-database)                            | Konfiguration einer Autonomous Databases                    | 30    |
 | 07 | [Object Store](#object-storage)                               | Konfiguration von Object Storages                           | 15    |
-| 08 | [OCI Command line](#oci-command-line-interface)               | Konfiguration und Einsatz des OCI Command Line Utilities    | 15    |
 
 Table: Workshop Übungen zum Thema OCI Walkthrough
 
