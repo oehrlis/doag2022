@@ -71,6 +71,8 @@ Beachten: Das Image muss Oracle Linux 7.9 sein für die spätere Verwendung!
 | Public IP address            | Assign a public IPv4 address         | keine        |
 | SSH keys                     | Public SSH Key aus der Cloud Shell   | keine        |
 
+Table: Compute Instance Konfiguration
+
 ![OCI Compute Instance Erstellen Teil I](../../images/1x01-04-compute-public-02.png)
 
 ![OCI Compute Instance Shape Auswahl](../../images/1x01-04-compute-public-03.png)
