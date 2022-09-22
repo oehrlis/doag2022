@@ -196,6 +196,7 @@ laden können. Alternativ kann man das auch direkt in seinem Bash Profile ablege
 ```bash
 vi $HOME/tf_env
 
+export TF_VAR_lab_id="$(id -u -n| tail -c 3)"
 export TF_VAR_lab_compartment_name="Student$(id -u -n| tail -c 3)"
 export TF_VAR_tenancy_ocid="WERT-AUS-CONSOLE"
 export TF_VAR_user_ocid="WERT-AUS-CONSOLE"

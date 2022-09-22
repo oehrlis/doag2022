@@ -45,6 +45,11 @@ variable "region" {
 }
 
 # --- LAB Config ---------------------------------------------------------------
+variable "lab_id" {
+  description = "Student LAB ID"
+  default     = ""
+  type        = string
+}
 variable "lab_compartment_name" {
   description = "Name of the students LAB Compartment"
   default     = ""
