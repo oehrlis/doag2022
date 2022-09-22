@@ -2,3 +2,5 @@
 images copy/*
 **/*.terraform.lock.hcl
 **/*.terraform
+ppt/~$03_Terraform_kickstart.pptx
+ppt/~$02_OCI-Walkthrough.pptx
