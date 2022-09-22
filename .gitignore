@@ -4,3 +4,5 @@ images copy/*
 **/*.terraform
 ppt/~$03_Terraform_kickstart.pptx
 ppt/~$02_OCI-Walkthrough.pptx
+**/*terraform.tfstate
+**/*terraform.tfstate.backup
