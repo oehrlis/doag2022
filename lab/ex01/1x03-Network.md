@@ -129,7 +129,7 @@ Fügen Sie folgende Route hinzu:
 
 | Target Type                  | Value                   | Bemerkungen  |
 |:-----------------------------|:------------------------|:-------------|
-| NAT      Gateway             | rt-doag-student-public  | keine        |
+| NAT      Gateway             | rt-doag-student-private | keine        |
 | Destination CIDR Block       | 0.0.0.0/0               | keine        |
 | Target NAT Gateway           | ngw-doag-student-01     | keine        |
 
@@ -193,7 +193,6 @@ Fügen Sie folgende Ingress-Regeln hinzu:
 |:-----------------------------|:---------------------|:--------|:------------|
 | Ingress                      | CIDR 10.0.0.0/16     | 22      | TCP         |
 | Ingress                      | CIDR 10.0.0.0/16     | 80      | TCP         |
-| Ingress                      | CIDR 10.0.0.0/16     | 22      | TCP         |
 
 Table: Ingress-Regeln
 
