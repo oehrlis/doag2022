@@ -54,6 +54,8 @@ Da wir in diesem Verzeichnis Terraform noch nicht initialisiert haben, müssen
 wir als erstes *terraform init* ausführen.
 
 ```bash
+cd $HOME/doag2022/lab/ex10
+. $HOME/tf_env
 terraform init
 ```
 
