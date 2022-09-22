@@ -15,6 +15,13 @@
 # ---------------------------------------------------------------------------
 
 locals {
-  lab_compartment_ocid = data.oci_identity_compartments.lab_compartment.compartments.0.compartment_id
+  all_protocols         = "all"
+  lab_compartment_ocid  = data.oci_identity_compartments.lab_compartments.compartments.0.id
+  label_prefix          = "doag"
+  resource_name         = lower(join("-", [local.label_prefix, trimsuffix(data.oci_identity_compartment.lab_compartment.name, var.lab_id), var.lab_id]))
+  resource_shortname    = lower(replace(local.resource_name, "-", ""))
+  public_dns_label      = lower(join("", ["sn", trimsuffix(data.oci_identity_compartment.lab_compartment.name, var.lab_id), "pub", var.lab_id]))
+  private_app_dns_label = lower(join("", ["sn", trimsuffix(data.oci_identity_compartment.lab_compartment.name, var.lab_id), "pvap", var.lab_id]))
+  private_db_dns_label  = lower(join("", ["sn", trimsuffix(data.oci_identity_compartment.lab_compartment.name, var.lab_id), "pvdb", var.lab_id]))
 }
 # --- EOF -------------------------------------------------------------------

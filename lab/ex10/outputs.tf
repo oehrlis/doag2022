@@ -21,7 +21,11 @@ output "oracle_images" {
 
 output "lab_compartment" {
   description = "OCID of Student LAB Compartment"
-  value       = data.oci_identity_compartments.lab_compartment.compartments.*.compartment_id
+  value       = data.oci_identity_compartment.lab_compartment.id
 }
 
+output "lab_vcn" {
+  description = "OCID of the LAB virtual cloud network"
+  value       = oci_core_vcn.vcn.id
+}
 # --- EOF -------------------------------------------------------------------
