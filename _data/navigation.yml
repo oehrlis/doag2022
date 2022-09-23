@@ -15,7 +15,7 @@
 # -----------------------------------------------------------------------------
 main:
   - title: "Einführung"
-    url: /doc/introduction/
+    url: /doc/into/
     description: "Einführung in den OCI Workshop (O-OCI-WS)"
   - title: "Übungen"
     url: /lab/
@@ -28,7 +28,7 @@ lab:
   - title: Einführung
     children:
       - title: "Einführung"
-        url: /doc/introduction/
+        url: /doc/into/
       - title: "Anforderungen"
         url: /doc/requirements/
       - title: "Lab Umgebung"
