@@ -40,12 +40,13 @@ Erstellen eines lokalen SSH Key Paares mit *ssh-keygen*. Der public Key werden
 wir anschliessend in der Terraform verwenden.
 
 ```bash
-cd $HOME/doag2022/lab/ex10
+cd $HOME/doag2022/lab/ex11
 . $HOME/tf_env
 mkdir -p $HOME/.ssh
 chmod 700 $HOME/.ssh
 ssh-keygen -C "DOAG OCI Test" -f $HOME/.ssh/id_rsa_doag -b 2048
 chmod 600 $HOME/.ssh/id_rsa_doag*
+cat >ssh_public_key_path
 ```
 
 Für den generierten SSH mit Terraform nutzen wir die Ressource *tls_private_key*
@@ -129,6 +130,62 @@ Den Plan mit *terraform apply* ausführen.
 terraform apply compute.tfplan
 ```
 
+Sobald Terraform die Instanz angelegt hat, können Sie via OCI Konsole die Ressourcen
+kontrollieren. Wurde alles wie gewünscht angelegt?
+
+- VCN mit den verschiedene Subnetzen
+- Compute Instance im Public Subnetz
+
+Anschliessend verbinden Sie sich via SSH. Nutzen Sie dazu das SSH Kommando
+respektive die Public IP Adresse, welche im Terraform Output angegeben wurde.
+
+```bash
+ssh -A -i /Users/stefan.oehrli/.ssh/id_rsa_doag opc@<PUBLICIP>
+```
+
+### Umstellung des Terraform Backends
+
+Bis anhin wurde unser Terraform State jeweils in der lokalen Datei *terraform.tfstate*
+bewirtschafte. Wenn wir diese verlieren oder sie beschädigt wird, kennt Terraform
+den Zustand der OCI Umgebungen nicht mehr. Ein erneutes *plan* und *apply* würde
+einfach alle Ressourcen neu anlegen.
+
+::: warning
+**Warnung** Der Verlust eines Terraform State entspricht einem kleinen bis grösseren
+Disaster. Ein aktuelles State File ist daher immens Wichtig. Terraform bietet
+Verschiedene Massnahmen um Verloren Zustände der Infrastruktur wieder herzustellen
+Alle sind aber mit Aufwand und entsprechendem Risiko verbunden. Das neu anlegen
+einer Compute Resource ist nicht das primäre Problem sondern die Daten, welche in der
+Datenbank oder auf dem Volume waren. Informationen zu *Terraform State Restoration*
+finden Sie unter den folgenden Links:
+
+- Terraform State Restoration Overview [Blog](https://support.hashicorp.com/hc/en-us/articles/4403065345555-Terraform-State-Restoration-Overview)
+- Terraform CLI documentation [Recovering from State Disasters](https://www.terraform.io/cli/state/recover)
+- Terraform CLI documentation [Command: state rm](https://www.terraform.io/cli/commands/state/rm)
+- Terraform CLI documentation [Command: import](https://www.terraform.io/cli/commands/import)
+:::
+
+Damit die Terraform State Datei nicht einfach lokal herumliegt, kann man diese auch
+in einem remote Backend (siehe auch [Backend Configuration](https://www.terraform.io/language/settings/backends/configuration))
+abspeichern. Die bietet mehrer Vorteile. Zum einen ist die State Datei zentral und
+sicher abgespeichert. Idealerweise natürlich mit einer entsprechende Sicherung.
+Zudem ist man unabhängig. D.h. man kann vom System A eine Umgebung aufbauen und
+auf dem System B den Terraform Code aus dem Version Control auschecken und
+Anpassungen vornehmen. Mit dem remote Backend weis Terraform immer wie der Status
+ist.
+
+Grundsätzlich stehen verschiedene Backends zur Verfügung. Mit OCI kann man den
+Terraform State respektive die State Datei relativ einfach in einem HTTP Backend
+in einem OCI Object Store ablegen.
+
+Erstellen wir als erstes mit dem OCI-CLI *oci* ein entsprechendes Bucket. Das
+soll in unserem Fall gleich benannt werden wie das Compartment. Die benötigen
+Informationen wie Compartment OCID suchen wir uns ebenfalls direkt mit *oci*
+zusammen.
+
+Erstellen Sie ein neues OCI Bucket mit dem Namen *StudentNN*. Wobei NN die Nummer
+Ihrer Umgebung ist.
+
 ```bash
 export COMPARTMENT_NAME="Student$(id -un|tail -c 3)"
 export COMPARTMENT_OCID=$(oci iam compartment list \
@@ -136,13 +193,56 @@ export COMPARTMENT_OCID=$(oci iam compartment list \
     --raw-output --query "data [?name == '${COMPARTMENT_NAME}'].id|[0]")
 
 oci os bucket create --compartment-id "$COMPARTMENT_OCID" --name "$COMPARTMENT_NAME"
+```
 
+Anschliessend laden wir unsere State Datei in das Bucket
+
+```bash
 touch terraform.tfstate
 oci os object put --bucket-name "$COMPARTMENT_NAME" --file "terraform.tfstate"
+```
 
+Damit wir mit Terraform auf die State Datei zugreifen können, benötigen wir noch
+eine Pre-Authenticated URL für die Provider Konfiguration.
+
+```bash
 oci os preauth-request create --bucket-name  "$COMPARTMENT_NAME" \
 --name "terraform.tfstate" --access-type "ObjectReadWrite" \
---time-expires "2050-11-21T23:00:00+00:00" --object-name "terraform.tfstate"
-
-/p/85_v_f7WQxnsTfHe53ab5KH6swneqzVXa1evVnfYRkxpgdvN7X1rdHOxH1PE87F-/n/frxplqvlwvmz/b/Student01/o/terraform.tfstate
+--time-expires "2025-11-21T23:00:00+00:00" --object-name "terraform.tfstate"
 ```
+
+OCI-CLI gibt die Pre-Authenticated URL mit dem Parameter ** an. Kopieren Sie diesen
+Wert bitte wir benötigen diesen für die Anpassung der Provider Konfiguration in
+der Datei *provider.tf*.
+
+In der Terraform Provider Konfiguration *provider.tf* fügen wir nun das HTTP Backend
+hinzu. Die entsprechenden Zeilen sind bereits in der Datei. Sie müssen lediglich die
+Kommentarzeilen entfernen und *PRE_AUTH_URL* mit der zuvor kopierten Pre-Authenticated URL
+ersetzten. Anbei ein Auszug aus *provider.tf*.
+
+```bash
+vi provider.tf
+
+terraform {
+  required_version = ">= 0.14.0"
+    backend "http" {
+      update_method = "PUT"
+      address       = "https://objectstorage.eu-zurich-1.oraclecloud.com/PRE_AUTH_URL"
+    }
+```
+
+Jetzt muss nur noch Terraform mitgeteilt werden, dass neu ein Remote Backen zu verwenden
+ist. Dazu führen wir *terraform init* aus.
+
+```bash
+terraform init
+```
+
+Die Anpassung auf ein remote Backend ist übrigens eine Voraussetzung für die nächste
+Übung. Wenn das nicht klappt, bekommen wir da ein *leichtes* Durcheinander.
+
+::: note
+**Hinweise** Als kleine Hausaufgabe, können Sie auch einmal versuchen bei einer
+erstellten Terraform Umgebung die State Datei zu löschen und manuell wiederherzustellen.
+Nutzen Sie dazu die oben aufgeführten Links.
+:::

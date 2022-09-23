@@ -14,17 +14,17 @@
 #              at http://www.apache.org/licenses/
 # ------------------------------------------------------------------------------
 
-resource "oci_core_instance" "compute" {
+resource "oci_core_instance" "compute_public" {
   availability_domain = local.availability_domain
   compartment_id      = data.oci_identity_compartment.lab_compartment.id
   display_name        = "tfci-${local.resource_name}-public"
-  shape               = "VM.Standard.E4.Flex"
+  shape               = var.compute_public_shape
   state               = "RUNNING"
 
   create_vnic_details {
     subnet_id        = oci_core_subnet.public_subnet.id
     assign_public_ip = true
-    private_ip       = "10.0.1.11"
+    private_ip       = var.compute_public_private_ip
     display_name     = "vnic"
     hostname_label   = "tfci-${local.resource_name}-public"
   }
@@ -39,14 +39,14 @@ resource "oci_core_instance" "compute" {
   }
 
   shape_config {
-    memory_in_gbs = 4
-    ocpus         = 1
+    memory_in_gbs = var.compute_public_memory_in_gbs
+    ocpus         = var.compute_public_ocpus
   }
 
   source_details {
     source_type             = "image"
     source_id               = data.oci_core_images.oracle_images.images.0.id
-    boot_volume_size_in_gbs = "100"
+    boot_volume_size_in_gbs = var.compute_public_boot_volume_size
   }
 
   timeouts {

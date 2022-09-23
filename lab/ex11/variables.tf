@@ -73,4 +73,46 @@ variable "ad_index" {
   type        = number
 }
 
+# --- Compute Config -----------------------------------------------------------
+variable "compute_public_os" {
+  description = "Base OS for the compute host."
+  default     = "Oracle Linux"
+  type        = string
+}
+
+variable "compute_public_os_version" {
+  description = "Define Base OS version for the compute host."
+  default     = "7.8"
+  type        = string
+}
+
+variable "compute_public_private_ip" {
+  description = "Private IP for host."
+  default     = "10.0.1.10"
+  type        = string
+}
+
+variable "compute_public_shape" {
+  description = "The shape of compute instance."
+  default     = "VM.Standard.E4.Flex"
+  type        = string
+}
+
+variable "compute_public_ocpus" {
+  description = "The ocpus for the shape."
+  default     = 1
+  type        = number
+}
+
+variable "compute_public_memory_in_gbs" {
+  description = "The memory in gbs for the shape."
+  default     = 4
+  type        = number
+}
+
+variable "compute_public_boot_volume_size" {
+  description = "Size of the boot volume."
+  default     = 50
+  type        = number
+}
 # --- EOF ----------------------------------------------------------------------

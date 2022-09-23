@@ -31,7 +31,7 @@ output "lab_vcn" {
 
 output "compute_public_ip" {
   description = "The public IP address of the compute instance."
-  value       = oci_core_instance.compute.public_ip
+  value       = oci_core_instance.compute_public.public_ip
 }
 
 output "compute_private_ssh_key" {
@@ -42,7 +42,7 @@ output "compute_private_ssh_key" {
 
 output "compute_ssh_access" {
   description = "SSH access string for compute instance."
-  value       = format("ssh -A -i ${var.ssh_public_key_path} opc@%s", oci_core_instance.compute.public_ip)
+  value       = format("ssh -A -i %s opc@%s", trimsuffix(var.ssh_public_key_path, ".pub"), oci_core_instance.compute_public.public_ip)
 }
 
 ### Important Security Notice ###

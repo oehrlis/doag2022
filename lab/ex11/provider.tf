@@ -19,7 +19,7 @@ terraform {
   required_version = ">= 0.14.0"
   # backend "http" {
   #   update_method = "PUT"
-  #   address       = "https://objectstorage.eu-zurich-1.oraclecloud.com/p/85_v_f7WQxnsTfHe53ab5KH6swneqzVXa1evVnfYRkxpgdvN7X1rdHOxH1PE87F-/n/frxplqvlwvmz/b/Student01/o/terraform.tfstate"
+  #   address       = "https://objectstorage.eu-zurich-1.oraclecloud.com/PRE_AUTH_URL"
   # }
   required_providers {
     oci = {
