@@ -28,7 +28,7 @@ Oehrli und Berger - mit Freunden in der Cloud unterwegs
 - 10:00 VCN / Compute Service / Load Balancer
 - 10:50 Database as a Service / ADB vs. DBCS
 - 12:00 - 13:00 Mittagspause
-- 14:00 Quickstart Terraform / IaC
+- 13:00 Quickstart Terraform / IaC
 - 14:30 - 15:00 Kaffeepause
 - 15:00 Terraform inside
 - 16:00 Feedback / Fragen
