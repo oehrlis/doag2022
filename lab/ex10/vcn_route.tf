@@ -16,7 +16,7 @@
 
 #RT # create a default routing table -----------------------------------------------
 #RT resource "oci_core_default_route_table" "default_route_table" {
-#RT  display_name               = "rt-${local.resource_name}-public"
+#RT  display_name               = "tf-rt-${local.resource_name}-public"
 #RT  manage_default_resource_id = oci_core_vcn.vcn.default_route_table_id
 
 #RT  route_rules {
@@ -28,7 +28,7 @@
 # create a default routing table --------------------------------------------
 #RT resource "oci_core_route_table" "private_route_table" {
 #RT   compartment_id = data.oci_identity_compartment.lab_compartment.id
-#RT   display_name   = "rt-${local.resource_name}-private"
+#RT   display_name   = "tf-rt-${local.resource_name}-private"
 #RT   vcn_id         = oci_core_vcn.vcn.id
 
 #RT  route_rules {

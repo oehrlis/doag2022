@@ -17,7 +17,7 @@
 # create the internet gateway resource -----------------------------------------
 #IGW resource "oci_core_internet_gateway" "igw" {
 #IGW  compartment_id = data.oci_identity_compartment.lab_compartment.id
-#IGW  display_name   = "igw-${local.resource_name}"
+#IGW  display_name   = "tf-igw-${local.resource_name}"
 #IGW  vcn_id         = oci_core_vcn.vcn.id
 #IGW  enabled        = "true"
 #IGW }

@@ -17,7 +17,7 @@
 #SEC # create default security list
 #SEC resource "oci_core_default_security_list" "public_security_list" {
 #SEC   manage_default_resource_id = oci_core_vcn.vcn.default_security_list_id
-#SEC   display_name               = "sl-${local.resource_name}-public"
+#SEC   display_name               = "tf-sl-${local.resource_name}-public"
 
 #SEC   # allow outbound tcp traffic on all ports
 #SEC   egress_security_rules {
@@ -54,7 +54,7 @@
 #SEC resource "oci_core_security_list" "private_security_list" {
 #SEC   compartment_id = data.oci_identity_compartment.lab_compartment.id
 #SEC   vcn_id         = oci_core_vcn.vcn.id
-#SEC   display_name   = "sl-${local.resource_name}-private"
+#SEC   display_name   = "tf-sl-${local.resource_name}-private"
 
 #SEC   # allow outbound tcp traffic on all ports
 #SEC   egress_security_rules {

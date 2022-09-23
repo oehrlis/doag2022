@@ -18,7 +18,7 @@
 #SUB resource "oci_core_subnet" "public_subnet" {
 #SUB   compartment_id    = data.oci_identity_compartment.lab_compartment.id
 #SUB   cidr_block        = cidrsubnet("10.0.0.0/20", 4, 1)
-#SUB   display_name      = "sn-${local.resource_name}-public"
+#SUB   display_name      = "tf-sn-${local.resource_name}-public"
 #SUB   dns_label         = local.public_dns_label
 #SUB   vcn_id            = oci_core_vcn.vcn.id
 #SUB   security_list_ids = [oci_core_vcn.vcn.default_security_list_id]
@@ -30,7 +30,7 @@
 #SUB resource "oci_core_subnet" "private_subnet1" {
 #SUB   compartment_id             = data.oci_identity_compartment.lab_compartment.id
 #SUB   cidr_block                 = cidrsubnet("10.0.0.0/20", 4, 2)
-#SUB   display_name               = "sn-${local.resource_name}-private-app"
+#SUB   display_name               = "tf-sn-${local.resource_name}-private-app"
 #SUB   dns_label                  = local.private_app_dns_label
 #SUB   prohibit_public_ip_on_vnic = true
 #SUB   vcn_id                     = oci_core_vcn.vcn.id
@@ -43,7 +43,7 @@
 #SUB resource "oci_core_subnet" "private_subnet2" {
 #SUB   compartment_id             = data.oci_identity_compartment.lab_compartment.id
 #SUB   cidr_block                 = cidrsubnet("10.0.0.0/20", 4, 3)
-#SUB   display_name               = "sn-${local.resource_name}-private-db"
+#SUB   display_name               = "tf-sn-${local.resource_name}-private-db"
 #SUB   dns_label                  = local.private_db_dns_label
 #SUB   prohibit_public_ip_on_vnic = true
 #SUB   vcn_id                     = oci_core_vcn.vcn.id

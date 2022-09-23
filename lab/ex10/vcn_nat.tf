@@ -17,7 +17,7 @@
 #NAT # create the nat gateway resource -------------------------------------------
 #NAT resource "oci_core_nat_gateway" "ngw" {
 #NAT   compartment_id = data.oci_identity_compartment.lab_compartment.id
-#NAT   display_name   = "ngw-${local.resource_name}"
+#NAT   display_name   = "tf-ngw-${local.resource_name}"
 #NAT   vcn_id         = oci_core_vcn.vcn.id
 #NAT   block_traffic  = false
 #NAT }
