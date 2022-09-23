@@ -148,16 +148,20 @@ ssh -A -i /Users/stefan.oehrli/.ssh/id_rsa_doag opc@<PUBLICIP>
 Bis anhin wurde unser Terraform State jeweils in der lokalen Datei *terraform.tfstate*
 bewirtschafte. Wenn wir diese verlieren oder sie beschädigt wird, kennt Terraform
 den Zustand der OCI Umgebungen nicht mehr. Ein erneutes *plan* und *apply* würde
-einfach alle Ressourcen neu anlegen.
+einfach alle Ressourcen neu anlegen. Daher erstellt Terraform jeweils eine
+Sicherung der State Datei als *terraform.tfstate.backup*. Das abspeichern der
+State Datei in einem Version Control sollte man übrigens nicht machen. Zum Einen
+wird die State Datei immer wieder von Terraform angepasst. Zum Andern stehen da teilweise
+Sensitive Informationen drin.
 
 ::: warning
 **Warnung** Der Verlust eines Terraform State entspricht einem kleinen bis grösseren
 Disaster. Ein aktuelles State File ist daher immens Wichtig. Terraform bietet
-Verschiedene Massnahmen um Verloren Zustände der Infrastruktur wieder herzustellen
+verschiedene Massnahmen um Verloren Zustände der Infrastruktur wieder herzustellen.
 Alle sind aber mit Aufwand und entsprechendem Risiko verbunden. Das neu anlegen
-einer Compute Resource ist nicht das primäre Problem sondern die Daten, welche in der
-Datenbank oder auf dem Volume waren. Informationen zu *Terraform State Restoration*
-finden Sie unter den folgenden Links:
+einer Compute Resource ist nicht das primäre Problem sondern die Daten, welche
+in der Datenbank oder auf dem Volume waren. Informationen zu
+*Terraform State Restoration* finden Sie unter den folgenden Links:
 
 - Terraform State Restoration Overview [Blog](https://support.hashicorp.com/hc/en-us/articles/4403065345555-Terraform-State-Restoration-Overview)
 - Terraform CLI documentation [Recovering from State Disasters](https://www.terraform.io/cli/state/recover)
@@ -239,7 +243,9 @@ terraform init
 ```
 
 Die Anpassung auf ein remote Backend ist übrigens eine Voraussetzung für die nächste
-Übung. Wenn das nicht klappt, bekommen wir da ein *leichtes* Durcheinander.
+Übung. Wenn das nicht klappt, bekommen wir da ein *leichtes* Durcheinander. Die
+lokale State Datei *terraform.tfstate* sowie *terraform.tfstate.backup* benötigen
+wir nicht mehr.
 
 ::: note
 **Hinweise** Als kleine Hausaufgabe, können Sie auch einmal versuchen bei einer
