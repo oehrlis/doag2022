@@ -11,12 +11,13 @@ excerpt: "Verwendung von Terraform Modulen"
 
 ### Übungsziele {.unlisted .unnumbered}
 
-to be documented
+Nutzen eines Terraform Modules für das Bereitstellen von OCI Ressourcen.
 
 ### Aufgaben {.unlisted .unnumbered}
 
-to be documented
+- Terraform Modules in die eigene Konfiguration einbinden
+- Terraform Konfiguration bereitstellen
 
-### tbd
+### Umsetzung
 
 to be documented

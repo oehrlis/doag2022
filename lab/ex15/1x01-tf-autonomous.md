@@ -15,8 +15,10 @@ Ziel ist die Bereitstellung einer Autonomous Database Autonomous Transaction Pro
 
 ### Aufgaben {.unlisted .unnumbered}
 
-to be documented
+- Terraform Konfiguration Autonomous Database erstellen
+- Ressourcen bereitstellen
+- Verbinden zur Autonomous Database mit einem Wallet
 
-### tbd
+### Umsetzung
 
 to be documented

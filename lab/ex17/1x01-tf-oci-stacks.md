@@ -11,12 +11,13 @@ excerpt: "Verwendung von OCI Stacks mit Terraform"
 
 ### Übungsziele {.unlisted .unnumbered}
 
-to be documented
+Nutzen eines OCI Stacks für das Bereitstellen von OCI Ressourcen.
 
 ### Aufgaben {.unlisted .unnumbered}
 
-to be documented
+- OCI Stack erstellen
+- OCI Stack in einem bestehenden VCN bereitstellen
 
-### tbd
+### Umsetzung
 
 to be documented

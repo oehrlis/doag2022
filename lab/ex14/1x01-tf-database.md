@@ -16,10 +16,10 @@ Ziel ist die Bereitstellung einer Oracle Datenbank in der Availability Domain 2 
 
 ### Aufgaben {.unlisted .unnumbered}
 
-- Übersicht zu den DB Systemen finden
-- Einfaches DB System erstellen
+- Terraform Konfiguration für einfaches DB System erstellen
+- Ressourcen bereitstellen
 - Zugriff via SSH / Cloud Shell sicherstellen
 
-### tbd
+### Umsetzung
 
 to be documented
