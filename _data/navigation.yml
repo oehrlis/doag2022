@@ -62,7 +62,7 @@ lab:
       - title: "Compute Instance"
         url: /lab/tf-compute/
       - title: "Compute Instance Anpassen"
-        url: /lab/tf/compute-adv/
+        url: /lab/tf-compute-adv/
       - title: "Block Volume"
         url: /lab/tf-compute-bv/
       - title: "DB System"
