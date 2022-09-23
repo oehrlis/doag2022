@@ -287,6 +287,29 @@ Den Plan mit *terraform apply* ausführen.
 terraform apply network.tfplan
 ```
 
+### All In VCN mit Terraform erstellen
+
+Mit den folgenden *sed* Kommandos entfernen wir den Kommentar Prefix in allen
+Dateien.
+
+```bash
+sed -i 's/#IGW//g' vcn_igw.tf
+sed -i 's/#NAT//g' vcn_nat.tf
+sed -i 's/#RT//g' vcn_route.tf
+sed -i 's/#SEC//g' vcn_security.tf
+sed -i 's/#SUB//g' vcn_subnets.tf
+```
+
+```bash
+terraform plan -out=network.tfplan
+```
+
+Den Plan mit *terraform apply* ausführen.
+
+```bash
+terraform apply network.tfplan
+```
+
 ### Löschen der Netzwerk Ressourcen
 
 Kontrollieren Sie die verschiedenen Netzwerkressourcen in der OCI Konsole. Stimmen
