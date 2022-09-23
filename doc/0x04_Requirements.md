@@ -1,5 +1,4 @@
 ---
-title: "Anforderungen"
 permalink: /doc/requirements/
 excerpt: "Einführung in den OCI Workshop (O-OCI-WS)"
 ---

@@ -1,5 +1,4 @@
 ---
-title: "Workshop Einführung"
 permalink: /doc/into/
 excerpt: "Einführung in den OCI Workshop (O-OCI-WS)"
 ---
