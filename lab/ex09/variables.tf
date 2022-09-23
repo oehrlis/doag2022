@@ -14,35 +14,34 @@
 #              at http://www.apache.org/licenses/
 # ------------------------------------------------------------------------------
 # provider identity parameters ------------------------------------------------
-variable "user_ocid" {
-  description = "user OCID used to access OCI"
-  default     = ""
-  type        = string
-}
+#VAR variable "user_ocid" {
+#VAR   description = "user OCID used to access OCI"
+#VAR   default     = ""
+#VAR   type        = string
+#VAR }
 
-variable "fingerprint" {
-  description = "Fingerprint for user"
-  default     = ""
-  type        = string
-}
+#VAR variable "fingerprint" {
+#VAR   description = "Fingerprint for user"
+#VAR   default     = ""
+#VAR   type        = string
+#VAR }
 
-variable "private_key_path" {
-  description = "Private Key Path"
-  default     = ""
-  type        = string
-}
+#VAR variable "private_key_path" {
+#VAR   description = "Private Key Path"
+#VAR   default     = ""
+#VAR   type        = string
+#VAR }
 
-variable "tenancy_ocid" {
-  description = "tenancy id where to create the resources"
-  type        = string
-}
+#VAR variable "tenancy_ocid" {
+#VAR   description = "tenancy id where to create the resources"
+#VAR   type        = string
+#VAR }
 
-
-variable "region" {
-  # List of regions: https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#ServiceAvailabilityAcrossRegions
-  description = "The OCI region where resources will be created"
-  type        = string
-}
+#VAR variable "region" {
+#VAR   # List of regions: https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#ServiceAvailabilityAcrossRegions
+#VAR   description = "The OCI region where resources will be created"
+#VAR   type        = string
+#VAR }
 
 # --- LAB Config ---------------------------------------------------------------
 variable "lab_id" {
@@ -55,6 +54,7 @@ variable "lab_compartment_name" {
   default     = ""
   type        = string
 }
+
 variable "base_compartment_ocid" {
   description = "OCID of the base compartment"
   default     = ""

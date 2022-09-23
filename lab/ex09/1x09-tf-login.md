@@ -128,6 +128,21 @@ terraform init
 Terraform erstellt im lokalen Verzeichnis ein neues Verzeichnis *.terraform*. Da
 ist die aktuelle Version des OCI Providers sowie weiteres abgelegt (z.B. Module).
 
+*Terraform plan* erstellen. Erst bei diesem Schritt nutzt *Terraform* explizit die
+definierten Credentials.
+
+```bash
+terraform plan -out=login.tfplan
+```
+
+*Terraform apply* ausführen. Wobei *apply* bei diesem Beispiel nicht nötig ist.
+Die Terraform konfiguration enthält neben dem Provider lediglich noch eine
+Abfrage in der Datei *datasource.tf* mit der Ausgabe in *outputs.tf*.
+
+```bash
+terraform apply login.tfplan
+```
+
 ### Konfiguration OCI Provider mit Terraform Variablen
 
 Das direkte abspeichern der Provider Konfiguration in den *Terraform* Dateien ist
@@ -135,6 +150,7 @@ nicht ganz ideal. Aus diesem Grund werden für die Informationen entsprechende
 *Terraform* Variablen definiert. Siehe die Datei *variables.tf*.
 
 ```bash
+sed -i 's/#VAR//g' variables.tf
 cat variables.tf
 ```
 
