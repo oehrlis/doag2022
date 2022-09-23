@@ -11,11 +11,17 @@ excerpt: "Anpassung von Compute Instances mit Terraform"
 
 ### Übungsziele {.unlisted .unnumbered}
 
-to be documented
+Anpassen einer bestehenden Compute Instance sowie hinzufügen einer weiteren
+Compute Instanz mit *Cloud-Init* zu einer bestehenden Terraform Konfiguration.
+Dabei sollen Sie am Beispiel sehen, welche Anpassungen *in-place* gehen und welche
+nicht sowie was dies für eine Bedeutung für Ihre Terraform Konfiguration hat.
 
 ### Aufgaben {.unlisted .unnumbered}
 
-to be documented
+- Konfiguration des OCI Providers mit remote Backend
+- Compute Instance Ressourcen anpassen
+- Hinzufügen einer weiteren Compute Instance im Private Subnet
+- SSH Verbindung auf die Compute Instance
 
 ### tbd
 
